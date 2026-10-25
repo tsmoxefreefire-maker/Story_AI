@@ -1,0 +1,24 @@
+{
+  "characters": [
+    {"key": "nadia", "build": "child", "presentation": "f", "skin_tone": 2, "hair_style": "ponytail", "hair_color": 1,
+     "top": {"style": "tshirt", "color_token": "c-secondary"}, "bottom": {"style": "skirt_knee", "color_token": "c-support"},
+     "shoes": "sneakers", "accessories": [], "head_covering": "none",
+     "voice_profile": {"gender": "f", "age_band": "child", "energy": "normal"}, "idle_style": "normal"},
+    {"key": "karim", "build": "child", "presentation": "m", "skin_tone": 3, "hair_style": "short_crop", "hair_color": 0,
+     "top": {"style": "hoodie", "color_token": "c-primary"}, "bottom": {"style": "shorts", "color_token": "c-neutral-2"},
+     "shoes": "sneakers", "accessories": [], "head_covering": "none",
+     "voice_profile": {"gender": "m", "age_band": "child", "energy": "lively"}, "idle_style": "lively"},
+    {"key": "mama", "build": "adult", "presentation": "f", "skin_tone": 1, "hair_style": "bun", "hair_color": 1,
+     "top": {"style": "tunic", "color_token": "c-accent"}, "bottom": {"style": "trousers", "color_token": "c-neutral-1"},
+     "shoes": "sandals", "accessories": [], "head_covering": "none",
+     "voice_profile": {"gender": "f", "age_band": "adult", "energy": "calm"}, "idle_style": "calm"}
+  ],
+  "settings": [
+    {"scene_id": "s01", "background_id": "bg_home_kitchen", "time_of_day": "evening", "prop_ids": ["prop_table", "prop_pizza", "prop_wall_clock"], "custom_props": []},
+    {"scene_id": "s02", "background_id": "bg_home_kitchen", "time_of_day": "evening", "prop_ids": ["prop_table", "prop_pizza_slice"], "custom_props": []},
+    {"scene_id": "s03", "background_id": "bg_home_kitchen", "time_of_day": "evening", "prop_ids": ["prop_table", "prop_pizza"],
+     "custom_props": [{"key": "pizza_cutter", "description": "A round pizza cutter wheel with a short handle, flat style, centered."}]},
+    {"scene_id": "s04", "background_id": "bg_home_living", "time_of_day": "evening", "prop_ids": ["prop_sofa", "prop_table", "prop_pizza_slice", "prop_notebook"], "custom_props": []},
+    {"scene_id": "s05", "background_id": "bg_home_kitchen", "time_of_day": "evening", "prop_ids": ["prop_table", "prop_wall_clock", "prop_plate"], "custom_props": []}
+  ]
+}

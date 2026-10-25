@@ -1,0 +1,19 @@
+{
+  "topic_title": "أجزاء النبات",
+  "topic_text": "أجزاء النبات\nللنبات أجزاء، ولكل جزء منها عمل. الجذر يكون تحت التربة، يمتص الماء منها ويثبت النبات في مكانه. والساق تحمل النبات وتنقل الماء من الجذر إلى الأوراق. والورقة تصنع غذاء النبات مستخدمة ضوء الشمس. والزهرة جزء مهم تتكون منه البذور التي تنمو منها نباتات جديدة.",
+  "prior_text": "الكائنات الحية\nالنبات كائن حي ينمو ويحتاج إلى الماء والهواء.",
+  "later_preview": "حاجات النبات\nيحتاج النبات إلى الماء والهواء وضوء الشمس والتربة المناسبة لينمو.",
+  "language": "ar",
+  "dialect_applied": "msa",
+  "country": "JO",
+  "age_group": "9-11",
+  "grade": "4",
+  "subject": "science",
+  "target_duration_sec": 120,
+  "warnings": [
+    {
+      "code": "DIALECT_FALLBACK",
+      "message": "Dialect 'levantine' (derived from country JO) is not supported by TTS provider 'groq'; using 'msa'."
+    }
+  ]
+}

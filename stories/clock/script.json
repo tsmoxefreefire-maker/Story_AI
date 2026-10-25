@@ -1,0 +1,311 @@
+{
+ "title": "يزن والحافلة",
+ "logline": "يزن يتعلم قراءة الساعة من أمه، فيصل إلى الحافلة في موعدها.",
+ "characters": [
+  {
+   "key": "yazan",
+   "name": "يزن",
+   "role": "protagonist",
+   "gender": "m",
+   "age_years": 7,
+   "traits": [
+    "curious",
+    "sleepy"
+   ]
+  },
+  {
+   "key": "mama",
+   "name": "أمي",
+   "role": "supporting",
+   "gender": "f",
+   "age_years": 34,
+   "traits": [
+    "patient"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "s01",
+   "summary": "المنبه يرن، ويزن لا يعرف قراءة الساعة.",
+   "location": "غرفة يزن",
+   "time_of_day": "day",
+   "lines": [
+    {
+     "id": "s01_l01",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "في الصباح، رن المنبه في غرفة يزن: ترن ترن!",
+     "text_spoken": "في الصباح رن المنبه في غرفة يزن ترن ترن"
+    },
+    {
+     "id": "s01_l02",
+     "speaker": "mama",
+     "emotion": "happy",
+     "text_display": "صباح الخير يا يزن، الحافلة تأتي الساعة السابعة والنصف.",
+     "text_spoken": "صباح الخير يا يزن الحافلة تأتي الساعة السابعة والنصف"
+    },
+    {
+     "id": "s01_l03",
+     "speaker": "yazan",
+     "emotion": "worried",
+     "text_display": "لكني لا أعرف كيف أقرأ الساعة يا أمي.",
+     "text_spoken": "لكني لا أعرف كيف أقرأ الساعة يا أمي"
+    },
+    {
+     "id": "s01_l04",
+     "speaker": "mama",
+     "emotion": "neutral",
+     "text_display": "لا بأس، تعال إلى المطبخ وسأعلمك وأنت تأكل فطورك.",
+     "text_spoken": "لا بأس تعال إلى المطبخ وسأعلمك وأنت تأكل فطورك"
+    },
+    {
+     "id": "s01_l05",
+     "speaker": "yazan",
+     "emotion": "happy",
+     "text_display": "حسنًا، أنا قادم!",
+     "text_spoken": "حسنا أنا قادم"
+    }
+   ],
+   "concepts_covered": [],
+   "interaction": null
+  },
+  {
+   "id": "s02",
+   "summary": "أمي تشرح أن العقرب القصير يدل على الساعة.",
+   "location": "المطبخ",
+   "time_of_day": "day",
+   "lines": [
+    {
+     "id": "s02_l01",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "في المطبخ، أشارت أمي إلى الساعة المعلقة على الحائط.",
+     "text_spoken": "في المطبخ أشارت أمي إلى الساعة المعلقة على الحائط"
+    },
+    {
+     "id": "s02_l02",
+     "speaker": "mama",
+     "emotion": "neutral",
+     "text_display": "انظر يا يزن، في الساعة عقربان: واحد قصير، وواحد طويل.",
+     "text_spoken": "انظر يا يزن في الساعة عقربان واحد قصير وواحد طويل"
+    },
+    {
+     "id": "s02_l03",
+     "speaker": "mama",
+     "emotion": "neutral",
+     "text_display": "العقرب القصير يخبرنا بالساعة، وهو الآن عند الرقم 7.",
+     "text_spoken": "العقرب القصير يخبرنا بالساعة وهو الآن عند الرقم سبعة"
+    },
+    {
+     "id": "s02_l04",
+     "speaker": "mama",
+     "emotion": "happy",
+     "text_display": "والعقرب الطويل عند الرقم 12، إذن الساعة الآن السابعة تمامًا.",
+     "text_spoken": "والعقرب الطويل عند الرقم اثني عشر إذن الساعة الآن السابعة تماما"
+    },
+    {
+     "id": "s02_l05",
+     "speaker": "yazan",
+     "emotion": "surprised",
+     "text_display": "القصير للساعة، والطويل للدقائق! هذا سهل!",
+     "text_spoken": "القصير للساعة والطويل للدقائق هذا سهل"
+    }
+   ],
+   "concepts_covered": [
+    "c1",
+    "c2"
+   ],
+   "interaction": {
+    "type": "choose_answer",
+    "concept_id": "c1",
+    "prompt": "أي عقرب يخبرنا بالساعة؟",
+    "hint": "تذكر العقرب الذي كان عند الرقم 7.",
+    "options": [
+     {
+      "id": "a",
+      "text": "العقرب القصير",
+      "correct": true,
+      "feedback": "أحسنت! القصير يخبرنا بالساعة."
+     },
+     {
+      "id": "b",
+      "text": "العقرب الطويل",
+      "correct": false,
+      "feedback": "الطويل يخبرنا بالدقائق."
+     }
+    ],
+    "max_attempts": 2,
+    "id": "s02_i1",
+    "after_line": "s02_l05"
+   }
+  },
+  {
+   "id": "s03",
+   "summary": "الوقت يمر، ويزن يقرأ الساعة السابعة والنصف.",
+   "location": "المطبخ",
+   "time_of_day": "day",
+   "lines": [
+    {
+     "id": "s03_l01",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "أكل يزن فطوره، ومر الوقت، فتحرك العقربان في الساعة.",
+     "text_spoken": "أكل يزن فطوره ومر الوقت فتحرك العقربان في الساعة"
+    },
+    {
+     "id": "s03_l02",
+     "speaker": "mama",
+     "emotion": "neutral",
+     "text_display": "انظر الآن يا يزن، أين صار العقرب الطويل؟",
+     "text_spoken": "انظر الآن يا يزن أين صار العقرب الطويل"
+    },
+    {
+     "id": "s03_l03",
+     "speaker": "yazan",
+     "emotion": "thinking",
+     "text_display": "إنه عند الرقم 6، في أسفل الساعة.",
+     "text_spoken": "إنه عند الرقم ستة في أسفل الساعة"
+    },
+    {
+     "id": "s03_l04",
+     "speaker": "mama",
+     "emotion": "happy",
+     "text_display": "عندما يكون الطويل عند 6، نقول: الساعة والنصف.",
+     "text_spoken": "عندما يكون الطويل عند الستة نقول الساعة والنصف"
+    },
+    {
+     "id": "s03_l05",
+     "speaker": "yazan",
+     "emotion": "surprised",
+     "text_display": "والقصير بين 7 و8، إذن الساعة السابعة والنصف!",
+     "text_spoken": "والقصير بين السبعة والثمانية إذن الساعة السابعة والنصف"
+    },
+    {
+     "id": "s03_l06",
+     "speaker": "mama",
+     "emotion": "worried",
+     "text_display": "صحيح! إنه موعد الحافلة، أسرع يا يزن!",
+     "text_spoken": "صحيح إنه موعد الحافلة أسرع يا يزن"
+    }
+   ],
+   "concepts_covered": [
+    "c2",
+    "c3"
+   ],
+   "interaction": null
+  },
+  {
+   "id": "s04",
+   "summary": "يزن يصل إلى الحافلة في موعدها، ويعرف متى تعود.",
+   "location": "الشارع",
+   "time_of_day": "day",
+   "lines": [
+    {
+     "id": "s04_l01",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "ركض يزن مع أمه، ووصل إلى الحافلة في الوقت تمامًا.",
+     "text_spoken": "ركض يزن مع أمه ووصل إلى الحافلة في الوقت تماما"
+    },
+    {
+     "id": "s04_l02",
+     "speaker": "yazan",
+     "emotion": "happy",
+     "text_display": "يا أمي، أستطيع الآن أن أقرأ الساعة وحدي!",
+     "text_spoken": "يا أمي أستطيع الآن أن أقرأ الساعة وحدي"
+    },
+    {
+     "id": "s04_l03",
+     "speaker": "mama",
+     "emotion": "happy",
+     "text_display": "إذن قل لي: الحافلة تعود والقصير عند 1، والطويل عند 12.",
+     "text_spoken": "إذن قل لي الحافلة تعود والقصير عند الواحد والطويل عند الاثني عشر"
+    },
+    {
+     "id": "s04_l04",
+     "speaker": "yazan",
+     "emotion": "laughing",
+     "text_display": "هذا سهل، ستعود الحافلة الساعة الواحدة تمامًا!",
+     "text_spoken": "هذا سهل ستعود الحافلة الساعة الواحدة تماما"
+    },
+    {
+     "id": "s04_l05",
+     "speaker": "mama",
+     "emotion": "happy",
+     "text_display": "أحسنت يا بطل، هيا اصعد إلى الحافلة.",
+     "text_spoken": "أحسنت يا بطل هيا اصعد إلى الحافلة"
+    }
+   ],
+   "concepts_covered": [
+    "c1",
+    "c2"
+   ],
+   "interaction": {
+    "type": "predict",
+    "concept_id": "c2",
+    "prompt": "متى تعود الحافلة؟",
+    "options": [
+     {
+      "id": "a",
+      "text": "الساعة الواحدة"
+     },
+     {
+      "id": "b",
+      "text": "الساعة الثانية عشرة"
+     }
+    ],
+    "expected_option_id": "a",
+    "reveal_text": "القصير عند 1 والطويل عند 12، إذن الساعة الواحدة تمامًا.",
+    "id": "s04_i1",
+    "after_line": "s04_l03"
+   }
+  },
+  {
+   "id": "s05",
+   "summary": "في المدرسة، يزن يخبر أصدقاءه كيف يقرأ الساعة.",
+   "location": "ساحة المدرسة",
+   "time_of_day": "day",
+   "lines": [
+    {
+     "id": "s05_l01",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "في المدرسة، أخبر يزن أصدقاءه بما تعلمه في الصباح.",
+     "text_spoken": "في المدرسة أخبر يزن أصدقاءه بما تعلمه في الصباح"
+    },
+    {
+     "id": "s05_l02",
+     "speaker": "yazan",
+     "emotion": "happy",
+     "text_display": "العقرب القصير يخبرنا بالساعة، والطويل يخبرنا بالدقائق.",
+     "text_spoken": "العقرب القصير يخبرنا بالساعة والطويل يخبرنا بالدقائق"
+    },
+    {
+     "id": "s05_l03",
+     "speaker": "yazan",
+     "emotion": "laughing",
+     "text_display": "وعندما يكون الطويل عند 6، تكون الساعة والنصف!",
+     "text_spoken": "وعندما يكون الطويل عند الستة تكون الساعة والنصف"
+    },
+    {
+     "id": "s05_l04",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "ومنذ ذلك اليوم، لم يتأخر يزن عن حافلته أبدًا.",
+     "text_spoken": "ومنذ ذلك اليوم لم يتأخر يزن عن حافلته أبدا"
+    }
+   ],
+   "concepts_covered": [
+    "c1",
+    "c2",
+    "c3"
+   ],
+   "interaction": null
+  }
+ ],
+ "recap_line_ids": [
+  "s05_l02",
+  "s05_l03"
+ ]
+}

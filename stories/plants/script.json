@@ -1,0 +1,379 @@
+{
+ "title": "نبتة سلمى العطشى",
+ "logline": "سلمى تكتشف مع جدها أن لكل جزء في النبتة عملا، فتنقذ نبتتها قبل معرض العلوم.",
+ "characters": [
+  {
+   "key": "salma",
+   "name": "سلمى",
+   "role": "protagonist",
+   "gender": "f",
+   "age_years": 10,
+   "traits": [
+    "curious",
+    "caring"
+   ]
+  },
+  {
+   "key": "omar",
+   "name": "عمر",
+   "role": "supporting",
+   "gender": "m",
+   "age_years": 8,
+   "traits": [
+    "playful"
+   ]
+  },
+  {
+   "key": "jaddo",
+   "name": "جدي سالم",
+   "role": "supporting",
+   "gender": "m",
+   "age_years": 66,
+   "traits": [
+    "calm",
+    "wise"
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "id": "s01",
+   "summary": "نبتة سلمى ذابلة قبل المعرض، فتقرر أن تسأل جدها.",
+   "location": "غرفة الجلوس",
+   "time_of_day": "day",
+   "lines": [
+    {
+     "id": "s01_l01",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "قبل معرض العلوم بأسبوع، لاحظت سلمى أن نبتتها حزينة ومائلة.",
+     "text_spoken": "قبل معرض العلوم بأسبوع لاحظت سلمى أن نبتتها حزينة ومائلة"
+    },
+    {
+     "id": "s01_l02",
+     "speaker": "salma",
+     "emotion": "worried",
+     "text_display": "يا عمر، أنا أرش الماء على أوراقها كل يوم، فلماذا تذبل؟",
+     "text_spoken": "يا عمر أنا أرش الماء على أوراقها كل يوم فلماذا تذبل"
+    },
+    {
+     "id": "s01_l03",
+     "speaker": "omar",
+     "emotion": "thinking",
+     "text_display": "ربما هي عطشى أكثر، لنرش عليها ماء أكثر!",
+     "text_spoken": "ربما هي عطشى أكثر لنرش عليها ماء أكثر"
+    },
+    {
+     "id": "s01_l04",
+     "speaker": "salma",
+     "emotion": "worried",
+     "text_display": "لا أظن أن الماء الكثير على الأوراق هو الحل.",
+     "text_spoken": "لا أظن أن الماء الكثير على الأوراق هو الحل"
+    },
+    {
+     "id": "s01_l05",
+     "speaker": "omar",
+     "emotion": "happy",
+     "text_display": "جدي سالم مزارع، وهو يعرف كل شيء عن النباتات.",
+     "text_spoken": "جدي سالم مزارع وهو يعرف كل شيء عن النباتات"
+    },
+    {
+     "id": "s01_l06",
+     "speaker": "salma",
+     "emotion": "happy",
+     "text_display": "فكرة رائعة! سنأخذ النبتة ونزوره اليوم.",
+     "text_spoken": "فكرة رائعة سنأخذ النبتة ونزوره اليوم"
+    }
+   ],
+   "concepts_covered": [],
+   "interaction": null
+  },
+  {
+   "id": "s02",
+   "summary": "الجد يخرج نبتة من التراب ويريهما الجذور والساق.",
+   "location": "حديقة الجد",
+   "time_of_day": "day",
+   "lines": [
+    {
+     "id": "s02_l01",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "في حديقة الجد، أمسك جدي سالم نبتة صغيرة وأخرجها من التراب بلطف.",
+     "text_spoken": "في حديقة الجد أمسك جدي سالم نبتة صغيرة وأخرجها من التراب بلطف"
+    },
+    {
+     "id": "s02_l02",
+     "speaker": "jaddo",
+     "emotion": "neutral",
+     "text_display": "انظرا إلى هذه الخيوط تحت الساق، هذه هي الجذور.",
+     "text_spoken": "انظرا إلى هذه الخيوط تحت الساق هذه هي الجذور"
+    },
+    {
+     "id": "s02_l03",
+     "speaker": "jaddo",
+     "emotion": "neutral",
+     "text_display": "الجذور تمتص الماء من التربة، وتثبت النبتة في مكانها.",
+     "text_spoken": "الجذور تمتص الماء من التربة وتثبت النبتة في مكانها"
+    },
+    {
+     "id": "s02_l04",
+     "speaker": "salma",
+     "emotion": "surprised",
+     "text_display": "إذن النبتة لا تشرب من أوراقها، بل من جذورها!",
+     "text_spoken": "إذن النبتة لا تشرب من أوراقها بل من جذورها"
+    },
+    {
+     "id": "s02_l05",
+     "speaker": "omar",
+     "emotion": "thinking",
+     "text_display": "والساق، ما عملها يا جدي؟",
+     "text_spoken": "والساق ما عملها يا جدي"
+    },
+    {
+     "id": "s02_l06",
+     "speaker": "jaddo",
+     "emotion": "happy",
+     "text_display": "الساق مثل الأنبوب، تنقل الماء من الجذور إلى الأوراق.",
+     "text_spoken": "الساق مثل الأنبوب تنقل الماء من الجذور إلى الأوراق"
+    }
+   ],
+   "concepts_covered": [
+    "c1",
+    "c2"
+   ],
+   "interaction": {
+    "type": "choose_answer",
+    "concept_id": "c1",
+    "prompt": "من أي جزء تشرب النبتة الماء؟",
+    "hint": "تذكر ما أخرجه الجد من التراب.",
+    "options": [
+     {
+      "id": "a",
+      "text": "من أوراقها",
+      "correct": false,
+      "feedback": "الأوراق لا تشرب الماء، بل تصنع الغذاء."
+     },
+     {
+      "id": "b",
+      "text": "من جذورها",
+      "correct": true,
+      "feedback": "صحيح، الجذور تمتص الماء من التربة."
+     },
+     {
+      "id": "c",
+      "text": "من زهرتها",
+      "correct": false,
+      "feedback": "الزهرة تتكون منها البذور، ولا تشرب الماء."
+     }
+    ],
+    "max_attempts": 2,
+    "id": "s02_i1",
+    "after_line": "s02_l06"
+   }
+  },
+  {
+   "id": "s03",
+   "summary": "الجد يشرح أن الورقة تصنع الغذاء بضوء الشمس.",
+   "location": "حديقة الجد",
+   "time_of_day": "day",
+   "lines": [
+    {
+     "id": "s03_l01",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "رفع الجد رأسه نحو الشمس، وأشار إلى أوراق الشجرة الخضراء.",
+     "text_spoken": "رفع الجد رأسه نحو الشمس وأشار إلى أوراق الشجرة الخضراء"
+    },
+    {
+     "id": "s03_l02",
+     "speaker": "jaddo",
+     "emotion": "happy",
+     "text_display": "الأوراق هي مطبخ النبتة، تصنع فيه غذاءها.",
+     "text_spoken": "الأوراق هي مطبخ النبتة تصنع فيه غذاءها"
+    },
+    {
+     "id": "s03_l03",
+     "speaker": "omar",
+     "emotion": "surprised",
+     "text_display": "مطبخ؟ وأين النار والقدور يا جدي؟",
+     "text_spoken": "مطبخ وأين النار والقدور يا جدي"
+    },
+    {
+     "id": "s03_l04",
+     "speaker": "jaddo",
+     "emotion": "laughing",
+     "text_display": "لا نار هنا، الورقة تستعمل ضوء الشمس لتصنع الغذاء.",
+     "text_spoken": "لا نار هنا الورقة تستعمل ضوء الشمس لتصنع الغذاء"
+    },
+    {
+     "id": "s03_l05",
+     "speaker": "salma",
+     "emotion": "thinking",
+     "text_display": "نبتتي في زاوية مظلمة من الغرفة، لا يصلها الضوء!",
+     "text_spoken": "نبتتي في زاوية مظلمة من الغرفة لا يصلها الضوء"
+    },
+    {
+     "id": "s03_l06",
+     "speaker": "jaddo",
+     "emotion": "happy",
+     "text_display": "ضعيها قرب النافذة، واسقي التربة لا الأوراق.",
+     "text_spoken": "ضعيها قرب النافذة واسقي التربة لا الأوراق"
+    }
+   ],
+   "concepts_covered": [
+    "c3"
+   ],
+   "interaction": {
+    "type": "drag_match",
+    "concept_id": "c3",
+    "prompt": "صل كل جزء من النبتة بعمله.",
+    "pairs": [
+     {
+      "id": "p1",
+      "item": "الجذور",
+      "target": "تمتص الماء"
+     },
+     {
+      "id": "p2",
+      "item": "الساق",
+      "target": "تنقل الماء"
+     },
+     {
+      "id": "p3",
+      "item": "الأوراق",
+      "target": "تصنع الغذاء"
+     }
+    ],
+    "wrong_feedback": "فكر: أي جزء كان تحت التراب، وأي جزء يحب الشمس؟",
+    "id": "s03_i1",
+    "after_line": "s03_l06"
+   }
+  },
+  {
+   "id": "s04",
+   "summary": "سلمى تنقل النبتة إلى النافذة وتسقي التربة، فتزهر.",
+   "location": "غرفة الجلوس",
+   "time_of_day": "day",
+   "lines": [
+    {
+     "id": "s04_l01",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "عادت سلمى إلى البيت، ونقلت نبتتها إلى جانب النافذة.",
+     "text_spoken": "عادت سلمى إلى البيت ونقلت نبتتها إلى جانب النافذة"
+    },
+    {
+     "id": "s04_l02",
+     "speaker": "salma",
+     "emotion": "happy",
+     "text_display": "هنا تصل الشمس إلى الأوراق، فتصنع غذاءها.",
+     "text_spoken": "هنا تصل الشمس إلى الأوراق فتصنع غذاءها"
+    },
+    {
+     "id": "s04_l03",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "ثم سقت التربة قليلا كل يومين، ولم ترش الأوراق.",
+     "text_spoken": "ثم سقت التربة قليلا كل يومين ولم ترش الأوراق"
+    },
+    {
+     "id": "s04_l04",
+     "speaker": "omar",
+     "emotion": "surprised",
+     "text_display": "انظري يا سلمى! النبتة وقفت، وظهرت عليها زهرة حمراء!",
+     "text_spoken": "انظري يا سلمى النبتة وقفت وظهرت عليها زهرة حمراء"
+    },
+    {
+     "id": "s04_l05",
+     "speaker": "salma",
+     "emotion": "happy",
+     "text_display": "الزهرة مهمة أيضا، فمنها تتكون البذور التي تصبح نباتات جديدة.",
+     "text_spoken": "الزهرة مهمة أيضا فمنها تتكون البذور التي تصبح نباتات جديدة"
+    }
+   ],
+   "concepts_covered": [
+    "c3",
+    "c4"
+   ],
+   "interaction": {
+    "type": "tap_reveal",
+    "concept_id": "c4",
+    "prompt": "المس ثلاثة أشياء ساعدت نبتة سلمى.",
+    "hint": "ابحث قرب النافذة.",
+    "targets": [
+     {
+      "label": "الشمس",
+      "reveal_text": "ضوء الشمس يساعد الورقة على صنع الغذاء.",
+      "thing": "the sun in the window"
+     },
+     {
+      "label": "مرشة الماء",
+      "reveal_text": "نسقي التربة، فتمتص الجذور الماء.",
+      "thing": "the watering can"
+     },
+     {
+      "label": "الزهرة",
+      "reveal_text": "من الزهرة تتكون البذور.",
+      "thing": "the red flower"
+     }
+    ],
+    "id": "s04_i1",
+    "after_line": "s04_l05"
+   }
+  },
+  {
+   "id": "s05",
+   "summary": "في معرض العلوم، سلمى تشرح أجزاء النبتة.",
+   "location": "الصف",
+   "time_of_day": "day",
+   "lines": [
+    {
+     "id": "s05_l01",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "في معرض العلوم، وقفت سلمى بجانب نبتتها المزهرة.",
+     "text_spoken": "في معرض العلوم وقفت سلمى بجانب نبتتها المزهرة"
+    },
+    {
+     "id": "s05_l02",
+     "speaker": "salma",
+     "emotion": "happy",
+     "text_display": "لكل جزء في النبتة عمل: الجذور تمتص الماء، والساق تنقله.",
+     "text_spoken": "لكل جزء في النبتة عمل الجذور تمتص الماء والساق تنقله"
+    },
+    {
+     "id": "s05_l03",
+     "speaker": "salma",
+     "emotion": "happy",
+     "text_display": "والأوراق تصنع الغذاء بضوء الشمس، والزهرة تعطينا البذور.",
+     "text_spoken": "والأوراق تصنع الغذاء بضوء الشمس والزهرة تعطينا البذور"
+    },
+    {
+     "id": "s05_l04",
+     "speaker": "omar",
+     "emotion": "laughing",
+     "text_display": "وأنا تعلمت أن نسقي التربة، لا الأوراق!",
+     "text_spoken": "وأنا تعلمت أن نسقي التربة لا الأوراق"
+    },
+    {
+     "id": "s05_l05",
+     "speaker": "narrator",
+     "emotion": "neutral",
+     "text_display": "ابتسم جدي سالم، فقد عرفت سلمى سر نبتتها العطشى.",
+     "text_spoken": "ابتسم جدي سالم فقد عرفت سلمى سر نبتتها العطشى"
+    }
+   ],
+   "concepts_covered": [
+    "c1",
+    "c2",
+    "c3",
+    "c4"
+   ],
+   "interaction": null
+  }
+ ],
+ "recap_line_ids": [
+  "s05_l02",
+  "s05_l03"
+ ]
+}

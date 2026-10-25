@@ -1,0 +1,19 @@
+{
+  "topic_title": "النسبة المئوية",
+  "topic_text": "النسبة المئوية\nالنسبة المئوية طريقة لكتابة جزء من مئة، ونرمز لها بالرمز %. فالعدد 20% يعني 20 جزءًا من كل 100 جزء. ولحساب نسبة مئوية من عدد، نجد قيمتها من 100 ثم نطبقها على العدد. مثال: 20% من 100 تساوي 20، و20% من 50 تساوي 10 لأن 50 نصف الـ100. وتستعمل النسبة المئوية في الخصومات والأسعار.",
+  "prior_text": "الكسور العشرية\nالكسر العشري جزء من عشرة أو من مئة.",
+  "later_preview": "الزيادة والنقصان بالنسبة المئوية\nنحسب الزيادة في الأسعار بالطريقة نفسها.",
+  "language": "ar",
+  "dialect_applied": "msa",
+  "country": "JO",
+  "age_group": "12-14",
+  "grade": "7",
+  "subject": "math",
+  "target_duration_sec": 150,
+  "warnings": [
+    {
+      "code": "DIALECT_FALLBACK",
+      "message": "Dialect 'levantine' (derived from country JO) is not supported by TTS provider 'groq'; using 'msa'."
+    }
+  ]
+}

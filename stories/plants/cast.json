@@ -1,0 +1,142 @@
+{
+ "characters": [
+  {
+   "key": "salma",
+   "build": "child",
+   "presentation": "f",
+   "skin_tone": 2,
+   "hair_style": "braids",
+   "hair_color": 1,
+   "top": {
+    "style": "long_sleeve",
+    "color_token": "c-accent"
+   },
+   "bottom": {
+    "style": "trousers",
+    "color_token": "c-secondary"
+   },
+   "shoes": "sneakers",
+   "accessories": [],
+   "head_covering": "none",
+   "voice_profile": {
+    "gender": "f",
+    "age_band": "child",
+    "energy": "normal"
+   },
+   "idle_style": "normal"
+  },
+  {
+   "key": "omar",
+   "build": "child",
+   "presentation": "m",
+   "skin_tone": 2,
+   "hair_style": "curly_short",
+   "hair_color": 0,
+   "top": {
+    "style": "hoodie",
+    "color_token": "c-primary"
+   },
+   "bottom": {
+    "style": "shorts",
+    "color_token": "c-neutral-2"
+   },
+   "shoes": "sneakers",
+   "accessories": [],
+   "head_covering": "none",
+   "voice_profile": {
+    "gender": "m",
+    "age_band": "child",
+    "energy": "lively"
+   },
+   "idle_style": "lively"
+  },
+  {
+   "key": "jaddo",
+   "build": "elder",
+   "presentation": "m",
+   "skin_tone": 3,
+   "hair_style": "thin_elder",
+   "hair_color": 5,
+   "top": {
+    "style": "collared_shirt",
+    "color_token": "c-secondary"
+   },
+   "bottom": {
+    "style": "trousers",
+    "color_token": "c-neutral-2"
+   },
+   "shoes": "sandals",
+   "accessories": [
+    "glasses_round"
+   ],
+   "head_covering": "none",
+   "voice_profile": {
+    "gender": "m",
+    "age_band": "elder",
+    "energy": "calm"
+   },
+   "idle_style": "calm"
+  }
+ ],
+ "settings": [
+  {
+   "scene_id": "s01",
+   "background_id": "bg_home_living",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_plant_pot",
+    "prop_table",
+    "prop_watering_can"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s02",
+   "background_id": "bg_farm",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_cat",
+    "prop_plant_roots",
+    "prop_rock",
+    "prop_tree"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s03",
+   "background_id": "bg_farm",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_cat",
+    "prop_flower",
+    "prop_tree"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s04",
+   "background_id": "bg_home_living",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_flower",
+    "prop_plant_pot",
+    "prop_sun",
+    "prop_table",
+    "prop_watering_can"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s05",
+   "background_id": "bg_classroom",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_flower",
+    "prop_plant_pot",
+    "prop_table",
+    "prop_trophy"
+   ],
+   "custom_props": []
+  }
+ ]
+}

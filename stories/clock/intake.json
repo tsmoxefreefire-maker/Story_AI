@@ -1,0 +1,19 @@
+{
+  "topic_title": "قراءة الساعة",
+  "topic_text": "قراءة الساعة\nفي الساعة عقربان: عقرب قصير وعقرب طويل. العقرب القصير يدل على الساعة، والعقرب الطويل يدل على الدقائق. عندما يكون العقرب الطويل عند الرقم 12 نقول إن الساعة تمامًا، فإذا كان القصير عند 7 تكون الساعة السابعة تمامًا. وعندما يكون العقرب الطويل عند الرقم 6 نقول الساعة والنصف.",
+  "prior_text": "الأعداد من 1 إلى 12\nنعد من واحد إلى اثني عشر.",
+  "later_preview": "الربع والثلث\nعندما يكون العقرب الطويل عند الرقم 3 نقول الساعة والربع.",
+  "language": "ar",
+  "dialect_applied": "msa",
+  "country": "JO",
+  "age_group": "6-8",
+  "grade": "2",
+  "subject": "math",
+  "target_duration_sec": 100,
+  "warnings": [
+    {
+      "code": "DIALECT_FALLBACK",
+      "message": "Dialect 'levantine' (derived from country JO) is not supported by TTS provider 'groq'; using 'msa'."
+    }
+  ]
+}

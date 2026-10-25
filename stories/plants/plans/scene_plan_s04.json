@@ -1,0 +1,441 @@
+{
+ "scene_id": "s04",
+ "background": {
+  "id": "bg_home_living",
+  "time_of_day": "day"
+ },
+ "camera": {
+  "x": 640,
+  "y": 360,
+  "zoom": 1.0
+ },
+ "actors": [
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "salma",
+   "x": 360,
+   "facing": "right"
+  },
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "omar",
+   "x": 1130,
+   "facing": "left"
+  }
+ ],
+ "props": [
+  {
+   "scale": 1.0,
+   "rotation": 0,
+   "z": 10,
+   "ref": "prop_table",
+   "id": "table1",
+   "x": 880,
+   "y": 640
+  },
+  {
+   "scale": 0.9,
+   "rotation": 0,
+   "z": 12,
+   "ref": "prop_plant_pot",
+   "id": "plant1",
+   "x": 520,
+   "y": 640
+  },
+  {
+   "scale": 1.1,
+   "rotation": 0,
+   "z": 11,
+   "ref": "prop_flower",
+   "id": "flower1",
+   "x": 880,
+   "y": 478
+  },
+  {
+   "scale": 0.45,
+   "rotation": 0,
+   "z": 13,
+   "ref": "prop_watering_can",
+   "id": "can1",
+   "x": 958,
+   "y": 524
+  },
+  {
+   "scale": 0.5,
+   "rotation": 0,
+   "z": 10,
+   "ref": "prop_sun",
+   "id": "sun1",
+   "x": 880,
+   "y": 200
+  }
+ ],
+ "widgets": [],
+ "cues": [
+  {
+   "id": "s04_c01",
+   "at": {
+    "line": "s04_l01",
+    "anchor": "start",
+    "offset_ms": -600
+   },
+   "target": "plant1",
+   "action": "fade",
+   "params": {
+    "to": 0.55
+   },
+   "dur_ms": 1
+  },
+  {
+   "id": "s04_c02",
+   "at": {
+    "line": "s04_l01",
+    "anchor": "start",
+    "offset_ms": -600
+   },
+   "target": "flower1",
+   "action": "hide",
+   "params": {},
+   "dur_ms": 1
+  },
+  {
+   "id": "s04_c03",
+   "at": {
+    "line": "s04_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "plant1",
+   "action": "move",
+   "params": {
+    "to": [
+     360,
+     -116
+    ]
+   },
+   "dur_ms": 1400
+  },
+  {
+   "id": "s04_c04",
+   "at": {
+    "line": "s04_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "salma",
+   "action": "move",
+   "params": {
+    "to": [
+     300,
+     0
+    ]
+   },
+   "dur_ms": 1400
+  },
+  {
+   "id": "s04_c05",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c06",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c07",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "point_right"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c08",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 2
+   },
+   "target": "sun1",
+   "action": "highlight",
+   "params": {
+    "pulses": 2
+   },
+   "dur_ms": 800
+  },
+  {
+   "id": "s04_c09",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c10",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 1
+   },
+   "target": "can1",
+   "action": "shake",
+   "params": {
+    "amplitude": 5
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s04_c11",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 5
+   },
+   "target": "plant1",
+   "action": "fade",
+   "params": {
+    "to": 0.8
+   },
+   "dur_ms": 1200
+  },
+  {
+   "id": "s04_c12",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "omar",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c13",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "omar",
+   "action": "expression",
+   "params": {
+    "name": "surprised"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c14",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "omar",
+   "action": "pose",
+   "params": {
+    "name": "point_left"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c15",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "plant1",
+   "action": "fade",
+   "params": {
+    "to": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s04_c16",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "plant1",
+   "action": "scale",
+   "params": {
+    "to": 1.1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s04_c17",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 7
+   },
+   "target": "flower1",
+   "action": "show",
+   "params": {},
+   "dur_ms": 600
+  },
+  {
+   "id": "s04_c18",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "omar",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c19",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c20",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c21",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "flower1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 700
+  },
+  {
+   "id": "s04_c22",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 5
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "celebrate"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c23",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  }
+ ],
+ "interaction_bindings": [
+  {
+   "interaction_id": "s04_i1",
+   "targets": [
+    {
+     "index": 0,
+     "element_id": "sun1"
+    },
+    {
+     "index": 1,
+     "element_id": "can1"
+    },
+    {
+     "index": 2,
+     "element_id": "flower1"
+    }
+   ]
+  }
+ ]
+}

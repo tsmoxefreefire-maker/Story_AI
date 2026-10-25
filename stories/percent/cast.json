@@ -1,0 +1,137 @@
+{
+ "characters": [
+  {
+   "key": "leen",
+   "build": "teen",
+   "presentation": "f",
+   "skin_tone": 1,
+   "hair_style": "long_straight",
+   "hair_color": 1,
+   "top": {
+    "style": "long_sleeve",
+    "color_token": "c-support"
+   },
+   "bottom": {
+    "style": "skirt_long",
+    "color_token": "c-neutral-2"
+   },
+   "shoes": "sneakers",
+   "accessories": [],
+   "head_covering": "hijab",
+   "voice_profile": {
+    "gender": "f",
+    "age_band": "teen",
+    "energy": "normal"
+   },
+   "idle_style": "normal"
+  },
+  {
+   "key": "zaid",
+   "build": "teen",
+   "presentation": "m",
+   "skin_tone": 3,
+   "hair_style": "side_part",
+   "hair_color": 0,
+   "top": {
+    "style": "tshirt",
+    "color_token": "c-secondary"
+   },
+   "bottom": {
+    "style": "trousers",
+    "color_token": "c-support"
+   },
+   "shoes": "sneakers",
+   "accessories": [
+    "watch"
+   ],
+   "head_covering": "none",
+   "voice_profile": {
+    "gender": "m",
+    "age_band": "teen",
+    "energy": "lively"
+   },
+   "idle_style": "lively"
+  },
+  {
+   "key": "abukhaled",
+   "build": "adult",
+   "presentation": "m",
+   "skin_tone": 2,
+   "hair_style": "short_crop",
+   "hair_color": 5,
+   "top": {
+    "style": "collared_shirt",
+    "color_token": "c-primary"
+   },
+   "bottom": {
+    "style": "trousers",
+    "color_token": "c-neutral-2"
+   },
+   "shoes": "school_shoes",
+   "accessories": [
+    "glasses_square"
+   ],
+   "head_covering": "none",
+   "voice_profile": {
+    "gender": "m",
+    "age_band": "adult",
+    "energy": "calm"
+   },
+   "idle_style": "calm"
+  }
+ ],
+ "settings": [
+  {
+   "scene_id": "s01",
+   "background_id": "bg_street",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_price_tag",
+    "prop_schoolbag"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s02",
+   "background_id": "bg_shop",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_price_tag",
+    "prop_schoolbag",
+    "prop_table"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s03",
+   "background_id": "bg_shop",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_calculator",
+    "prop_schoolbag",
+    "prop_table"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s04",
+   "background_id": "bg_shop",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_sneakers",
+    "prop_table"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s05",
+   "background_id": "bg_street",
+   "time_of_day": "evening",
+   "prop_ids": [
+    "prop_schoolbag",
+    "prop_sneakers"
+   ],
+   "custom_props": []
+  }
+ ]
+}

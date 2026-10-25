@@ -1,0 +1,304 @@
+{
+ "scene_id": "s05",
+ "background": {
+  "id": "bg_school_yard",
+  "time_of_day": "day"
+ },
+ "camera": {
+  "x": 640,
+  "y": 360,
+  "zoom": 1.0
+ },
+ "actors": [
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "yazan",
+   "x": 640,
+   "facing": "right"
+  }
+ ],
+ "props": [
+  {
+   "scale": 0.6,
+   "rotation": 0,
+   "z": 10,
+   "ref": "prop_ball",
+   "id": "ball1",
+   "x": 960,
+   "y": 640
+  }
+ ],
+ "widgets": [
+  {
+   "scale": 1.0,
+   "z": 30,
+   "initial": "hidden",
+   "ref": "widget_clock_face",
+   "id": "clock1",
+   "params": {
+    "hour": 7,
+    "minute": 0
+   },
+   "x": 330,
+   "y": 212
+  },
+  {
+   "scale": 1.0,
+   "z": 30,
+   "initial": "hidden",
+   "ref": "widget_clock_face",
+   "id": "clock2",
+   "params": {
+    "hour": 7,
+    "minute": 30
+   },
+   "x": 950,
+   "y": 212
+  }
+ ],
+ "cues": [
+  {
+   "id": "s05_c01",
+   "at": {
+    "line": "s05_l01",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "yazan",
+   "action": "move",
+   "params": {
+    "from": [
+     -200,
+     0
+    ],
+    "to": [
+     0,
+     0
+    ]
+   },
+   "dur_ms": 1200
+  },
+  {
+   "id": "s05_c02",
+   "at": {
+    "line": "s05_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "yazan",
+   "action": "pose",
+   "params": {
+    "name": "wave"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c03",
+   "at": {
+    "line": "s05_l01",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "yazan",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c04",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "yazan",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c05",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "yazan",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c06",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 1
+   },
+   "target": "clock1",
+   "action": "show",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s05_c07",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "clock1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s05_c08",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "yazan",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c09",
+   "at": {
+    "line": "s05_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "yazan",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c10",
+   "at": {
+    "line": "s05_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "yazan",
+   "action": "expression",
+   "params": {
+    "name": "laughing"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c11",
+   "at": {
+    "line": "s05_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "clock2",
+   "action": "show",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s05_c12",
+   "at": {
+    "line": "s05_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 7
+   },
+   "target": "yazan",
+   "action": "pose",
+   "params": {
+    "name": "celebrate"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c13",
+   "at": {
+    "line": "s05_l03",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "yazan",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c14",
+   "at": {
+    "line": "s05_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 5
+   },
+   "target": "ball1",
+   "action": "move",
+   "params": {
+    "to": [
+     -60,
+     0
+    ]
+   },
+   "dur_ms": 900
+  },
+  {
+   "id": "s05_c15",
+   "at": {
+    "line": "s05_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 8
+   },
+   "target": "yazan",
+   "action": "pose",
+   "params": {
+    "name": "wave"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c16",
+   "at": {
+    "line": "s05_l04",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "yazan",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  }
+ ],
+ "interaction_bindings": []
+}

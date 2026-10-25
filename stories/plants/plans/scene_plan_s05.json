@@ -1,0 +1,394 @@
+{
+ "scene_id": "s05",
+ "background": {
+  "id": "bg_classroom",
+  "time_of_day": "day"
+ },
+ "camera": {
+  "x": 640,
+  "y": 360,
+  "zoom": 1.0
+ },
+ "actors": [
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "salma",
+   "x": 380,
+   "facing": "right"
+  },
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "omar",
+   "x": 860,
+   "facing": "left"
+  },
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "jaddo",
+   "x": 1080,
+   "facing": "left"
+  }
+ ],
+ "props": [
+  {
+   "scale": 1.0,
+   "rotation": 0,
+   "z": 10,
+   "ref": "prop_table",
+   "id": "table1",
+   "x": 640,
+   "y": 640
+  },
+  {
+   "scale": 1.0,
+   "rotation": 0,
+   "z": 12,
+   "ref": "prop_plant_pot",
+   "id": "plant1",
+   "x": 620,
+   "y": 524
+  },
+  {
+   "scale": 1.1,
+   "rotation": 0,
+   "z": 11,
+   "ref": "prop_flower",
+   "id": "flower1",
+   "x": 620,
+   "y": 468
+  },
+  {
+   "scale": 0.5,
+   "rotation": 0,
+   "z": 13,
+   "ref": "prop_trophy",
+   "id": "trophy1",
+   "x": 700,
+   "y": 524
+  }
+ ],
+ "widgets": [
+  {
+   "scale": 1.0,
+   "z": 30,
+   "initial": "hidden",
+   "ref": "widget_label_card",
+   "id": "card1",
+   "params": {
+    "text": "جذر، ساق، ورقة، زهرة"
+   },
+   "x": 640,
+   "y": 185
+  }
+ ],
+ "cues": [
+  {
+   "id": "s05_c01",
+   "at": {
+    "line": "s05_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "salma",
+   "action": "move",
+   "params": {
+    "to": [
+     80,
+     0
+    ]
+   },
+   "dur_ms": 900
+  },
+  {
+   "id": "s05_c02",
+   "at": {
+    "line": "s05_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 7
+   },
+   "target": "flower1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 700
+  },
+  {
+   "id": "s05_c03",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c04",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c05",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "card1",
+   "action": "show",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s05_c06",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 5
+   },
+   "target": "plant1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s05_c07",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 8
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "point_right"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c08",
+   "at": {
+    "line": "s05_l02",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c09",
+   "at": {
+    "line": "s05_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c10",
+   "at": {
+    "line": "s05_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c11",
+   "at": {
+    "line": "s05_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "card1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s05_c12",
+   "at": {
+    "line": "s05_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 5
+   },
+   "target": "flower1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s05_c13",
+   "at": {
+    "line": "s05_l03",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "salma",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c14",
+   "at": {
+    "line": "s05_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "omar",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c15",
+   "at": {
+    "line": "s05_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "omar",
+   "action": "expression",
+   "params": {
+    "name": "laughing"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c16",
+   "at": {
+    "line": "s05_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "omar",
+   "action": "pose",
+   "params": {
+    "name": "celebrate"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c17",
+   "at": {
+    "line": "s05_l04",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "omar",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c18",
+   "at": {
+    "line": "s05_l05",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "jaddo",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c19",
+   "at": {
+    "line": "s05_l05",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 5
+   },
+   "target": "jaddo",
+   "action": "pose",
+   "params": {
+    "name": "wave"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s05_c20",
+   "at": {
+    "line": "s05_l05",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 8
+   },
+   "target": "trophy1",
+   "action": "highlight",
+   "params": {
+    "pulses": 2
+   },
+   "dur_ms": 800
+  }
+ ],
+ "interaction_bindings": []
+}

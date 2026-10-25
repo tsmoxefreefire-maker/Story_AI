@@ -1,0 +1,535 @@
+{
+ "scene_id": "s03",
+ "background": {
+  "id": "bg_home_kitchen",
+  "time_of_day": "evening"
+ },
+ "camera": {
+  "x": 640,
+  "y": 360,
+  "zoom": 1.0
+ },
+ "actors": [
+  {
+   "char_key": "nadia",
+   "x": 420,
+   "y": 640,
+   "scale": 1.0,
+   "facing": "right",
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false
+  },
+  {
+   "char_key": "karim",
+   "x": 860,
+   "y": 640,
+   "scale": 1.0,
+   "facing": "left",
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false
+  },
+  {
+   "char_key": "mama",
+   "x": 1090,
+   "y": 640,
+   "scale": 1.0,
+   "facing": "left",
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false
+  }
+ ],
+ "props": [
+  {
+   "ref": "prop_table",
+   "id": "table1",
+   "x": 640,
+   "y": 640,
+   "scale": 1.3,
+   "rotation": 0,
+   "z": 10
+  },
+  {
+   "ref": "prop_pizza",
+   "id": "pizza1",
+   "x": 640,
+   "y": 496,
+   "scale": 1.0,
+   "rotation": 0,
+   "z": 11
+  },
+  {
+   "ref": "custom:pizza_cutter",
+   "id": "cutter1",
+   "x": 712,
+   "y": 492,
+   "scale": 0.45,
+   "rotation": 0,
+   "z": 12
+  }
+ ],
+ "widgets": [
+  {
+   "ref": "widget_pie_fraction",
+   "id": "pie1",
+   "params": {
+    "parts": 4,
+    "filled": 1
+   },
+   "x": 640,
+   "y": 200,
+   "scale": 0.6,
+   "z": 30,
+   "initial": "hidden"
+  },
+  {
+   "ref": "widget_label_card",
+   "id": "frac1",
+   "params": {
+    "text": "1/4"
+   },
+   "x": 900,
+   "y": 205,
+   "scale": 1.0,
+   "z": 30,
+   "initial": "hidden"
+  }
+ ],
+ "cues": [
+  {
+   "id": "s03_c01",
+   "at": {
+    "line": "s03_l01",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c02",
+   "at": {
+    "line": "s03_l01",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "expression",
+   "params": {
+    "name": "neutral"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c03",
+   "at": {
+    "line": "s03_l01",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c04",
+   "at": {
+    "line": "s03_l01",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "pie1",
+   "action": "show",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s03_c05",
+   "at": {
+    "line": "s03_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "cutter1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s03_c06",
+   "at": {
+    "line": "s03_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "pie1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s03_c07",
+   "at": {
+    "line": "s03_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c08",
+   "at": {
+    "line": "s03_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "expression",
+   "params": {
+    "name": "thinking"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c09",
+   "at": {
+    "line": "s03_l02",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c10",
+   "at": {
+    "line": "s03_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c11",
+   "at": {
+    "line": "s03_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c12",
+   "at": {
+    "line": "s03_l03",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c13",
+   "at": {
+    "line": "s03_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "camera",
+   "action": "camera",
+   "params": {
+    "to": {
+     "x": 660,
+     "y": 396,
+     "zoom": 1.12
+    }
+   },
+   "dur_ms": 1200
+  },
+  {
+   "id": "s03_c14",
+   "at": {
+    "line": "s03_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 1
+   },
+   "target": "frac1",
+   "action": "show",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s03_c15",
+   "at": {
+    "line": "s03_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 3
+   },
+   "target": "pie1",
+   "action": "highlight",
+   "params": {
+    "pulses": 2
+   },
+   "dur_ms": 700
+  },
+  {
+   "id": "s03_c16",
+   "at": {
+    "line": "s03_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 9
+   },
+   "target": "frac1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s03_c17",
+   "at": {
+    "line": "s03_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c18",
+   "at": {
+    "line": "s03_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c19",
+   "at": {
+    "line": "s03_l04",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c20",
+   "at": {
+    "line": "s03_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "mama",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c21",
+   "at": {
+    "line": "s03_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "mama",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c22",
+   "at": {
+    "line": "s03_l05",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "mama",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c23",
+   "at": {
+    "line": "s03_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "camera",
+   "action": "camera",
+   "params": {
+    "to": {
+     "x": 640,
+     "y": 360,
+     "zoom": 1.0
+    }
+   },
+   "dur_ms": 1200
+  },
+  {
+   "id": "s03_c24",
+   "at": {
+    "line": "s03_l06",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c25",
+   "at": {
+    "line": "s03_l06",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "expression",
+   "params": {
+    "name": "surprised"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c26",
+   "at": {
+    "line": "s03_l06",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c27",
+   "at": {
+    "line": "s03_l06",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "point_left"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c28",
+   "at": {
+    "line": "s03_l07",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c29",
+   "at": {
+    "line": "s03_l07",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s03_c30",
+   "at": {
+    "line": "s03_l07",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  }
+ ],
+ "interaction_bindings": []
+}

@@ -1,0 +1,465 @@
+{
+ "scene_id": "s02",
+ "background": {
+  "id": "bg_shop",
+  "time_of_day": "day"
+ },
+ "camera": {
+  "x": 640,
+  "y": 360,
+  "zoom": 1.0
+ },
+ "actors": [
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "leen",
+   "x": 300,
+   "facing": "right"
+  },
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "zaid",
+   "x": 500,
+   "facing": "right"
+  },
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "abukhaled",
+   "x": 1080,
+   "facing": "left"
+  }
+ ],
+ "props": [
+  {
+   "scale": 1.2,
+   "rotation": 0,
+   "z": 10,
+   "ref": "prop_table",
+   "id": "table1",
+   "x": 820,
+   "y": 640
+  },
+  {
+   "scale": 0.8,
+   "rotation": 0,
+   "z": 11,
+   "ref": "prop_schoolbag",
+   "id": "bag1",
+   "x": 800,
+   "y": 501
+  },
+  {
+   "scale": 0.5,
+   "rotation": 0,
+   "z": 12,
+   "ref": "prop_price_tag",
+   "id": "tag1",
+   "x": 870,
+   "y": 470
+  }
+ ],
+ "widgets": [
+  {
+   "scale": 0.75,
+   "z": 30,
+   "initial": "hidden",
+   "ref": "widget_grid_array",
+   "id": "grid1",
+   "params": {
+    "rows": 10,
+    "cols": 10,
+    "highlight_rows": [
+     1,
+     2
+    ]
+   },
+   "x": 640,
+   "y": 215
+  },
+  {
+   "scale": 1.0,
+   "z": 30,
+   "initial": "hidden",
+   "ref": "widget_label_card",
+   "id": "card1",
+   "params": {
+    "text": "20 من 100"
+   },
+   "x": 1030,
+   "y": 170
+  }
+ ],
+ "cues": [
+  {
+   "id": "s02_c01",
+   "at": {
+    "line": "s02_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "wave"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c02",
+   "at": {
+    "line": "s02_l01",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c03",
+   "at": {
+    "line": "s02_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c04",
+   "at": {
+    "line": "s02_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c05",
+   "at": {
+    "line": "s02_l02",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 11
+   },
+   "target": "tag1",
+   "action": "highlight",
+   "params": {
+    "pulses": 2
+   },
+   "dur_ms": 800
+  },
+  {
+   "id": "s02_c06",
+   "at": {
+    "line": "s02_l02",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c07",
+   "at": {
+    "line": "s02_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c08",
+   "at": {
+    "line": "s02_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "expression",
+   "params": {
+    "name": "neutral"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c09",
+   "at": {
+    "line": "s02_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 1
+   },
+   "target": "grid1",
+   "action": "show",
+   "params": {},
+   "dur_ms": 600
+  },
+  {
+   "id": "s02_c10",
+   "at": {
+    "line": "s02_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 10
+   },
+   "target": "grid1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s02_c11",
+   "at": {
+    "line": "s02_l03",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c12",
+   "at": {
+    "line": "s02_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "leen",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c13",
+   "at": {
+    "line": "s02_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "leen",
+   "action": "expression",
+   "params": {
+    "name": "surprised"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c14",
+   "at": {
+    "line": "s02_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 6
+   },
+   "target": "card1",
+   "action": "show",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s02_c15",
+   "at": {
+    "line": "s02_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "leen",
+   "action": "pose",
+   "params": {
+    "name": "point_right"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c16",
+   "at": {
+    "line": "s02_l04",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "leen",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c17",
+   "at": {
+    "line": "s02_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c18",
+   "at": {
+    "line": "s02_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c19",
+   "at": {
+    "line": "s02_l05",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "card1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s02_c20",
+   "at": {
+    "line": "s02_l05",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c21",
+   "at": {
+    "line": "s02_l06",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "zaid",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c22",
+   "at": {
+    "line": "s02_l06",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "zaid",
+   "action": "expression",
+   "params": {
+    "name": "thinking"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c23",
+   "at": {
+    "line": "s02_l06",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 8
+   },
+   "target": "zaid",
+   "action": "pose",
+   "params": {
+    "name": "shrug"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s02_c24",
+   "at": {
+    "line": "s02_l06",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 2
+   },
+   "target": "bag1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s02_c25",
+   "at": {
+    "line": "s02_l06",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "zaid",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  }
+ ],
+ "interaction_bindings": []
+}

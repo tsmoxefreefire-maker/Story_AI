@@ -1,0 +1,111 @@
+{
+ "characters": [
+  {
+   "key": "yazan",
+   "build": "child",
+   "presentation": "m",
+   "skin_tone": 1,
+   "hair_style": "side_part",
+   "hair_color": 2,
+   "top": {
+    "style": "school_top",
+    "color_token": "c-support"
+   },
+   "bottom": {
+    "style": "shorts",
+    "color_token": "c-neutral-2"
+   },
+   "shoes": "school_shoes",
+   "accessories": [
+    "backpack"
+   ],
+   "head_covering": "none",
+   "voice_profile": {
+    "gender": "m",
+    "age_band": "child",
+    "energy": "lively"
+   },
+   "idle_style": "lively"
+  },
+  {
+   "key": "mama",
+   "build": "adult",
+   "presentation": "f",
+   "skin_tone": 1,
+   "hair_style": "bun",
+   "hair_color": 0,
+   "top": {
+    "style": "tunic",
+    "color_token": "c-secondary"
+   },
+   "bottom": {
+    "style": "trousers",
+    "color_token": "c-neutral-1"
+   },
+   "shoes": "sandals",
+   "accessories": [],
+   "head_covering": "hijab",
+   "voice_profile": {
+    "gender": "f",
+    "age_band": "adult",
+    "energy": "calm"
+   },
+   "idle_style": "calm"
+  }
+ ],
+ "settings": [
+  {
+   "scene_id": "s01",
+   "background_id": "bg_bedroom",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_alarm_clock",
+    "prop_bed",
+    "prop_table"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s02",
+   "background_id": "bg_home_kitchen",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_bread",
+    "prop_cup",
+    "prop_table",
+    "prop_wall_clock"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s03",
+   "background_id": "bg_home_kitchen",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_cup",
+    "prop_plate",
+    "prop_table",
+    "prop_wall_clock"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s04",
+   "background_id": "bg_street",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_bus"
+   ],
+   "custom_props": []
+  },
+  {
+   "scene_id": "s05",
+   "background_id": "bg_school_yard",
+   "time_of_day": "day",
+   "prop_ids": [
+    "prop_ball"
+   ],
+   "custom_props": []
+  }
+ ]
+}

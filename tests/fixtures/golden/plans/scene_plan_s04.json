@@ -1,0 +1,710 @@
+{
+ "scene_id": "s04",
+ "background": {
+  "id": "bg_home_living",
+  "time_of_day": "evening"
+ },
+ "camera": {
+  "x": 640,
+  "y": 360,
+  "zoom": 1.0
+ },
+ "actors": [
+  {
+   "char_key": "nadia",
+   "x": 330,
+   "y": 640,
+   "scale": 1.0,
+   "facing": "right",
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false
+  },
+  {
+   "char_key": "karim",
+   "x": 900,
+   "y": 640,
+   "scale": 1.0,
+   "facing": "left",
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false
+  },
+  {
+   "char_key": "mama",
+   "x": 1090,
+   "y": 640,
+   "scale": 1.0,
+   "facing": "left",
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false
+  }
+ ],
+ "props": [
+  {
+   "ref": "prop_sofa",
+   "id": "sofa1",
+   "x": 640,
+   "y": 600,
+   "scale": 1.5,
+   "rotation": 0,
+   "z": 10
+  },
+  {
+   "ref": "prop_table",
+   "id": "table1",
+   "x": 640,
+   "y": 646,
+   "scale": 1.0,
+   "rotation": 0,
+   "z": 10
+  },
+  {
+   "ref": "prop_pizza_slice",
+   "id": "q1",
+   "x": 586,
+   "y": 532,
+   "scale": 0.7,
+   "rotation": 0,
+   "z": 11
+  },
+  {
+   "ref": "prop_pizza_slice",
+   "id": "q2",
+   "x": 622,
+   "y": 532,
+   "scale": 0.7,
+   "rotation": 0,
+   "z": 11
+  },
+  {
+   "ref": "prop_pizza_slice",
+   "id": "q3",
+   "x": 658,
+   "y": 532,
+   "scale": 0.7,
+   "rotation": 0,
+   "z": 11
+  },
+  {
+   "ref": "prop_pizza_slice",
+   "id": "q4",
+   "x": 694,
+   "y": 532,
+   "scale": 0.7,
+   "rotation": 0,
+   "z": 11
+  },
+  {
+   "ref": "prop_notebook",
+   "id": "note1",
+   "x": 742,
+   "y": 530,
+   "scale": 0.4,
+   "rotation": 0,
+   "z": 12
+  }
+ ],
+ "widgets": [
+  {
+   "ref": "widget_label_card",
+   "id": "frac1",
+   "params": {
+    "text": "1/4"
+   },
+   "x": 900,
+   "y": 205,
+   "scale": 1.0,
+   "z": 30,
+   "initial": "hidden"
+  },
+  {
+   "ref": "widget_bar_fraction",
+   "id": "bar1",
+   "params": {
+    "parts": 4,
+    "filled": 1
+   },
+   "x": 640,
+   "y": 190,
+   "scale": 0.6,
+   "z": 30,
+   "initial": "hidden"
+  }
+ ],
+ "cues": [
+  {
+   "id": "s04_c01",
+   "at": {
+    "line": "s04_l01",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "mama",
+   "action": "enter",
+   "params": {
+    "from": "right"
+   },
+   "dur_ms": 1600
+  },
+  {
+   "id": "s04_c02",
+   "at": {
+    "line": "s04_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 10
+   },
+   "target": "nadia",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c03",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "mama",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c04",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "mama",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c05",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "mama",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c06",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c07",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c08",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c09",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 2
+   },
+   "target": "bar1",
+   "action": "show",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c10",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 3
+   },
+   "target": "q1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c11",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 9
+   },
+   "target": "q2",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c12",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c13",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "expression",
+   "params": {
+    "name": "thinking"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c14",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c15",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 4
+   },
+   "target": "note1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s04_c16",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c17",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c18",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c19",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 1
+   },
+   "target": "frac1",
+   "action": "show",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c20",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 5
+   },
+   "target": "frac1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s04_c21",
+   "at": {
+    "line": "s04_l06",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c22",
+   "at": {
+    "line": "s04_l06",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "expression",
+   "params": {
+    "name": "neutral"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c23",
+   "at": {
+    "line": "s04_l06",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "nadia",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c24",
+   "at": {
+    "line": "s04_l06",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 1
+   },
+   "target": "bar1",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s04_c25",
+   "at": {
+    "line": "s04_l06",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 5
+   },
+   "target": "q3",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c26",
+   "at": {
+    "line": "s04_l07",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "mama",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c27",
+   "at": {
+    "line": "s04_l07",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "mama",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c28",
+   "at": {
+    "line": "s04_l07",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "mama",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c29",
+   "at": {
+    "line": "s04_l08",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c30",
+   "at": {
+    "line": "s04_l08",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 9
+   },
+   "target": "karim",
+   "action": "expression",
+   "params": {
+    "name": "laughing"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c31",
+   "at": {
+    "line": "s04_l08",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 5
+   },
+   "target": "nadia",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c32",
+   "at": {
+    "line": "s04_l09",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c33",
+   "at": {
+    "line": "s04_l09",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "expression",
+   "params": {
+    "name": "laughing"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c34",
+   "at": {
+    "line": "s04_l09",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c35",
+   "at": {
+    "line": "s04_l09",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 6
+   },
+   "target": "karim",
+   "action": "pose",
+   "params": {
+    "name": "celebrate"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c40",
+   "at": {
+    "line": "s04_l08",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "camera",
+   "action": "camera",
+   "params": {
+    "to": {
+     "x": 640,
+     "y": 380,
+     "zoom": 1.1
+    }
+   },
+   "dur_ms": 2400
+  },
+  {
+   "id": "s04_c41",
+   "at": {
+    "line": "s04_l08",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 1
+   },
+   "target": "q1",
+   "action": "hide",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c42",
+   "at": {
+    "line": "s04_l08",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 3
+   },
+   "target": "q2",
+   "action": "hide",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c43",
+   "at": {
+    "line": "s04_l08",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 5
+   },
+   "target": "q3",
+   "action": "hide",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c44",
+   "at": {
+    "line": "s04_l08",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 7
+   },
+   "target": "q4",
+   "action": "hide",
+   "params": {},
+   "dur_ms": 500
+  }
+ ],
+ "interaction_bindings": []
+}

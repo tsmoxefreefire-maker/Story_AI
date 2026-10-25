@@ -1,0 +1,25 @@
+# Voices the Audio Producer (S6) may assign (Section 9.2).
+# Source: Groq docs, "Orpheus Text to Speech" (console.groq.com/docs/text-to-speech/orpheus), checked 2026-10-21:
+#   canopylabs/orpheus-arabic-saudi  -> abdullah, fahad, sultan (male); lulwa, noura, aisha (female); WAV only; 200 chars.
+#   canopylabs/orpheus-v1-english    -> autumn, diana, hannah (female); austin, daniel, troy (male).
+# The provider lists no ages, so every voice is "adult": child characters fall back to adult voices (9.2 step 2).
+# The Saudi model speaks Gulf Arabic; "msa" is listed because the same voices read Modern Standard Arabic.
+# `fake` voices are for tests and local demos only (FakeTTS).
+voices:
+  - {id: groq_ar_f_adult_1, provider: groq, voice_id: lulwa,    gender: f, age_band: adult, dialects: [gulf, msa], languages: [ar]}
+  - {id: groq_ar_f_adult_2, provider: groq, voice_id: noura,    gender: f, age_band: adult, dialects: [gulf, msa], languages: [ar]}
+  - {id: groq_ar_f_adult_3, provider: groq, voice_id: aisha,    gender: f, age_band: adult, dialects: [gulf, msa], languages: [ar]}
+  - {id: groq_ar_m_adult_1, provider: groq, voice_id: abdullah, gender: m, age_band: adult, dialects: [gulf, msa], languages: [ar]}
+  - {id: groq_ar_m_adult_2, provider: groq, voice_id: fahad,    gender: m, age_band: adult, dialects: [gulf, msa], languages: [ar]}
+  - {id: groq_ar_m_adult_3, provider: groq, voice_id: sultan,   gender: m, age_band: adult, dialects: [gulf, msa], languages: [ar]}
+  - {id: groq_en_f_adult_1, provider: groq, voice_id: autumn,   gender: f, age_band: adult, dialects: [],          languages: [en]}
+  - {id: groq_en_f_adult_2, provider: groq, voice_id: diana,    gender: f, age_band: adult, dialects: [],          languages: [en]}
+  - {id: groq_en_f_adult_3, provider: groq, voice_id: hannah,   gender: f, age_band: adult, dialects: [],          languages: [en]}
+  - {id: groq_en_m_adult_1, provider: groq, voice_id: austin,   gender: m, age_band: adult, dialects: [],          languages: [en]}
+  - {id: groq_en_m_adult_2, provider: groq, voice_id: daniel,   gender: m, age_band: adult, dialects: [],          languages: [en]}
+  - {id: groq_en_m_adult_3, provider: groq, voice_id: troy,     gender: m, age_band: adult, dialects: [],          languages: [en]}
+  - {id: fake_ar_f_adult_1, provider: fake, voice_id: f1, gender: f, age_band: adult, dialects: [gulf, msa], languages: [ar, en]}
+  - {id: fake_ar_f_child_1, provider: fake, voice_id: f2, gender: f, age_band: child, dialects: [gulf, msa], languages: [ar, en]}
+  - {id: fake_ar_m_child_1, provider: fake, voice_id: m1, gender: m, age_band: child, dialects: [gulf, msa], languages: [ar, en]}
+  - {id: fake_ar_f_adult_2, provider: fake, voice_id: f3, gender: f, age_band: adult, dialects: [gulf, msa], languages: [ar, en]}
+  - {id: fake_ar_m_adult_1, provider: fake, voice_id: m2, gender: m, age_band: adult, dialects: [gulf, msa], languages: [ar, en]}

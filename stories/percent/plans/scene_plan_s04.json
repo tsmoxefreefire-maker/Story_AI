@@ -1,0 +1,427 @@
+{
+ "scene_id": "s04",
+ "background": {
+  "id": "bg_shop",
+  "time_of_day": "day"
+ },
+ "camera": {
+  "x": 640,
+  "y": 360,
+  "zoom": 1.0
+ },
+ "actors": [
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "leen",
+   "x": 330,
+   "facing": "right"
+  },
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "zaid",
+   "x": 560,
+   "facing": "right"
+  },
+  {
+   "y": 640,
+   "scale": 1.0,
+   "z": 20,
+   "pose": "idle",
+   "expression": "neutral",
+   "offstage_ok": false,
+   "char_key": "abukhaled",
+   "x": 1080,
+   "facing": "left"
+  }
+ ],
+ "props": [
+  {
+   "scale": 1.2,
+   "rotation": 0,
+   "z": 10,
+   "ref": "prop_table",
+   "id": "table1",
+   "x": 820,
+   "y": 640
+  },
+  {
+   "scale": 0.75,
+   "rotation": 0,
+   "z": 11,
+   "ref": "prop_sneakers",
+   "id": "shoes1",
+   "x": 820,
+   "y": 501
+  }
+ ],
+ "widgets": [
+  {
+   "scale": 1.0,
+   "z": 30,
+   "initial": "hidden",
+   "ref": "widget_label_card",
+   "id": "card1",
+   "params": {
+    "text": "20% من 30: 6"
+   },
+   "x": 420,
+   "y": 180
+  },
+  {
+   "scale": 1.0,
+   "z": 30,
+   "initial": "hidden",
+   "ref": "widget_label_card",
+   "id": "card2",
+   "params": {
+    "text": "6 أقل من 8"
+   },
+   "x": 860,
+   "y": 180
+  }
+ ],
+ "cues": [
+  {
+   "id": "s04_c01",
+   "at": {
+    "line": "s04_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 1
+   },
+   "target": "zaid",
+   "action": "pose",
+   "params": {
+    "name": "point_right"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c02",
+   "at": {
+    "line": "s04_l01",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 3
+   },
+   "target": "shoes1",
+   "action": "highlight",
+   "params": {
+    "pulses": 2
+   },
+   "dur_ms": 800
+  },
+  {
+   "id": "s04_c03",
+   "at": {
+    "line": "s04_l01",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "zaid",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c04",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "zaid",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c05",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "zaid",
+   "action": "expression",
+   "params": {
+    "name": "happy"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c06",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "zaid",
+   "action": "move",
+   "params": {
+    "to": [
+     120,
+     0
+    ]
+   },
+   "dur_ms": 900
+  },
+  {
+   "id": "s04_c07",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 9
+   },
+   "target": "shoes1",
+   "action": "shake",
+   "params": {
+    "amplitude": 5
+   },
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c08",
+   "at": {
+    "line": "s04_l02",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "zaid",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c09",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "leen",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c10",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "leen",
+   "action": "expression",
+   "params": {
+    "name": "thinking"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c11",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 0
+   },
+   "target": "leen",
+   "action": "pose",
+   "params": {
+    "name": "think"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c12",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 8
+   },
+   "target": "card1",
+   "action": "show",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c13",
+   "at": {
+    "line": "s04_l03",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "leen",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c14",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c15",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "expression",
+   "params": {
+    "name": "laughing"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c16",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 3
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "point_left"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c17",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 6
+   },
+   "target": "card2",
+   "action": "show",
+   "params": {},
+   "dur_ms": 500
+  },
+  {
+   "id": "s04_c18",
+   "at": {
+    "line": "s04_l04",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "abukhaled",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c19",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "zaid",
+   "action": "pose",
+   "params": {
+    "name": "talk"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c20",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "start",
+    "offset_ms": 0
+   },
+   "target": "zaid",
+   "action": "expression",
+   "params": {
+    "name": "surprised"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c21",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 2
+   },
+   "target": "card2",
+   "action": "highlight",
+   "params": {
+    "pulses": 1
+   },
+   "dur_ms": 600
+  },
+  {
+   "id": "s04_c22",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "word",
+    "offset_ms": 0,
+    "word_index": 11
+   },
+   "target": "zaid",
+   "action": "pose",
+   "params": {
+    "name": "shrug"
+   },
+   "dur_ms": 0
+  },
+  {
+   "id": "s04_c23",
+   "at": {
+    "line": "s04_l05",
+    "anchor": "end",
+    "offset_ms": 0
+   },
+   "target": "zaid",
+   "action": "pose",
+   "params": {
+    "name": "idle"
+   },
+   "dur_ms": 0
+  }
+ ],
+ "interaction_bindings": []
+}
