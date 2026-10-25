@@ -1,0 +1,27 @@
+# keys and secrets: never on GitHub
+.env
+*.key
+api_key*.txt
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# test and lint caches
+.pytest_cache/
+.ruff_cache/
+
+# stories you build and local data
+out/
+data/
+
+# editors and Windows
+.idea/
+.vscode/
+Thumbs.db
+desktop.ini
