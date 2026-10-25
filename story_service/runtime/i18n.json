@@ -1,4 +1,0 @@
-{
- "ar": {"start": "ابدأ القصة", "pause": "إيقاف مؤقت", "resume": "متابعة التشغيل", "restart": "من البداية", "captions": "النص", "speed": "السرعة", "skip": "تخطي", "hint": "تلميح", "continue": "متابعة", "replay": "إعادة المشاهدة", "good_guess": "توقع جميل!", "lets_see": "لنرَ ما سيحدث", "correct": "إجابة صحيحة", "try_again": "حاول مرة أخرى", "rotate_hint": "لصورة أكبر، أدر الجهاز", "close": "إغلاق"},
- "en": {"start": "Start the story", "pause": "Pause", "resume": "Resume", "restart": "Restart", "captions": "Captions", "speed": "Speed", "skip": "Skip", "hint": "Hint", "continue": "Continue", "replay": "Replay", "good_guess": "Good guess!", "lets_see": "Let’s see what happens", "correct": "Correct", "try_again": "Try again", "rotate_hint": "Rotate your device for a bigger picture", "close": "Close"}
-}
