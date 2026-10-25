@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Cup (mug)" data-label-ar="كوب" data-tags="drink kitchen" data-bbox="60 116 140 196" data-scale="0.5">
+<path d="M118 132 Q144 132 140 156 Q136 176 116 172" fill="none" stroke="var(--c-primary)" stroke-width="9"/>
+<path d="M62 120 L122 120 L116 188 Q115 196 106 196 L78 196 Q69 196 68 188 Z" fill="var(--c-primary)"/>
+<path d="M102 120 L122 120 L116 188 Q115 196 106 196 L98 196 Z" fill="var(--c-primary-d)"/>
+<ellipse cx="92" cy="121" rx="30" ry="6" fill="var(--c-primary-d)"/>
+<g fill="none" stroke="var(--c-neutral-2)" stroke-width="5" stroke-linecap="round"><path class="amb-steam" d="M80 112 q-6 -8 0 -16 q6 -8 0 -16"/><path class="amb-steam d2" d="M96 112 q-6 -8 0 -16 q6 -8 0 -16"/><path class="amb-steam d3" d="M110 110 q-6 -8 0 -16 q6 -8 0 -16"/></g>
+</svg>

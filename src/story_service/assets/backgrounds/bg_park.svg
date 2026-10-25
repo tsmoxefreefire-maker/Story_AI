@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="Park with trees, a bench and a pond" data-kind="outdoor" data-ground-y="640" data-supports="day evening night" data-slots="260,640 640,640 1020,640">
+  <defs><linearGradient id="pk-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky-d)" stop-opacity="0.75"/><stop offset="0.8" stop-color="var(--sky-d)" stop-opacity="0"/></linearGradient></defs>
+  <g class="layer-far">
+    <rect x="0" y="0" width="1280" height="720" fill="var(--sky)"/>
+    <rect x="0" y="0" width="1280" height="720" fill="url(#pk-sky)"/>
+    <circle class="sun amb-glow" cx="200" cy="120" r="72" fill="var(--c-accent)" opacity="0.3"/><circle class="sun" cx="200" cy="120" r="50" fill="var(--c-accent)"/>
+    <g class="night-only">
+      <circle cx="200" cy="110" r="36" fill="var(--paper)"/><circle cx="215" cy="100" r="32" fill="var(--sky)"/>
+      <circle class="amb-twinkle" cx="420" cy="80" r="2.5" fill="var(--paper)"/><circle class="amb-twinkle d2" cx="640" cy="140" r="3" fill="var(--paper)"/>
+      <circle class="amb-twinkle" cx="880" cy="70" r="2.5" fill="var(--paper)"/><circle class="amb-twinkle d2" cx="1150" cy="120" r="3" fill="var(--paper)"/>
+    </g>
+    <g class="day-only amb-drift" fill="var(--paper)" opacity="0.9">
+      <ellipse cx="900" cy="110" rx="66" ry="22"/><ellipse cx="940" cy="92" rx="42" ry="26"/>
+    </g>
+    <path d="M0 520 Q160 470 330 500 Q520 534 700 488 Q900 440 1080 486 Q1180 510 1280 492 L1280 600 L0 600 Z" fill="var(--ground-d)"/>
+  </g>
+  <g class="day-only amb-fly"><g transform="translate(-170 150)" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.45"><path class="amb-flap" d="M0 0 Q8 -8 16 0 Q24 -8 32 0"/><path class="amb-flap" d="M44 22 Q50 16 56 22 Q62 16 68 22"/><path class="amb-flap" d="M-34 30 Q-28 24 -22 30 Q-16 24 -10 30"/></g></g>
+  <g class="layer-mid">
+    <rect x="133" y="380" width="22" height="200" rx="10" fill="var(--c-neutral-2)"/>
+    <circle cx="144" cy="350" r="78" fill="var(--ground-d)"/><circle cx="96" cy="390" r="48" fill="var(--ground-d)"/><circle cx="196" cy="384" r="52" fill="var(--ground-d)"/>
+    <rect x="1133" y="400" width="20" height="180" rx="10" fill="var(--c-neutral-2)"/>
+    <circle cx="1143" cy="372" r="70" fill="var(--ground-d)"/><circle cx="1196" cy="404" r="44" fill="var(--ground-d)"/>
+    <rect x="955" y="420" width="10" height="170" rx="5" fill="var(--ink)"/>
+    <rect x="938" y="404" width="44" height="22" rx="8" fill="var(--ink)"/>
+    <circle cx="960" cy="432" r="12" fill="var(--c-accent)"/>
+    <circle cx="960" cy="432" r="46" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
+  </g>
+  <g class="layer-near">
+    <rect x="0" y="590" width="1280" height="130" fill="var(--ground)"/>
+    <path d="M420 720 Q520 650 640 630 Q760 612 900 620 L980 620 Q840 640 760 680 Q700 708 660 720 Z" fill="var(--c-neutral-1)"/>
+    <ellipse cx="300" cy="620" rx="150" ry="24" fill="var(--c-secondary)"/>
+    <ellipse cx="270" cy="616" rx="60" ry="7" fill="var(--c-secondary-d)"/>
+    <circle cx="520" cy="606" r="6" fill="var(--c-primary)"/><circle cx="540" cy="612" r="5" fill="var(--c-accent)"/>
+    <circle cx="1060" cy="660" r="6" fill="var(--c-primary)"/><circle cx="1080" cy="668" r="5" fill="var(--c-accent)"/>
+    <circle cx="80" cy="690" r="6" fill="var(--c-support)"/><circle cx="1220" cy="640" r="6" fill="var(--c-support)"/>
+    <ellipse cx="1000" cy="690" rx="90" ry="28" fill="var(--ground-d)"/>
+    <g class="bg-cat" transform="translate(64 652) scale(1.25)"><ellipse cx="2" cy="-1" rx="27" ry="5" fill="var(--ink)" fill-opacity="0.13"/><path class="amb-tail" d="M14 -6 Q34 -8 32 -28 Q31 -38 38 -42" fill="none" stroke="var(--c-accent)" stroke-width="6" stroke-linecap="round"/><path d="M-17 -2 Q-21 -30 -5 -38 Q13 -41 18 -18 Q20 -4 14 -2 Z" fill="var(--c-accent)"/><path d="M-9 -4 L-9 -16 M1 -4 L1 -16" stroke="var(--c-accent-d)" stroke-width="3" stroke-linecap="round"/><circle cx="-10" cy="-44" r="13" fill="var(--c-accent)"/><path d="M-21 -51 L-20 -64 L-12 -55 Z M-6 -56 L-1 -66 L2 -52 Z" fill="var(--c-accent)"/><g class="amb-blink"><circle cx="-15" cy="-45" r="2.1" fill="var(--ink)"/><circle cx="-6" cy="-45" r="2.1" fill="var(--ink)"/></g><path d="M-13 -39.5 l2 1.6 l2 -1.6" fill="none" stroke="var(--ink)" stroke-width="1.3" stroke-linecap="round"/></g>
+  </g>
+</svg>

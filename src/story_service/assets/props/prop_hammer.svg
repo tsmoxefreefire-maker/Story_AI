@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Hammer" data-label-ar="مطرقة" data-tags="tools" data-bbox="48 56 152 196" data-scale="0.6">
+<rect x="94" y="84" width="16" height="112" rx="7" fill="var(--hair-3)"/>
+<path d="M50 62 L140 62 Q150 62 150 72 L150 86 L50 86 Q44 74 50 62 Z" fill="var(--c-neutral-2-d)"/>
+<rect x="50" y="62" width="100" height="10" rx="4" fill="var(--c-neutral-2)"/>
+</svg>

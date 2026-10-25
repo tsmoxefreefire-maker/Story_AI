@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Signpost" data-label-ar="لافتة" data-tags="outdoor street" data-bbox="40 8 160 196" data-scale="1.6">
+<rect x="94" y="20" width="12" height="176" rx="5" fill="var(--hair-3)"/>
+<path d="M60 28 L140 28 L156 44 L140 60 L60 60 Z" fill="var(--c-secondary)"/>
+<path d="M140 74 L60 74 L44 90 L60 106 L140 106 Z" fill="var(--c-primary)"/>
+<rect x="80" y="40" width="44" height="8" rx="4" fill="var(--paper)"/><rect x="74" y="86" width="44" height="8" rx="4" fill="var(--paper)"/>
+</svg>

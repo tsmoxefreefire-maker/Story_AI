@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Cloud" data-label-ar="غيمة" data-tags="sky weather" data-bbox="18 118 182 196" data-scale="1.0" data-shadow="none">
+<g class="amb-drift"><ellipse cx="100" cy="170" rx="80" ry="26" fill="var(--paper)"/>
+<circle cx="78" cy="152" r="32" fill="var(--paper)"/><circle cx="118" cy="146" r="40" fill="var(--paper)"/>
+<ellipse cx="110" cy="182" rx="66" ry="12" fill="var(--paper-d)"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Mobile phone" data-label-ar="هاتف" data-tags="tech" data-bbox="72 86 128 196" data-scale="0.4">
+<rect x="72" y="86" width="56" height="110" rx="12" fill="var(--ink)"/>
+<rect x="78" y="98" width="44" height="80" rx="4" fill="var(--c-secondary)"/>
+<circle cx="100" cy="186" r="5" fill="var(--c-neutral-2)"/>
+</svg>

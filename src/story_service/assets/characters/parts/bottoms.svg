@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400">
+  <!-- Bottoms (catalog enum). data-legs says what the legs are made of: "bottom" (trousers) or "skin".
+       Slot hips/skirt go into the torso (behind the top), slot leg-l/leg-r over each leg. -->
+  <g data-variant="trousers" data-legs="bottom">
+    <g data-slot="hips"><rect x="65" y="232" width="70" height="30" rx="10" fill="var(--bottom)"/></g>
+  </g>
+  <g data-variant="shorts" data-legs="skin">
+    <g data-slot="hips"><rect x="65" y="232" width="70" height="30" rx="10" fill="var(--bottom)"/></g>
+    <g data-slot="leg-l"><rect x="73" y="244" width="22" height="58" rx="10" fill="var(--bottom)"/></g>
+    <g data-slot="leg-r"><rect x="105" y="244" width="22" height="58" rx="10" fill="var(--bottom-d)"/></g>
+  </g>
+  <g data-variant="skirt_knee" data-legs="skin">
+    <g data-slot="skirt">
+      <path d="M68 234 L132 234 L144 318 Q144 324 136 324 L64 324 Q56 324 56 318 Z" fill="var(--bottom)"/>
+      <path d="M116 234 L132 234 L144 318 Q144 324 136 324 L120 324 Z" fill="var(--bottom-d)"/>
+    </g>
+  </g>
+  <g data-variant="skirt_long" data-legs="skin">
+    <g data-slot="skirt">
+      <path d="M68 234 L132 234 L146 366 Q146 374 138 374 L62 374 Q54 374 54 366 Z" fill="var(--bottom)"/>
+      <path d="M116 234 L132 234 L146 366 Q146 374 138 374 L121 374 Z" fill="var(--bottom-d)"/>
+    </g>
+  </g>
+  <g data-variant="none" data-legs="skin"/>
+</svg>

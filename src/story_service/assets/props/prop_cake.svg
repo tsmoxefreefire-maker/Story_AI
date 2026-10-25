@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Cake with a candle" data-label-ar="كعكة" data-tags="food party" data-bbox="44 82 156 196" data-scale="0.9">
+<rect x="48" y="128" width="104" height="66" rx="10" fill="var(--c-primary)"/>
+<rect x="118" y="128" width="34" height="66" rx="8" fill="var(--c-primary-d)"/>
+<path d="M44 132 Q44 116 100 116 Q156 116 156 132 L156 142 Q146 150 136 142 Q126 152 116 142 Q106 152 96 142 Q86 152 76 142 Q66 152 56 142 Q50 148 44 142 Z" fill="var(--paper)"/>
+<rect x="44" y="186" width="112" height="10" rx="5" fill="var(--c-neutral-1)"/>
+<rect x="95" y="90" width="10" height="30" rx="4" fill="var(--c-support)"/>
+<path d="M100 72 Q110 84 100 92 Q90 84 100 72 Z" fill="var(--c-accent)"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Book" data-label-ar="كتاب" data-tags="school reading" data-bbox="38 136 162 196" data-scale="0.6">
+<rect x="40" y="150" width="122" height="46" rx="6" fill="var(--paper-d)"/>
+<rect x="38" y="138" width="124" height="44" rx="6" fill="var(--c-support)"/>
+<rect x="38" y="138" width="20" height="44" rx="6" fill="var(--c-support-d)"/>
+<rect x="74" y="152" width="64" height="8" rx="4" fill="var(--paper)"/>
+</svg>

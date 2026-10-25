@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="Library with tall bookshelves" data-kind="indoor" data-ground-y="640" data-supports="day evening night" data-slots="260,640 640,640 1020,640">
+  <defs>
+    <g id="lb-row">
+      <rect x="0" y="16" width="22" height="78" rx="3" fill="var(--c-primary)"/><rect x="26" y="26" width="18" height="68" rx="3" fill="var(--c-accent)"/>
+      <rect x="48" y="10" width="24" height="84" rx="3" fill="var(--c-secondary)"/><rect x="76" y="22" width="20" height="72" rx="3" fill="var(--c-support)"/>
+      <rect x="100" y="14" width="22" height="80" rx="3" fill="var(--c-primary-d)"/><rect x="126" y="30" width="18" height="64" rx="3" fill="var(--c-secondary-d)"/>
+      <rect x="148" y="18" width="24" height="76" rx="3" fill="var(--c-accent-d)"/><rect x="176" y="26" width="20" height="68" rx="3" fill="var(--c-support-d)"/>
+      <rect x="200" y="12" width="22" height="82" rx="3" fill="var(--c-primary)"/><rect x="226" y="24" width="24" height="70" rx="3" fill="var(--c-secondary)"/>
+      <path d="M256 94 L270 34 L286 38 L274 94 Z" fill="var(--c-accent)"/>
+    </g>
+  </defs>
+  <g class="layer-far">
+    <rect x="0" y="0" width="1280" height="600" fill="var(--paper)"/>
+    <rect x="0" y="0" width="1280" height="600" fill="var(--c-primary)" opacity="0.12"/>
+    <rect x="530" y="80" width="220" height="300" rx="110" fill="var(--paper)"/>
+    <rect x="546" y="96" width="188" height="268" rx="94" fill="var(--sky)"/>
+    <rect x="636" y="96" width="8" height="268" fill="var(--paper)"/><rect x="546" y="230" width="188" height="8" fill="var(--paper)"/>
+  </g>
+  <g class="layer-mid">
+    <rect x="40" y="70" width="320" height="530" rx="8" fill="var(--c-neutral-2-d)"/>
+    <rect x="52" y="82" width="296" height="506" rx="4" fill="var(--c-neutral-1-d)"/>
+    <use href="#lb-row" transform="translate(58 86)"/><use href="#lb-row" transform="translate(58 210)"/><use href="#lb-row" transform="translate(58 334)"/><use href="#lb-row" transform="translate(58 458)"/>
+    <g fill="var(--c-neutral-2-d)"><rect x="52" y="180" width="296" height="14"/><rect x="52" y="304" width="296" height="14"/><rect x="52" y="428" width="296" height="14"/></g>
+    <rect x="920" y="70" width="320" height="530" rx="8" fill="var(--c-neutral-2-d)"/>
+    <rect x="932" y="82" width="296" height="506" rx="4" fill="var(--c-neutral-1-d)"/>
+    <use href="#lb-row" transform="translate(938 86)"/><use href="#lb-row" transform="translate(938 210)"/><use href="#lb-row" transform="translate(938 334)"/><use href="#lb-row" transform="translate(938 458)"/>
+    <g fill="var(--c-neutral-2-d)"><rect x="932" y="180" width="296" height="14"/><rect x="932" y="304" width="296" height="14"/><rect x="932" y="428" width="296" height="14"/></g>
+    <circle cx="640" cy="40" r="120" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
+    <rect x="590" y="0" width="100" height="20" rx="8" fill="var(--c-neutral-2)"/>
+  </g>
+  <g class="layer-near">
+    <rect x="0" y="600" width="1280" height="120" fill="var(--c-neutral-1-d)"/>
+    <rect x="0" y="592" width="1280" height="12" fill="var(--c-neutral-2)"/>
+    <rect x="380" y="640" width="520" height="56" rx="28" fill="var(--c-secondary)" opacity="0.6"/>
+  </g>
+</svg>

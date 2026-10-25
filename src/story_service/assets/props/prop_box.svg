@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Cardboard box" data-label-ar="صندوق" data-tags="misc" data-bbox="38 96 162 196" data-scale="0.9" data-surface="100">
+<rect x="40" y="100" width="122" height="96" rx="6" fill="var(--hair-4)"/>
+<rect x="126" y="100" width="36" height="96" rx="6" fill="var(--skin-3)"/>
+<path d="M36 100 L66 84 L136 84 L166 100 Z" fill="var(--skin-2)"/>
+<rect x="88" y="100" width="24" height="96" fill="var(--paper-d)" opacity="0.7"/>
+</svg>

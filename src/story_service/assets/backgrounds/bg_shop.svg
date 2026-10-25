@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="Small shop with shelves of goods" data-kind="indoor" data-ground-y="640" data-supports="day evening night" data-slots="260,640 640,640 1020,640">
+  <g class="layer-far">
+    <rect x="0" y="0" width="1280" height="600" fill="var(--paper)"/>
+    <rect x="0" y="0" width="1280" height="600" fill="var(--c-accent)" opacity="0.28"/>
+    <rect x="0" y="0" width="1280" height="70" fill="var(--c-primary)"/>
+    <g fill="var(--paper)"><rect x="0" y="0" width="80" height="70"/><rect x="160" y="0" width="80" height="70"/><rect x="320" y="0" width="80" height="70"/><rect x="480" y="0" width="80" height="70"/><rect x="640" y="0" width="80" height="70"/><rect x="800" y="0" width="80" height="70"/><rect x="960" y="0" width="80" height="70"/><rect x="1120" y="0" width="80" height="70"/></g>
+    <rect x="1000" y="140" width="220" height="250" rx="10" fill="var(--paper)"/>
+    <rect x="1014" y="154" width="192" height="222" rx="6" fill="var(--sky)"/>
+    <rect x="1106" y="154" width="8" height="222" fill="var(--paper)"/>
+  </g>
+  <g class="layer-mid">
+    <rect x="60" y="120" width="560" height="440" rx="8" fill="var(--c-neutral-2-d)"/>
+    <rect x="72" y="132" width="536" height="416" rx="4" fill="var(--c-neutral-1)"/>
+    <g fill="var(--c-neutral-2)"><rect x="72" y="236" width="536" height="12"/><rect x="72" y="346" width="536" height="12"/><rect x="72" y="456" width="536" height="12"/></g>
+    <g fill="var(--c-primary)"><rect x="90" y="166" width="50" height="70" rx="5"/><rect x="146" y="176" width="50" height="60" rx="5"/><rect x="430" y="286" width="44" height="60" rx="5"/></g>
+    <g fill="var(--c-secondary)"><rect x="210" y="160" width="60" height="76" rx="5"/><rect x="90" y="286" width="56" height="60" rx="5"/><rect x="480" y="396" width="56" height="60" rx="5"/></g>
+    <g fill="var(--c-accent)"><rect x="280" y="176" width="44" height="60" rx="5"/><rect x="152" y="296" width="44" height="50" rx="5"/><rect x="90" y="396" width="60" height="60" rx="5"/><rect x="540" y="176" width="54" height="60" rx="5"/></g>
+    <g fill="var(--c-support)"><rect x="340" y="166" width="60" height="70" rx="5"/><rect x="210" y="286" width="60" height="60" rx="5"/><rect x="160" y="406" width="54" height="50" rx="5"/><rect x="540" y="296" width="54" height="50" rx="5"/></g>
+    <g fill="var(--c-primary-d)"><circle cx="440" cy="216" r="20"/><circle cx="484" cy="216" r="20"/><circle cx="300" cy="326" r="20"/><circle cx="344" cy="326" r="20"/><circle cx="280" cy="436" r="20"/><circle cx="324" cy="436" r="20"/><circle cx="380" cy="436" r="20"/></g>
+    <circle cx="840" cy="40" r="120" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
+    <rect x="800" y="70" width="80" height="20" rx="8" fill="var(--c-neutral-2)"/>
+  </g>
+  <g class="layer-near">
+    <rect x="0" y="600" width="1280" height="120" fill="var(--c-neutral-1-d)"/>
+    <g fill="var(--c-neutral-1)"><rect x="0" y="600" width="128" height="60"/><rect x="256" y="600" width="128" height="60"/><rect x="512" y="600" width="128" height="60"/><rect x="768" y="600" width="128" height="60"/><rect x="1024" y="600" width="128" height="60"/>
+      <rect x="128" y="660" width="128" height="60"/><rect x="384" y="660" width="128" height="60"/><rect x="640" y="660" width="128" height="60"/><rect x="896" y="660" width="128" height="60"/><rect x="1152" y="660" width="128" height="60"/></g>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Globe" data-label-ar="مجسم الأرض" data-tags="school geography" data-bbox="52 36 148 196" data-scale="0.8">
+<rect x="84" y="182" width="32" height="14" rx="6" fill="var(--c-neutral-2-d)"/><rect x="96" y="150" width="8" height="34" fill="var(--c-neutral-2)"/>
+<circle cx="100" cy="96" r="54" fill="var(--c-secondary)"/>
+<path d="M70 72 Q86 60 98 72 Q92 92 76 96 Q64 88 70 72 Z M108 100 Q126 92 136 108 Q128 130 112 128 Q102 116 108 100 Z" fill="var(--ground-day-d)"/>
+<path d="M124 52 A54 54 0 0 1 124 140 A60 60 0 0 0 124 52 Z" fill="var(--c-secondary-d)"/>
+<path d="M58 60 A64 64 0 0 0 140 150" fill="none" stroke="var(--c-neutral-2)" stroke-width="6"/>
+</svg>

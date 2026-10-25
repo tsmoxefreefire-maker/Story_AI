@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Basket" data-label-ar="سلة" data-tags="shopping food" data-bbox="38 70 162 196" data-scale="0.9">
+<path d="M62 120 Q62 70 100 70 Q138 70 138 120" fill="none" stroke="var(--hair-3)" stroke-width="10" stroke-linecap="round"/>
+<path d="M38 118 L162 118 L148 190 Q146 196 140 196 L60 196 Q54 196 52 190 Z" fill="var(--hair-3)"/>
+<path d="M120 118 L162 118 L148 190 Q146 196 140 196 L126 196 Z" fill="var(--hair-2)"/>
+<path d="M46 140 L156 140 M50 162 L152 162 M54 182 L148 182" stroke="var(--hair-4)" stroke-width="5"/>
+</svg>

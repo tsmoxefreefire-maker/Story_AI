@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Floor lamp" data-label-ar="مصباح" data-tags="home light" data-bbox="60 8 140 196" data-scale="1.5">
+<rect x="96" y="60" width="8" height="128" fill="var(--ink)"/>
+<ellipse cx="100" cy="190" rx="34" ry="6" fill="var(--ink)"/>
+<path d="M66 64 L134 64 L120 10 L80 10 Z" fill="var(--c-accent)"/>
+<path d="M112 10 L120 10 L134 64 L118 64 Z" fill="var(--c-accent-d)"/>
+</svg>

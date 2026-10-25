@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Banknote" data-label-ar="ورقة نقدية" data-tags="money" data-bbox="28 140 172 196" data-scale="0.6">
+<rect x="28" y="140" width="144" height="56" rx="6" fill="var(--ground-day-d)"/>
+<rect x="38" y="150" width="124" height="36" rx="4" fill="var(--ground-day)"/>
+<circle cx="100" cy="168" r="14" fill="var(--ground-day-d)"/>
+<rect x="46" y="160" width="16" height="16" rx="4" fill="var(--ground-day-d)"/><rect x="138" y="160" width="16" height="16" rx="4" fill="var(--ground-day-d)"/>
+</svg>

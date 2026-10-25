@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Coin" data-label-ar="قطعة نقدية" data-tags="money" data-bbox="70 136 130 196" data-scale="0.35">
+<circle cx="100" cy="166" r="30" fill="var(--c-accent)"/>
+<path d="M114 140 A30 30 0 0 1 114 192 A36 36 0 0 0 114 140 Z" fill="var(--c-accent-d)"/>
+<circle cx="100" cy="166" r="20" fill="var(--c-accent-d)"/><circle cx="100" cy="166" r="16" fill="var(--c-accent)"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Calculator" data-label-ar="آلة حاسبة" data-tags="tools math" data-bbox="58 66 142 196" data-scale="0.55">
+<rect x="58" y="66" width="84" height="130" rx="12" fill="var(--c-neutral-2-d)"/>
+<rect x="70" y="78" width="60" height="28" rx="4" fill="var(--ground-day)"/>
+<g fill="var(--paper)"><rect x="70" y="118" width="16" height="14" rx="3"/><rect x="92" y="118" width="16" height="14" rx="3"/><rect x="70" y="140" width="16" height="14" rx="3"/><rect x="92" y="140" width="16" height="14" rx="3"/><rect x="70" y="162" width="16" height="14" rx="3"/><rect x="92" y="162" width="16" height="14" rx="3"/></g>
+<rect x="114" y="118" width="16" height="58" rx="3" fill="var(--c-primary)"/>
+</svg>

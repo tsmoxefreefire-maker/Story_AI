@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Hill" data-label-ar="تلة" data-tags="nature outdoor" data-bbox="0 96 200 196" data-scale="2.0" data-shadow="none">
+<path d="M0 196 Q40 96 100 96 Q160 96 200 196 Z" fill="var(--ground-day-d)"/>
+<path d="M100 96 Q160 96 200 196 L150 196 Q150 130 100 96 Z" fill="var(--ground-day)" opacity="0.3"/>
+</svg>

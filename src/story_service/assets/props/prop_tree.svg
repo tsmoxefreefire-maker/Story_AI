@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Tree" data-label-ar="شجرة" data-tags="nature outdoor park" data-bbox="18 0 182 200" data-scale="2.2">
+<rect x="88" y="100" width="24" height="100" rx="8" fill="var(--hair-3)"/>
+<rect x="100" y="100" width="12" height="100" rx="6" fill="var(--hair-2)"/>
+<g class="amb-sway amb-slow"><circle cx="100" cy="64" r="56" fill="var(--ground-day-d)"/>
+<circle cx="56" cy="96" r="38" fill="var(--ground-day-d)"/><circle cx="144" cy="96" r="38" fill="var(--ground-day-d)"/>
+<circle cx="120" cy="70" r="40" fill="var(--ground-day)" opacity="0.35"/></g>
+</svg>

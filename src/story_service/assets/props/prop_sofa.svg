@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Sofa" data-label-ar="كنبة" data-tags="home living furniture" data-bbox="10 78 190 196" data-scale="1.6" data-surface="140">
+<rect x="24" y="78" width="152" height="70" rx="16" fill="var(--c-secondary)"/>
+<rect x="10" y="118" width="180" height="56" rx="16" fill="var(--c-secondary)"/>
+<rect x="10" y="108" width="34" height="66" rx="14" fill="var(--c-secondary-d)"/><rect x="156" y="108" width="34" height="66" rx="14" fill="var(--c-secondary-d)"/>
+<rect x="44" y="132" width="112" height="16" rx="6" fill="var(--c-secondary-d)"/>
+<rect x="22" y="174" width="12" height="22" rx="4" fill="var(--hair-2)"/><rect x="166" y="174" width="12" height="22" rx="4" fill="var(--hair-2)"/>
+</svg>

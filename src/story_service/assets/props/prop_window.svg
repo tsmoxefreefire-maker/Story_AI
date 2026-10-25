@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Window" data-label-ar="نافذة" data-tags="home building" data-bbox="20 36 180 196" data-scale="1.0" data-shadow="none">
+<rect x="20" y="36" width="160" height="152" rx="8" fill="var(--paper)"/>
+<rect x="30" y="46" width="140" height="132" rx="4" fill="var(--sky)"/>
+<rect x="96" y="46" width="8" height="132" fill="var(--paper)"/><rect x="30" y="108" width="140" height="8" fill="var(--paper)"/>
+<rect x="14" y="184" width="172" height="12" rx="4" fill="var(--c-neutral-1)"/>
+</svg>

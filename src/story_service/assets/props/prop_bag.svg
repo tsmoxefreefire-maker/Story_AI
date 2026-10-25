@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Shopping bag" data-label-ar="كيس" data-tags="shopping" data-bbox="54 72 146 196" data-scale="0.7">
+<path d="M80 96 Q80 72 100 72 Q120 72 120 96" fill="none" stroke="var(--c-primary)" stroke-width="7"/>
+<path d="M56 96 L144 96 L140 196 L60 196 Z" fill="var(--paper)"/>
+<path d="M120 96 L144 96 L140 196 L120 196 Z" fill="var(--paper-d)"/>
+<circle cx="96" cy="146" r="16" fill="var(--c-primary)"/>
+</svg>

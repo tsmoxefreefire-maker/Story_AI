@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Bicycle" data-label-ar="دراجة" data-tags="transport play" data-bbox="8 92 192 196" data-scale="1.1">
+<circle cx="48" cy="156" r="40" fill="var(--ink)"/><circle cx="48" cy="156" r="30" fill="var(--paper-d)"/>
+<circle cx="152" cy="156" r="40" fill="var(--ink)"/><circle cx="152" cy="156" r="30" fill="var(--paper-d)"/>
+<path d="M48 156 L84 108 L130 108 L152 156 M84 108 L100 156 L130 108 M100 156 L48 156" fill="none" stroke="var(--c-primary)" stroke-width="8" stroke-linejoin="round"/>
+<rect x="70" y="94" width="30" height="10" rx="5" fill="var(--ink)"/><path d="M126 108 L120 92 L136 92" fill="none" stroke="var(--ink)" stroke-width="7" stroke-linecap="round"/>
+</svg>

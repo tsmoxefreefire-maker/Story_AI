@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Trophy" data-label-ar="كأس" data-tags="sport prize" data-bbox="56 58 144 196" data-scale="0.7">
+<path d="M70 70 Q48 70 52 92 Q56 112 80 114 M130 70 Q152 70 148 92 Q144 112 120 114" fill="none" stroke="var(--c-accent-d)" stroke-width="8"/>
+<path d="M66 60 L134 60 Q134 120 100 130 Q66 120 66 60 Z" fill="var(--c-accent)"/>
+<path d="M112 60 L134 60 Q134 120 100 130 Q120 110 112 60 Z" fill="var(--c-accent-d)"/>
+<rect x="92" y="128" width="16" height="34" fill="var(--c-accent-d)"/><rect x="66" y="160" width="68" height="36" rx="6" fill="var(--hair-2)"/>
+<rect x="82" y="172" width="36" height="10" rx="4" fill="var(--c-accent)"/>
+</svg>

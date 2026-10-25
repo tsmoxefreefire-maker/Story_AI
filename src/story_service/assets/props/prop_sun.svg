@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Sun" data-label-ar="الشمس" data-tags="sky weather" data-bbox="30 56 170 196" data-scale="1.0" data-shadow="none">
+<g class="amb-spin" fill="var(--c-accent-d)"><rect x="94" y="56" width="12" height="26" rx="6"/><rect x="94" y="170" width="12" height="26" rx="6"/><rect x="30" y="120" width="26" height="12" rx="6"/><rect x="144" y="120" width="26" height="12" rx="6"/>
+<rect x="44" y="76" width="12" height="24" rx="6" transform="rotate(-45 50 88)"/><rect x="144" y="76" width="12" height="24" rx="6" transform="rotate(45 150 88)"/><rect x="44" y="152" width="12" height="24" rx="6" transform="rotate(45 50 164)"/><rect x="144" y="152" width="12" height="24" rx="6" transform="rotate(-45 150 164)"/></g>
+<circle cx="100" cy="126" r="40" fill="var(--c-accent)"/>
+</svg>

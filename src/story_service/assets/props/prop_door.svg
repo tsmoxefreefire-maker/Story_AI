@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Door" data-label-ar="باب" data-tags="home building" data-bbox="36 0 164 200" data-scale="2.0" data-shadow="none">
+<rect x="36" y="0" width="128" height="200" rx="6" fill="var(--paper)"/>
+<rect x="46" y="10" width="108" height="190" rx="4" fill="var(--hair-3)"/>
+<rect x="56" y="22" width="88" height="70" rx="6" fill="var(--hair-2)"/><rect x="56" y="104" width="88" height="80" rx="6" fill="var(--hair-2)"/>
+<circle cx="136" cy="110" r="6" fill="var(--c-accent)"/>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400">
+  <!-- Tops (catalog enum). Each variant: data-sleeve short|long, a torso group and optional details.
+       Sleeves are generic (below); the builder adds the right ones to the arms. -->
+  <g data-variant="tshirt" data-sleeve="short">
+    <path d="M66 142 Q66 133 78 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L74 254 Q64 254 64 244 Z" fill="var(--top)"/>
+    <path d="M118 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L116 254 Q124 196 118 132 Z" fill="var(--top-d)"/>
+    <path d="M89 131 Q100 147 111 131 Z" fill="var(--skin-d)"/>
+  </g>
+  <g data-variant="long_sleeve" data-sleeve="long">
+    <path d="M66 142 Q66 133 78 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L74 254 Q64 254 64 244 Z" fill="var(--top)"/>
+    <path d="M118 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L116 254 Q124 196 118 132 Z" fill="var(--top-d)"/>
+    <path d="M92 131 Q100 141 108 131 Z" fill="var(--skin-d)"/>
+  </g>
+  <g data-variant="hoodie" data-sleeve="long">
+    <path d="M66 142 Q66 133 78 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L74 254 Q64 254 64 244 Z" fill="var(--top)"/>
+    <path d="M118 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L116 254 Q124 196 118 132 Z" fill="var(--top-d)"/>
+    <path d="M76 142 Q74 120 100 118 Q126 120 124 142 Q112 133 100 135 Q88 133 76 142 Z" fill="var(--top-d)"/>
+    <path d="M80 208 L120 208 L124 236 L76 236 Z" fill="var(--top-d)"/>
+    <path d="M94 141 L93 170 M106 141 L107 170" fill="none" stroke="var(--paper)" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+  <g data-variant="collared_shirt" data-sleeve="short">
+    <path d="M66 142 Q66 133 78 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L74 254 Q64 254 64 244 Z" fill="var(--top)"/>
+    <path d="M118 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L116 254 Q124 196 118 132 Z" fill="var(--top-d)"/>
+    <path d="M100 146 L100 252" fill="none" stroke="var(--top-d)" stroke-width="2.4"/>
+    <path d="M86 131 L100 146 L93 153 L81 137 Z M114 131 L100 146 L107 153 L119 137 Z" fill="var(--paper)"/>
+  </g>
+  <g data-variant="dress_long" data-sleeve="short">
+    <path d="M66 142 Q66 133 78 132 L122 132 Q134 133 134 142 L136 214 Q146 300 150 370 Q150 378 141 378 L59 378 Q50 378 50 370 Q54 300 64 214 Z" fill="var(--top)"/>
+    <path d="M118 132 L122 132 Q134 133 134 142 L136 214 Q146 300 150 370 Q150 378 141 378 L118 378 Q128 280 118 132 Z" fill="var(--top-d)"/>
+    <rect x="64" y="210" width="72" height="8" rx="4" fill="var(--top-d)"/>
+    <path d="M89 131 Q100 145 111 131 Z" fill="var(--skin-d)"/>
+  </g>
+  <g data-variant="tunic" data-sleeve="long">
+    <path d="M66 142 Q66 133 78 132 L122 132 Q134 133 134 142 L138 292 Q138 302 128 302 L72 302 Q62 302 62 292 Z" fill="var(--top)"/>
+    <path d="M118 132 L122 132 Q134 133 134 142 L138 292 Q138 302 128 302 L116 302 Q125 220 118 132 Z" fill="var(--top-d)"/>
+    <path d="M91 131 Q100 140 109 131 L106 158 L94 158 Z" fill="var(--top-d)"/>
+  </g>
+  <g data-variant="jacket" data-sleeve="long">
+    <path d="M66 142 Q66 133 78 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L74 254 Q64 254 64 244 Z" fill="var(--top)"/>
+    <path d="M118 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L116 254 Q124 196 118 132 Z" fill="var(--top-d)"/>
+    <path d="M91 132 L109 132 L105 254 L95 254 Z" fill="var(--paper)"/>
+    <path d="M90 132 L100 160 L93 170 L80 139 Z M110 132 L100 160 L107 170 L120 139 Z" fill="var(--top-d)"/>
+  </g>
+  <g data-variant="school_top" data-sleeve="short">
+    <path d="M66 142 Q66 133 78 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L74 254 Q64 254 64 244 Z" fill="var(--top)"/>
+    <path d="M118 132 L122 132 Q134 133 134 142 L136 244 Q136 254 126 254 L116 254 Q124 196 118 132 Z" fill="var(--top-d)"/>
+    <path d="M86 131 L100 146 L93 153 L81 137 Z M114 131 L100 146 L107 153 L119 137 Z" fill="var(--paper)"/>
+    <circle cx="117" cy="164" r="6" fill="var(--c-accent)"/>
+  </g>
+  <!-- sleeves -->
+  <g data-sleeve-part="short-upper-l"><rect x="53" y="136" width="18" height="40" rx="9" fill="var(--top)"/></g>
+  <g data-sleeve-part="short-upper-r"><rect x="129" y="136" width="18" height="40" rx="9" fill="var(--top-d)"/></g>
+  <g data-sleeve-part="long-upper-l"><rect x="53.5" y="136" width="17" height="66" rx="8.5" fill="var(--top)"/></g>
+  <g data-sleeve-part="long-upper-r"><rect x="129.5" y="136" width="17" height="66" rx="8.5" fill="var(--top-d)"/></g>
+  <g data-sleeve-part="long-fore-l"><rect x="54" y="188" width="16" height="50" rx="8" fill="var(--top)"/></g>
+  <g data-sleeve-part="long-fore-r"><rect x="130" y="188" width="16" height="50" rx="8" fill="var(--top-d)"/></g>
+</svg>

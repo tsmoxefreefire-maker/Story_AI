@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Potted plant" data-label-ar="نبتة في أصيص" data-tags="home nature" data-bbox="56 40 144 196" data-scale="0.8">
+<path d="M64 136 L136 136 L126 196 L74 196 Z" fill="var(--c-primary)"/>
+<path d="M112 136 L136 136 L126 196 L106 196 Z" fill="var(--c-primary-d)"/>
+<g class="amb-sway amb-slow"><ellipse cx="100" cy="80" rx="22" ry="44" fill="var(--ground-day-d)"/><ellipse cx="72" cy="104" rx="16" ry="34" fill="var(--ground-day-d)" transform="rotate(-25 72 104)"/>
+<ellipse cx="128" cy="104" rx="16" ry="34" fill="var(--ground-day-d)" transform="rotate(25 128 104)"/></g>
+</svg>

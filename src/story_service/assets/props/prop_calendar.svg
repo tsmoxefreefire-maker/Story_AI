@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Calendar" data-label-ar="تقويم" data-tags="time school" data-bbox="48 58 152 196" data-scale="0.7" data-shadow="none">
+<rect x="48" y="66" width="104" height="130" rx="10" fill="var(--paper)"/>
+<rect x="48" y="66" width="104" height="34" rx="10" fill="var(--c-primary)"/><rect x="48" y="86" width="104" height="14" fill="var(--c-primary)"/>
+<rect x="68" y="58" width="8" height="20" rx="4" fill="var(--ink)"/><rect x="124" y="58" width="8" height="20" rx="4" fill="var(--ink)"/>
+<g fill="var(--c-neutral-1)"><rect x="60" y="112" width="18" height="16" rx="3"/><rect x="84" y="112" width="18" height="16" rx="3"/><rect x="108" y="112" width="18" height="16" rx="3"/><rect x="60" y="136" width="18" height="16" rx="3"/><rect x="108" y="136" width="18" height="16" rx="3"/><rect x="60" y="160" width="18" height="16" rx="3"/><rect x="84" y="160" width="18" height="16" rx="3"/></g>
+<rect x="84" y="136" width="18" height="16" rx="3" fill="var(--c-secondary)"/>
+</svg>

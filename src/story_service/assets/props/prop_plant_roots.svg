@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Seedling with its roots" data-label-ar="نبتة بجذورها" data-tags="nature garden science" data-bbox="40 14 160 196" data-scale="0.9">
+<g fill="none" stroke="var(--c-neutral-1-d)" stroke-width="4" stroke-linecap="round">
+<path d="M100 132 Q98 160 100 194"/><path d="M100 146 Q82 156 70 182"/><path d="M100 146 Q120 158 132 184"/>
+<path d="M99 164 Q86 172 82 190"/><path d="M101 162 Q114 170 118 192"/><path d="M84 168 Q74 170 66 166"/><path d="M118 172 Q128 172 136 166"/>
+</g>
+<ellipse cx="100" cy="134" rx="36" ry="13" fill="var(--hair-2)"/>
+<ellipse cx="88" cy="130" rx="14" ry="5" fill="var(--hair-3)"/>
+<g class="amb-sway"><rect x="96" y="40" width="8" height="92" rx="4" fill="var(--ground-day-d)"/>
+<path d="M100 100 Q70 78 50 92 Q72 114 100 106 Z" fill="var(--ground-day-d)"/>
+<path d="M100 82 Q130 60 152 74 Q130 96 100 88 Z" fill="var(--ground-day-d)"/>
+<path d="M100 103 Q78 92 60 94" fill="none" stroke="var(--ground-day)" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M100 85 Q122 74 142 76" fill="none" stroke="var(--ground-day)" stroke-width="2.5" stroke-linecap="round"/>
+<g fill="var(--c-primary)"><circle cx="100" cy="22" r="10"/><circle cx="114" cy="32" r="10"/><circle cx="108" cy="47" r="10"/><circle cx="92" cy="47" r="10"/><circle cx="86" cy="32" r="10"/></g>
+<circle cx="100" cy="35" r="8" fill="var(--c-accent)"/></g>
+</svg>

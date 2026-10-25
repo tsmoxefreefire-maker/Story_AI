@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Apple" data-label-ar="تفاحة" data-tags="food fruit" data-bbox="64 118 136 196" data-scale="0.6">
+<path d="M100 132 C78 118 58 134 62 160 C66 186 84 198 100 190 C116 198 134 186 138 160 C142 134 122 118 100 132 Z" fill="var(--c-primary)"/>
+<path d="M104 133 C122 124 140 138 137 162 C134 184 118 196 104 190 C120 178 126 150 104 133 Z" fill="var(--c-primary-d)"/>
+<rect x="97" y="114" width="6" height="20" rx="3" fill="var(--hair-2)"/>
+<path d="M104 122 Q118 110 128 118 Q118 130 104 122 Z" fill="var(--ground-day-d)"/>
+</svg>

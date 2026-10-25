@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Balance scale" data-label-ar="ميزان" data-tags="tools math science" data-bbox="10 40 190 196" data-scale="1.0">
+<rect x="60" y="182" width="80" height="14" rx="6" fill="var(--c-neutral-2-d)"/><rect x="95" y="60" width="10" height="126" fill="var(--c-neutral-2)"/>
+<rect x="24" y="56" width="152" height="10" rx="5" fill="var(--c-neutral-2-d)"/><circle cx="100" cy="56" r="10" fill="var(--c-accent)"/>
+<path d="M32 66 L18 120 M32 66 L46 120 M168 66 L154 120 M168 66 L182 120" stroke="var(--c-neutral-2)" stroke-width="3"/>
+<path d="M10 120 L54 120 Q50 140 32 140 Q14 140 10 120 Z" fill="var(--c-accent)"/><path d="M146 120 L190 120 Q186 140 168 140 Q150 140 146 120 Z" fill="var(--c-accent)"/>
+</svg>

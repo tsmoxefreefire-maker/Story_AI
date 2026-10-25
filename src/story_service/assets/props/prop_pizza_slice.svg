@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Pizza slice" data-label-ar="قطعة بيتزا" data-tags="food pizza part" data-bbox="58 112 142 196" data-scale="0.7">
+<path d="M100 196 L58 124 Q100 104 142 124 Z" fill="var(--c-accent)"/>
+<path d="M58 124 Q100 104 142 124 L138 116 Q100 98 62 116 Z" fill="var(--hair-4)"/>
+<path d="M100 196 L120 118 Q132 120 142 124 Z" fill="var(--c-accent-d)"/>
+<ellipse cx="96" cy="140" rx="8" ry="5" fill="var(--c-primary-d)"/><ellipse cx="104" cy="168" rx="6" ry="4" fill="var(--c-primary-d)"/>
+</svg>

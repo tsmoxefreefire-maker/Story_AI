@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400">
+  <!-- Shoes (catalog enum), drawn for the left leg; the builder moves a copy 32 units right for the right leg.
+       data-color is the token the shoe uses (the cast gives the style only). -->
+  <g data-variant="sneakers" data-color="paper">
+    <path d="M73 377 Q73 370 82 370 L90 370 Q100 371 101 380 L101 387 Q101 391 96 391 L76 391 Q72 391 72 387 Z" fill="var(--shoe)"/>
+    <rect x="72" y="386" width="30" height="5" rx="2.5" fill="var(--c-neutral-2)"/>
+  </g>
+  <g data-variant="school_shoes" data-color="ink">
+    <path d="M73 378 Q74 371 84 371 L92 372 Q102 374 102 382 L102 387 Q102 391 97 391 L76 391 Q72 391 72 387 Z" fill="var(--shoe)"/>
+    <rect x="72" y="387" width="30" height="4" rx="2" fill="var(--shoe-d)"/>
+  </g>
+  <g data-variant="sandals" data-color="c-neutral-2">
+    <ellipse cx="87" cy="383" rx="13" ry="5" fill="var(--skin)"/>
+    <rect x="72" y="386" width="30" height="5" rx="2.5" fill="var(--shoe-d)"/>
+    <rect x="79" y="376" width="17" height="5" rx="2.5" fill="var(--shoe)"/>
+  </g>
+</svg>

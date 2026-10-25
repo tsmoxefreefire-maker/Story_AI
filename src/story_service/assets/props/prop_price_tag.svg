@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Price tag" data-label-ar="بطاقة السعر" data-tags="shop money" data-bbox="30 40 176 176" data-scale="0.5">
+<path d="M104 44 Q86 30 70 44" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+<path d="M66 60 L124 52 L172 116 L112 172 L50 130 Z" fill="var(--c-accent)"/>
+<path d="M124 52 L172 116 L112 172 L128 116 Z" fill="var(--c-accent-d)"/>
+<circle cx="84" cy="70" r="8" fill="var(--paper)"/>
+<path d="M82 106 L120 100 M88 126 L126 120" stroke="var(--c-accent-d)" stroke-width="7" stroke-linecap="round"/>
+</svg>

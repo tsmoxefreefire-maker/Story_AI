@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Rock" data-label-ar="صخرة" data-tags="nature outdoor" data-bbox="38 126 162 196" data-scale="0.7">
+<path d="M40 196 Q36 156 70 138 Q104 120 136 140 Q166 158 160 196 Z" fill="var(--c-neutral-2)"/>
+<path d="M112 128 Q136 132 150 150 Q166 170 160 196 L118 196 Q140 166 112 128 Z" fill="var(--c-neutral-2-d)"/>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Box (generic object)" data-label-ar="صندوق" data-tags="misc fallback" data-bbox="48 96 152 196" data-scale="0.8">
+<rect x="48" y="112" width="104" height="84" rx="8" fill="var(--c-neutral-2)"/>
+<rect x="120" y="112" width="32" height="84" rx="8" fill="var(--c-neutral-2-d)"/>
+<rect x="42" y="96" width="116" height="24" rx="8" fill="var(--c-neutral-1)"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Juice box" data-label-ar="علبة عصير" data-tags="drink" data-bbox="68 70 132 196" data-scale="0.7">
+<rect x="70" y="96" width="60" height="100" rx="6" fill="var(--c-accent)"/>
+<path d="M112 96 L130 96 L130 190 Q130 196 124 196 L112 196 Z" fill="var(--c-accent-d)"/>
+<circle cx="96" cy="146" r="18" fill="var(--c-primary)"/>
+<rect x="104" y="70" width="6" height="32" rx="3" fill="var(--c-support)"/>
+</svg>

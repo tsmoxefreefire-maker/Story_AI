@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Magnifying glass" data-label-ar="عدسة مكبرة" data-tags="tools science" data-bbox="40 56 160 196" data-scale="0.6">
+<rect x="116" y="124" width="22" height="72" rx="10" fill="var(--hair-3)" transform="rotate(-38 127 160)"/>
+<circle cx="88" cy="104" r="48" fill="var(--c-support)"/>
+<circle cx="88" cy="104" r="36" fill="var(--sky-day)"/>
+<path d="M66 92 Q72 76 88 72" fill="none" stroke="var(--paper)" stroke-width="7" stroke-linecap="round"/>
+</svg>

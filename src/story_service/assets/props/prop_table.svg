@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Table" data-label-ar="طاولة" data-tags="home school furniture" data-bbox="10 78 190 196" data-scale="1.3" data-surface="80">
+<rect x="10" y="78" width="180" height="18" rx="6" fill="var(--hair-3)"/>
+<rect x="10" y="90" width="180" height="8" fill="var(--hair-2)"/>
+<rect x="24" y="96" width="14" height="100" rx="5" fill="var(--hair-3)"/><rect x="162" y="96" width="14" height="100" rx="5" fill="var(--hair-2)"/>
+<rect x="44" y="96" width="112" height="10" fill="var(--hair-2)"/>
+</svg>

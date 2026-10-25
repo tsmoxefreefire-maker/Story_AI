@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Alarm clock" data-label-ar="منبه" data-tags="home bedroom time" data-bbox="44 28 156 196" data-scale="0.45">
+<path d="M70 176 L58 194 M130 176 L142 194" stroke="var(--c-primary-d)" stroke-width="9" stroke-linecap="round"/>
+<circle cx="64" cy="52" r="20" fill="var(--c-accent)"/><circle cx="136" cy="52" r="20" fill="var(--c-accent)"/>
+<rect x="94" y="32" width="12" height="20" rx="4" fill="var(--c-primary-d)"/>
+<circle cx="100" cy="118" r="56" fill="var(--c-primary)"/>
+<circle cx="100" cy="118" r="45" fill="var(--paper)"/>
+<g fill="var(--ink)"><rect x="98" y="78" width="4" height="9"/><rect x="98" y="149" width="4" height="9"/><rect x="60" y="116" width="9" height="4"/><rect x="131" y="116" width="9" height="4"/></g>
+<path d="M100 118 L80 130" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/>
+<path class="amb-hand" d="M100 118 L100 86" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+<circle cx="100" cy="118" r="5" fill="var(--c-primary-d)"/>
+</svg>

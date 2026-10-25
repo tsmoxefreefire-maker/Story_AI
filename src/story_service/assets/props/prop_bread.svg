@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Bread loaf" data-label-ar="خبز" data-tags="food" data-bbox="36 132 164 196" data-scale="0.8">
+<path d="M40 176 Q36 136 100 132 Q164 136 160 176 Q160 196 140 196 L60 196 Q40 196 40 176 Z" fill="var(--skin-3)"/>
+<path d="M120 134 Q162 142 160 176 Q160 196 140 196 L118 196 Q146 170 120 134 Z" fill="var(--skin-4)"/>
+<path d="M66 150 L78 168 M92 144 L104 162 M118 146 L130 164" stroke="var(--skin-1)" stroke-width="5" stroke-linecap="round"/>
+</svg>

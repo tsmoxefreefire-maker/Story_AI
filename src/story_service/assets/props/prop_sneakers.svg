@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Sneakers" data-label-ar="حذاء رياضي" data-tags="shop clothes sport" data-bbox="16 104 186 182" data-scale="0.55">
+<path d="M24 160 L24 128 Q24 112 40 112 L72 112 Q86 136 120 140 L160 146 Q182 150 182 168 L182 172 L24 172 Z" fill="var(--c-primary)"/>
+<path d="M120 140 L160 146 Q182 150 182 168 L182 172 L118 172 Z" fill="var(--c-primary-d)"/>
+<rect x="18" y="166" width="168" height="14" rx="7" fill="var(--paper)"/>
+<rect x="18" y="174" width="168" height="6" rx="3" fill="var(--c-neutral-1)"/>
+<g stroke="var(--paper)" stroke-width="4" stroke-linecap="round"><path d="M76 122 L66 132"/><path d="M88 128 L78 138"/><path d="M100 132 L92 142"/></g>
+<path d="M30 136 L60 136" stroke="var(--c-primary-d)" stroke-width="6" stroke-linecap="round"/>
+</svg>

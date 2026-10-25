@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Pencil" data-label-ar="قلم رصاص" data-tags="school writing" data-bbox="26 168 174 196" data-scale="0.5">
+<rect x="50" y="170" width="104" height="22" rx="4" fill="var(--c-accent)"/>
+<rect x="50" y="181" width="104" height="11" fill="var(--c-accent-d)"/>
+<path d="M154 170 L178 181 L154 192 Z" fill="var(--skin-1)"/><path d="M170 177 L178 181 L170 185 Z" fill="var(--ink)"/>
+<rect x="30" y="170" width="22" height="22" rx="6" fill="var(--c-primary)"/><rect x="48" y="170" width="6" height="22" fill="var(--c-neutral-2)"/>
+</svg>

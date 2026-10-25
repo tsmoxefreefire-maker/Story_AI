@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Bed" data-label-ar="سرير" data-tags="home bedroom furniture" data-bbox="4 64 196 196" data-scale="1.8" data-surface="120">
+<rect x="4" y="64" width="18" height="132" rx="6" fill="var(--hair-3)"/><rect x="178" y="104" width="18" height="92" rx="6" fill="var(--hair-3)"/>
+<rect x="14" y="128" width="176" height="40" rx="8" fill="var(--hair-2)"/>
+<rect x="18" y="112" width="168" height="26" rx="10" fill="var(--paper)"/>
+<rect x="24" y="98" width="46" height="24" rx="10" fill="var(--paper-d)"/>
+<path d="M76 108 L184 108 Q188 108 188 116 L188 148 L76 148 Z" fill="var(--c-support)"/>
+<path d="M150 108 L184 108 Q188 108 188 116 L188 148 L150 148 Z" fill="var(--c-support-d)"/>
+</svg>

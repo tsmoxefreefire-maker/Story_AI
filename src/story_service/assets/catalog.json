@@ -1,0 +1,1842 @@
+{
+ "version": 1,
+ "conventions": {
+  "stage": [
+   1280,
+   720
+  ],
+  "ground_y": 640,
+  "safe_area": {
+   "x": [
+    40,
+    1240
+   ],
+   "y": [
+    40,
+    700
+   ]
+  },
+  "z": {
+   "background": 0,
+   "props": 10,
+   "actors": 20,
+   "widgets": 30
+  },
+  "anchors": {
+   "actor": "x = center, y = feet baseline",
+   "prop": "x, y = bottom-center of its bbox",
+   "widget": "x, y = center of its box"
+  },
+  "scale": "a prop's default_scale is its natural size next to an adult at scale 1.0; a surface value is the local y of its top (put things on it at y = prop.y - (bbox_bottom - surface) * scale)"
+ },
+ "character": {
+  "build": [
+   "child",
+   "teen",
+   "adult",
+   "elder"
+  ],
+  "presentation": [
+   "f",
+   "m"
+  ],
+  "skin_tone": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "hair_style": [
+   "short_crop",
+   "side_part",
+   "curly_short",
+   "afro_puff",
+   "long_straight",
+   "ponytail",
+   "bun",
+   "braids",
+   "bald",
+   "thin_elder"
+  ],
+  "hair_color": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "top_style": [
+   "tshirt",
+   "long_sleeve",
+   "hoodie",
+   "collared_shirt",
+   "dress_long",
+   "tunic",
+   "jacket",
+   "school_top"
+  ],
+  "bottom_style": [
+   "trousers",
+   "shorts",
+   "skirt_long",
+   "skirt_knee",
+   "none"
+  ],
+  "shoes": [
+   "sneakers",
+   "sandals",
+   "school_shoes"
+  ],
+  "accessories": [
+   "glasses_round",
+   "glasses_square",
+   "backpack",
+   "cap",
+   "scarf",
+   "watch",
+   "headband"
+  ],
+  "head_covering": [
+   "none",
+   "hijab",
+   "cap",
+   "kufi"
+  ],
+  "color_token": [
+   "c-primary",
+   "c-secondary",
+   "c-accent",
+   "c-support",
+   "c-neutral-1",
+   "c-neutral-2",
+   "ink",
+   "paper"
+  ]
+ },
+ "character_bbox": {
+  "child": [
+   52,
+   64,
+   148,
+   391
+  ],
+  "teen": [
+   55,
+   42,
+   145,
+   391
+  ],
+  "adult": [
+   53,
+   28,
+   147,
+   391
+  ],
+  "elder": [
+   55,
+   45,
+   145,
+   391
+  ]
+ },
+ "backgrounds": [
+  {
+   "id": "bg_bedroom",
+   "label": "Child's bedroom with a window and a shelf",
+   "kind": "indoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_classroom",
+   "label": "Classroom with a board, windows and posters",
+   "kind": "indoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_farm",
+   "label": "Farm with a barn, a fence and fields",
+   "kind": "outdoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_home_kitchen",
+   "label": "Home kitchen with counters and a window",
+   "kind": "indoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_home_living",
+   "label": "Living room at home",
+   "kind": "indoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_indoor_generic",
+   "label": "Plain room (indoors)",
+   "kind": "indoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_lab",
+   "label": "Science lab with a bench and glassware",
+   "kind": "indoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_library",
+   "label": "Library with tall bookshelves",
+   "kind": "indoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_market",
+   "label": "Open-air market with fruit stalls",
+   "kind": "outdoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_outdoor_generic",
+   "label": "Outdoors (open field)",
+   "kind": "outdoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_park",
+   "label": "Park with trees, a bench and a pond",
+   "kind": "outdoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_playground",
+   "label": "Playground with a slide and swings",
+   "kind": "outdoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_school_yard",
+   "label": "School yard in front of the school building",
+   "kind": "outdoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_shop",
+   "label": "Small shop with shelves of goods",
+   "kind": "indoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_sports_field",
+   "label": "Sports field with a goal and stands",
+   "kind": "outdoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  },
+  {
+   "id": "bg_street",
+   "label": "City street with buildings and a sidewalk",
+   "kind": "outdoor",
+   "ground_y": 640.0,
+   "supports": [
+    "day",
+    "evening",
+    "night"
+   ],
+   "slots": {
+    "slot_left": [
+     260.0,
+     640.0
+    ],
+    "slot_center": [
+     640.0,
+     640.0
+    ],
+    "slot_right": [
+     1020.0,
+     640.0
+    ]
+   }
+  }
+ ],
+ "props": [
+  {
+   "id": "prop_alarm_clock",
+   "label": "Alarm clock",
+   "label_ar": "منبه",
+   "tags": [
+    "home",
+    "bedroom",
+    "time"
+   ],
+   "bbox": [
+    44.0,
+    28.0,
+    156.0,
+    196.0
+   ],
+   "default_scale": 0.45
+  },
+  {
+   "id": "prop_apple",
+   "label": "Apple",
+   "label_ar": "تفاحة",
+   "tags": [
+    "food",
+    "fruit"
+   ],
+   "bbox": [
+    64.0,
+    118.0,
+    136.0,
+    196.0
+   ],
+   "default_scale": 0.6
+  },
+  {
+   "id": "prop_bag",
+   "label": "Shopping bag",
+   "label_ar": "كيس",
+   "tags": [
+    "shopping"
+   ],
+   "bbox": [
+    54.0,
+    72.0,
+    146.0,
+    196.0
+   ],
+   "default_scale": 0.7
+  },
+  {
+   "id": "prop_ball",
+   "label": "Ball",
+   "label_ar": "كرة",
+   "tags": [
+    "play",
+    "sport"
+   ],
+   "bbox": [
+    68.0,
+    132.0,
+    132.0,
+    196.0
+   ],
+   "default_scale": 0.45
+  },
+  {
+   "id": "prop_banknote",
+   "label": "Banknote",
+   "label_ar": "ورقة نقدية",
+   "tags": [
+    "money"
+   ],
+   "bbox": [
+    28.0,
+    140.0,
+    172.0,
+    196.0
+   ],
+   "default_scale": 0.6
+  },
+  {
+   "id": "prop_basket",
+   "label": "Basket",
+   "label_ar": "سلة",
+   "tags": [
+    "shopping",
+    "food"
+   ],
+   "bbox": [
+    38.0,
+    70.0,
+    162.0,
+    196.0
+   ],
+   "default_scale": 0.9
+  },
+  {
+   "id": "prop_bed",
+   "label": "Bed",
+   "label_ar": "سرير",
+   "tags": [
+    "home",
+    "bedroom",
+    "furniture"
+   ],
+   "bbox": [
+    4.0,
+    64.0,
+    196.0,
+    196.0
+   ],
+   "default_scale": 1.8,
+   "surface": 120.0
+  },
+  {
+   "id": "prop_bicycle",
+   "label": "Bicycle",
+   "label_ar": "دراجة",
+   "tags": [
+    "transport",
+    "play"
+   ],
+   "bbox": [
+    8.0,
+    92.0,
+    192.0,
+    196.0
+   ],
+   "default_scale": 1.1
+  },
+  {
+   "id": "prop_blackboard",
+   "label": "Blackboard on a stand",
+   "label_ar": "سبورة",
+   "tags": [
+    "school",
+    "classroom"
+   ],
+   "bbox": [
+    6.0,
+    26.0,
+    194.0,
+    196.0
+   ],
+   "default_scale": 1.8,
+   "shadow": false
+  },
+  {
+   "id": "prop_book",
+   "label": "Book",
+   "label_ar": "كتاب",
+   "tags": [
+    "school",
+    "reading"
+   ],
+   "bbox": [
+    38.0,
+    136.0,
+    162.0,
+    196.0
+   ],
+   "default_scale": 0.6
+  },
+  {
+   "id": "prop_box",
+   "label": "Cardboard box",
+   "label_ar": "صندوق",
+   "tags": [
+    "misc"
+   ],
+   "bbox": [
+    38.0,
+    96.0,
+    162.0,
+    196.0
+   ],
+   "default_scale": 0.9,
+   "surface": 100.0
+  },
+  {
+   "id": "prop_bread",
+   "label": "Bread loaf",
+   "label_ar": "خبز",
+   "tags": [
+    "food"
+   ],
+   "bbox": [
+    36.0,
+    132.0,
+    164.0,
+    196.0
+   ],
+   "default_scale": 0.8
+  },
+  {
+   "id": "prop_bus",
+   "label": "Bus",
+   "label_ar": "حافلة",
+   "tags": [
+    "transport",
+    "city"
+   ],
+   "bbox": [
+    0.0,
+    58.0,
+    200.0,
+    196.0
+   ],
+   "default_scale": 3.0
+  },
+  {
+   "id": "prop_cake",
+   "label": "Cake with a candle",
+   "label_ar": "كعكة",
+   "tags": [
+    "food",
+    "party"
+   ],
+   "bbox": [
+    44.0,
+    82.0,
+    156.0,
+    196.0
+   ],
+   "default_scale": 0.9
+  },
+  {
+   "id": "prop_calculator",
+   "label": "Calculator",
+   "label_ar": "آلة حاسبة",
+   "tags": [
+    "tools",
+    "math"
+   ],
+   "bbox": [
+    58.0,
+    66.0,
+    142.0,
+    196.0
+   ],
+   "default_scale": 0.55
+  },
+  {
+   "id": "prop_calendar",
+   "label": "Calendar",
+   "label_ar": "تقويم",
+   "tags": [
+    "time",
+    "school"
+   ],
+   "bbox": [
+    48.0,
+    58.0,
+    152.0,
+    196.0
+   ],
+   "default_scale": 0.7,
+   "shadow": false
+  },
+  {
+   "id": "prop_car",
+   "label": "Car",
+   "label_ar": "سيارة",
+   "tags": [
+    "transport",
+    "city"
+   ],
+   "bbox": [
+    8.0,
+    98.0,
+    192.0,
+    196.0
+   ],
+   "default_scale": 2.0
+  },
+  {
+   "id": "prop_cat",
+   "label": "Cat (sitting)",
+   "label_ar": "قطة",
+   "tags": [
+    "animal",
+    "street",
+    "park",
+    "home"
+   ],
+   "bbox": [
+    44.0,
+    36.0,
+    194.0,
+    196.0
+   ],
+   "default_scale": 0.35
+  },
+  {
+   "id": "prop_chair",
+   "label": "Chair",
+   "label_ar": "كرسي",
+   "tags": [
+    "home",
+    "school",
+    "furniture"
+   ],
+   "bbox": [
+    46.0,
+    34.0,
+    154.0,
+    196.0
+   ],
+   "default_scale": 1.1,
+   "surface": 118.0
+  },
+  {
+   "id": "prop_cloud",
+   "label": "Cloud",
+   "label_ar": "غيمة",
+   "tags": [
+    "sky",
+    "weather"
+   ],
+   "bbox": [
+    18.0,
+    118.0,
+    182.0,
+    196.0
+   ],
+   "default_scale": 1.0,
+   "shadow": false
+  },
+  {
+   "id": "prop_coin",
+   "label": "Coin",
+   "label_ar": "قطعة نقدية",
+   "tags": [
+    "money"
+   ],
+   "bbox": [
+    70.0,
+    136.0,
+    130.0,
+    196.0
+   ],
+   "default_scale": 0.35
+  },
+  {
+   "id": "prop_cup",
+   "label": "Cup (mug)",
+   "label_ar": "كوب",
+   "tags": [
+    "drink",
+    "kitchen"
+   ],
+   "bbox": [
+    60.0,
+    116.0,
+    140.0,
+    196.0
+   ],
+   "default_scale": 0.5
+  },
+  {
+   "id": "prop_door",
+   "label": "Door",
+   "label_ar": "باب",
+   "tags": [
+    "home",
+    "building"
+   ],
+   "bbox": [
+    36.0,
+    0.0,
+    164.0,
+    200.0
+   ],
+   "default_scale": 2.0,
+   "shadow": false
+  },
+  {
+   "id": "prop_flower",
+   "label": "Flower",
+   "label_ar": "زهرة",
+   "tags": [
+    "nature",
+    "garden"
+   ],
+   "bbox": [
+    68.0,
+    80.0,
+    132.0,
+    196.0
+   ],
+   "default_scale": 0.5
+  },
+  {
+   "id": "prop_generic_box",
+   "label": "Box (generic object)",
+   "label_ar": "صندوق",
+   "tags": [
+    "misc",
+    "fallback"
+   ],
+   "bbox": [
+    48.0,
+    96.0,
+    152.0,
+    196.0
+   ],
+   "default_scale": 0.8
+  },
+  {
+   "id": "prop_globe",
+   "label": "Globe",
+   "label_ar": "مجسم الأرض",
+   "tags": [
+    "school",
+    "geography"
+   ],
+   "bbox": [
+    52.0,
+    36.0,
+    148.0,
+    196.0
+   ],
+   "default_scale": 0.8
+  },
+  {
+   "id": "prop_hammer",
+   "label": "Hammer",
+   "label_ar": "مطرقة",
+   "tags": [
+    "tools"
+   ],
+   "bbox": [
+    48.0,
+    56.0,
+    152.0,
+    196.0
+   ],
+   "default_scale": 0.6
+  },
+  {
+   "id": "prop_hill",
+   "label": "Hill",
+   "label_ar": "تلة",
+   "tags": [
+    "nature",
+    "outdoor"
+   ],
+   "bbox": [
+    0.0,
+    96.0,
+    200.0,
+    196.0
+   ],
+   "default_scale": 2.0,
+   "shadow": false
+  },
+  {
+   "id": "prop_juice_box",
+   "label": "Juice box",
+   "label_ar": "علبة عصير",
+   "tags": [
+    "drink"
+   ],
+   "bbox": [
+    68.0,
+    70.0,
+    132.0,
+    196.0
+   ],
+   "default_scale": 0.7
+  },
+  {
+   "id": "prop_lamp",
+   "label": "Floor lamp",
+   "label_ar": "مصباح",
+   "tags": [
+    "home",
+    "light"
+   ],
+   "bbox": [
+    60.0,
+    8.0,
+    140.0,
+    196.0
+   ],
+   "default_scale": 1.5
+  },
+  {
+   "id": "prop_laptop",
+   "label": "Laptop",
+   "label_ar": "حاسوب محمول",
+   "tags": [
+    "tech"
+   ],
+   "bbox": [
+    28.0,
+    86.0,
+    172.0,
+    196.0
+   ],
+   "default_scale": 0.8
+  },
+  {
+   "id": "prop_magnifier",
+   "label": "Magnifying glass",
+   "label_ar": "عدسة مكبرة",
+   "tags": [
+    "tools",
+    "science"
+   ],
+   "bbox": [
+    40.0,
+    56.0,
+    160.0,
+    196.0
+   ],
+   "default_scale": 0.6
+  },
+  {
+   "id": "prop_map",
+   "label": "Map",
+   "label_ar": "خريطة",
+   "tags": [
+    "travel",
+    "geography"
+   ],
+   "bbox": [
+    28.0,
+    86.0,
+    172.0,
+    196.0
+   ],
+   "default_scale": 0.8,
+   "shadow": false
+  },
+  {
+   "id": "prop_notebook",
+   "label": "Notebook",
+   "label_ar": "دفتر",
+   "tags": [
+    "school",
+    "writing"
+   ],
+   "bbox": [
+    52.0,
+    70.0,
+    148.0,
+    196.0
+   ],
+   "default_scale": 0.6
+  },
+  {
+   "id": "prop_pencil",
+   "label": "Pencil",
+   "label_ar": "قلم رصاص",
+   "tags": [
+    "school",
+    "writing"
+   ],
+   "bbox": [
+    26.0,
+    168.0,
+    174.0,
+    196.0
+   ],
+   "default_scale": 0.5
+  },
+  {
+   "id": "prop_phone",
+   "label": "Mobile phone",
+   "label_ar": "هاتف",
+   "tags": [
+    "tech"
+   ],
+   "bbox": [
+    72.0,
+    86.0,
+    128.0,
+    196.0
+   ],
+   "default_scale": 0.4
+  },
+  {
+   "id": "prop_pizza",
+   "label": "Pizza (whole, cut in parts)",
+   "label_ar": "بيتزا",
+   "tags": [
+    "food",
+    "pizza"
+   ],
+   "bbox": [
+    48.0,
+    142.0,
+    152.0,
+    196.0
+   ],
+   "default_scale": 1.0
+  },
+  {
+   "id": "prop_pizza_slice",
+   "label": "Pizza slice",
+   "label_ar": "قطعة بيتزا",
+   "tags": [
+    "food",
+    "pizza",
+    "part"
+   ],
+   "bbox": [
+    58.0,
+    112.0,
+    142.0,
+    196.0
+   ],
+   "default_scale": 0.7
+  },
+  {
+   "id": "prop_plant_pot",
+   "label": "Potted plant",
+   "label_ar": "نبتة في أصيص",
+   "tags": [
+    "home",
+    "nature"
+   ],
+   "bbox": [
+    56.0,
+    40.0,
+    144.0,
+    196.0
+   ],
+   "default_scale": 0.8
+  },
+  {
+   "id": "prop_plant_roots",
+   "label": "Seedling with its roots",
+   "label_ar": "نبتة بجذورها",
+   "tags": [
+    "nature",
+    "garden",
+    "science"
+   ],
+   "bbox": [
+    40.0,
+    14.0,
+    160.0,
+    196.0
+   ],
+   "default_scale": 0.9
+  },
+  {
+   "id": "prop_plate",
+   "label": "Plate",
+   "label_ar": "صحن",
+   "tags": [
+    "food",
+    "kitchen"
+   ],
+   "bbox": [
+    36.0,
+    168.0,
+    164.0,
+    196.0
+   ],
+   "default_scale": 0.8
+  },
+  {
+   "id": "prop_price_tag",
+   "label": "Price tag",
+   "label_ar": "بطاقة السعر",
+   "tags": [
+    "shop",
+    "money"
+   ],
+   "bbox": [
+    30.0,
+    40.0,
+    176.0,
+    176.0
+   ],
+   "default_scale": 0.5
+  },
+  {
+   "id": "prop_rock",
+   "label": "Rock",
+   "label_ar": "صخرة",
+   "tags": [
+    "nature",
+    "outdoor"
+   ],
+   "bbox": [
+    38.0,
+    126.0,
+    162.0,
+    196.0
+   ],
+   "default_scale": 0.7
+  },
+  {
+   "id": "prop_ruler",
+   "label": "Ruler",
+   "label_ar": "مسطرة",
+   "tags": [
+    "school",
+    "measuring"
+   ],
+   "bbox": [
+    18.0,
+    164.0,
+    182.0,
+    196.0
+   ],
+   "default_scale": 0.7
+  },
+  {
+   "id": "prop_scale_balance",
+   "label": "Balance scale",
+   "label_ar": "ميزان",
+   "tags": [
+    "tools",
+    "math",
+    "science"
+   ],
+   "bbox": [
+    10.0,
+    40.0,
+    190.0,
+    196.0
+   ],
+   "default_scale": 1.0
+  },
+  {
+   "id": "prop_schoolbag",
+   "label": "School bag (backpack)",
+   "label_ar": "حقيبة مدرسية",
+   "tags": [
+    "school"
+   ],
+   "bbox": [
+    48.0,
+    56.0,
+    152.0,
+    196.0
+   ],
+   "default_scale": 0.8
+  },
+  {
+   "id": "prop_scissors",
+   "label": "Scissors",
+   "label_ar": "مقص",
+   "tags": [
+    "school",
+    "tools"
+   ],
+   "bbox": [
+    38.0,
+    110.0,
+    162.0,
+    196.0
+   ],
+   "default_scale": 0.5
+  },
+  {
+   "id": "prop_signpost",
+   "label": "Signpost",
+   "label_ar": "لافتة",
+   "tags": [
+    "outdoor",
+    "street"
+   ],
+   "bbox": [
+    40.0,
+    8.0,
+    160.0,
+    196.0
+   ],
+   "default_scale": 1.6
+  },
+  {
+   "id": "prop_sneakers",
+   "label": "Sneakers",
+   "label_ar": "حذاء رياضي",
+   "tags": [
+    "shop",
+    "clothes",
+    "sport"
+   ],
+   "bbox": [
+    16.0,
+    104.0,
+    186.0,
+    182.0
+   ],
+   "default_scale": 0.55
+  },
+  {
+   "id": "prop_sofa",
+   "label": "Sofa",
+   "label_ar": "كنبة",
+   "tags": [
+    "home",
+    "living",
+    "furniture"
+   ],
+   "bbox": [
+    10.0,
+    78.0,
+    190.0,
+    196.0
+   ],
+   "default_scale": 1.6,
+   "surface": 140.0
+  },
+  {
+   "id": "prop_sun",
+   "label": "Sun",
+   "label_ar": "الشمس",
+   "tags": [
+    "sky",
+    "weather"
+   ],
+   "bbox": [
+    30.0,
+    56.0,
+    170.0,
+    196.0
+   ],
+   "default_scale": 1.0,
+   "shadow": false
+  },
+  {
+   "id": "prop_table",
+   "label": "Table",
+   "label_ar": "طاولة",
+   "tags": [
+    "home",
+    "school",
+    "furniture"
+   ],
+   "bbox": [
+    10.0,
+    78.0,
+    190.0,
+    196.0
+   ],
+   "default_scale": 1.3,
+   "surface": 80.0
+  },
+  {
+   "id": "prop_ticket",
+   "label": "Ticket",
+   "label_ar": "تذكرة",
+   "tags": [
+    "misc",
+    "travel"
+   ],
+   "bbox": [
+    36.0,
+    138.0,
+    164.0,
+    196.0
+   ],
+   "default_scale": 0.5
+  },
+  {
+   "id": "prop_tree",
+   "label": "Tree",
+   "label_ar": "شجرة",
+   "tags": [
+    "nature",
+    "outdoor",
+    "park"
+   ],
+   "bbox": [
+    18.0,
+    0.0,
+    182.0,
+    200.0
+   ],
+   "default_scale": 2.2
+  },
+  {
+   "id": "prop_trophy",
+   "label": "Trophy",
+   "label_ar": "كأس",
+   "tags": [
+    "sport",
+    "prize"
+   ],
+   "bbox": [
+    56.0,
+    58.0,
+    144.0,
+    196.0
+   ],
+   "default_scale": 0.7
+  },
+  {
+   "id": "prop_tv",
+   "label": "Television",
+   "label_ar": "تلفاز",
+   "tags": [
+    "home",
+    "screen"
+   ],
+   "bbox": [
+    28.0,
+    56.0,
+    172.0,
+    196.0
+   ],
+   "default_scale": 1.0
+  },
+  {
+   "id": "prop_wall_clock",
+   "label": "Wall clock",
+   "label_ar": "ساعة حائط",
+   "tags": [
+    "home",
+    "school",
+    "time"
+   ],
+   "bbox": [
+    50.0,
+    96.0,
+    150.0,
+    196.0
+   ],
+   "default_scale": 0.7,
+   "shadow": false
+  },
+  {
+   "id": "prop_water_bottle",
+   "label": "Water bottle",
+   "label_ar": "زجاجة ماء",
+   "tags": [
+    "drink"
+   ],
+   "bbox": [
+    74.0,
+    56.0,
+    126.0,
+    196.0
+   ],
+   "default_scale": 0.7
+  },
+  {
+   "id": "prop_watering_can",
+   "label": "Watering can",
+   "label_ar": "مرشة ماء",
+   "tags": [
+    "garden",
+    "nature",
+    "home"
+   ],
+   "bbox": [
+    44.0,
+    52.0,
+    192.0,
+    196.0
+   ],
+   "default_scale": 0.6
+  },
+  {
+   "id": "prop_window",
+   "label": "Window",
+   "label_ar": "نافذة",
+   "tags": [
+    "home",
+    "building"
+   ],
+   "bbox": [
+    20.0,
+    36.0,
+    180.0,
+    196.0
+   ],
+   "default_scale": 1.0,
+   "shadow": false
+  }
+ ],
+ "widgets": [
+  {
+   "id": "widget_pie_fraction",
+   "label": "A circle cut in equal parts, some filled",
+   "params": {
+    "parts": {
+     "type": "integer",
+     "minimum": 2,
+     "maximum": 12
+    },
+    "filled": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 12
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_bar_fraction",
+   "label": "A bar cut in equal parts, some filled",
+   "params": {
+    "parts": {
+     "type": "integer",
+     "minimum": 2,
+     "maximum": 12
+    },
+    "filled": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 12
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_number_line",
+   "label": "Number line with marks",
+   "params": {
+    "min": {
+     "type": "number"
+    },
+    "max": {
+     "type": "number"
+    },
+    "step": {
+     "type": "number"
+    },
+    "marks": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     }
+    },
+    "highlight": {
+     "type": "number"
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_bar_chart",
+   "label": "Bar chart (up to 6 bars)",
+   "params": {
+    "labels": {
+     "type": "array",
+     "maxItems": 6,
+     "items": {
+      "type": "string"
+     }
+    },
+    "values": {
+     "type": "array",
+     "maxItems": 6,
+     "items": {
+      "type": "number"
+     }
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_balance_scale",
+   "label": "Balance scale with weights on each side",
+   "params": {
+    "left_count": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 12
+    },
+    "right_count": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 12
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_grid_array",
+   "label": "Grid of dots in rows and columns",
+   "params": {
+    "rows": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 10
+    },
+    "cols": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 10
+    },
+    "highlight_rows": {
+     "type": "array",
+     "items": {
+      "type": "integer"
+     }
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_clock_face",
+   "label": "Clock showing a time",
+   "params": {
+    "hour": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 23
+    },
+    "minute": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 59
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_ruler",
+   "label": "Ruler in centimeters",
+   "params": {
+    "length_cm": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 30
+    },
+    "mark_cm": {
+     "type": "number"
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_coin_stack",
+   "label": "Stack of coins",
+   "params": {
+    "count": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 20
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_thermometer",
+   "label": "Thermometer",
+   "params": {
+    "value": {
+     "type": "number"
+    },
+    "min": {
+     "type": "number"
+    },
+    "max": {
+     "type": "number"
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_shape_set",
+   "label": "Set of geometric shapes",
+   "params": {
+    "shapes": {
+     "type": "array",
+     "maxItems": 6,
+     "items": {
+      "enum": [
+       "triangle",
+       "square",
+       "circle",
+       "rectangle",
+       "pentagon",
+       "hexagon"
+      ]
+     }
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_timeline_axis",
+   "label": "Timeline with up to 5 events",
+   "params": {
+    "events": {
+     "type": "array",
+     "maxItems": 5,
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  },
+  {
+   "id": "widget_label_card",
+   "label": "Card with a short label (up to 4 words)",
+   "params": {
+    "text": {
+     "type": "string"
+    }
+   },
+   "bbox": [
+    0,
+    0,
+    400,
+    300
+   ]
+  }
+ ],
+ "poses": [
+  "idle",
+  "talk",
+  "wave",
+  "point_right",
+  "point_left",
+  "walk",
+  "think",
+  "celebrate",
+  "shrug",
+  "surprised"
+ ],
+ "expressions": [
+  "neutral",
+  "happy",
+  "surprised",
+  "worried",
+  "thinking",
+  "laughing"
+ ],
+ "mouths": [
+  "closed",
+  "open_s",
+  "open_m",
+  "open_l",
+  "smile"
+ ]
+}

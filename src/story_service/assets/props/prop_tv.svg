@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Television" data-label-ar="تلفاز" data-tags="home screen" data-bbox="28 56 172 196" data-scale="1.0">
+<rect x="28" y="56" width="144" height="100" rx="10" fill="var(--c-neutral-2-d)"/>
+<rect x="38" y="66" width="124" height="80" rx="5" fill="var(--ink)"/>
+<path d="M46 74 L90 74 L66 138 L46 138 Z" fill="var(--c-neutral-2)" opacity="0.25"/>
+<rect x="94" y="156" width="12" height="26" fill="var(--c-neutral-2)"/><rect x="66" y="180" width="68" height="16" rx="6" fill="var(--c-neutral-2-d)"/>
+</svg>

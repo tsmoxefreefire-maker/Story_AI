@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Water bottle" data-label-ar="زجاجة ماء" data-tags="drink" data-bbox="74 56 126 196" data-scale="0.7">
+<rect x="76" y="80" width="48" height="116" rx="16" fill="var(--c-secondary)"/>
+<rect x="106" y="84" width="18" height="108" rx="9" fill="var(--c-secondary-d)"/>
+<rect x="86" y="58" width="28" height="26" rx="6" fill="var(--c-support)"/>
+<rect x="76" y="122" width="48" height="34" fill="var(--paper)"/>
+</svg>

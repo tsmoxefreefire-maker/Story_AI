@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Car" data-label-ar="سيارة" data-tags="transport city" data-bbox="8 98 192 196" data-scale="2.0">
+<path d="M54 120 Q62 98 92 98 L120 98 Q146 98 156 124 Z" fill="var(--c-primary-d)"/>
+<path d="M70 120 Q76 108 94 108 L116 108 Q132 108 140 120 Z" fill="var(--sky)"/>
+<rect x="8" y="118" width="184" height="52" rx="18" fill="var(--c-primary)"/>
+<rect x="8" y="150" width="184" height="20" rx="10" fill="var(--c-primary-d)"/>
+<circle cx="52" cy="172" r="22" fill="var(--ink)"/><circle cx="52" cy="172" r="9" fill="var(--c-neutral-2)"/>
+<circle cx="148" cy="172" r="22" fill="var(--ink)"/><circle cx="148" cy="172" r="9" fill="var(--c-neutral-2)"/>
+<rect x="176" y="128" width="14" height="10" rx="4" fill="var(--c-accent)"/>
+</svg>

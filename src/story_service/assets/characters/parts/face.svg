@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400">
+  <!-- Faces are simple: two eyes, brows, a mouth (Section 6.1). Every variant carries the expressions it serves as
+       classes (ex-<name>); the player shows the ones matching data-expr. Mouth shapes for lip-sync are mo-<name>.
+       Features sit 3 units to the right: the character looks the way it faces. -->
+  <g data-slot="cheeks">
+    <ellipse cx="84.5" cy="93" rx="5.6" ry="3.4" fill="var(--c-primary)" fill-opacity="0.26"/>
+    <ellipse cx="121.5" cy="93" rx="5.6" ry="3.4" fill="var(--c-primary)" fill-opacity="0.26"/>
+  </g>
+  <g data-slot="eyes">
+    <g class="ex ex-neutral ex-worried">
+      <ellipse cx="89" cy="82" rx="3.6" ry="4.8" fill="var(--ink)"/>
+      <ellipse cx="115" cy="82" rx="3.6" ry="4.8" fill="var(--ink)"/>
+      <circle cx="90.3" cy="80.2" r="1.2" fill="var(--paper)"/>
+      <circle cx="116.3" cy="80.2" r="1.2" fill="var(--paper)"/>
+    </g>
+    <g class="ex ex-happy ex-laughing">
+      <path d="M84.5 83.5 Q89 78 93.5 83.5" fill="none" stroke="var(--ink)" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M110.5 83.5 Q115 78 119.5 83.5" fill="none" stroke="var(--ink)" stroke-width="2.8" stroke-linecap="round"/>
+    </g>
+    <g class="ex ex-surprised">
+      <ellipse cx="89" cy="82" rx="4.4" ry="6" fill="var(--ink)"/>
+      <ellipse cx="115" cy="82" rx="4.4" ry="6" fill="var(--ink)"/>
+    </g>
+    <g class="ex ex-thinking">
+      <ellipse cx="91" cy="79.5" rx="3.6" ry="4.6" fill="var(--ink)"/>
+      <ellipse cx="117" cy="79.5" rx="3.6" ry="4.6" fill="var(--ink)"/>
+    </g>
+  </g>
+  <g data-slot="brows">
+    <g class="ex ex-neutral">
+      <path d="M84 71 Q89 69 94 71 M110 71 Q115 69 120 71" fill="none" stroke="var(--hair-d)" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <g class="ex ex-happy ex-laughing">
+      <path d="M84 69.5 Q89 66 94 69.5 M110 69.5 Q115 66 120 69.5" fill="none" stroke="var(--hair-d)" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <g class="ex ex-surprised">
+      <path d="M84 66.5 Q89 61.5 94 66.5 M110 66.5 Q115 61.5 120 66.5" fill="none" stroke="var(--hair-d)" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <g class="ex ex-worried">
+      <path d="M84 71.5 Q89 70 94 67 M110 67 Q115 70 120 71.5" fill="none" stroke="var(--hair-d)" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <g class="ex ex-thinking">
+      <path d="M84 71 Q89 69.5 94 71 M110 67 Q115 63.5 120 66" fill="none" stroke="var(--hair-d)" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g data-slot="mouth">
+    <path class="ex ex-neutral" d="M97 98.5 Q104 101.5 111 98.5" fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"/>
+    <path class="ex ex-happy" d="M95 96.5 Q104 105 113 96.5" fill="none" stroke="var(--ink)" stroke-width="2.8" stroke-linecap="round"/>
+    <ellipse class="ex ex-surprised" cx="104" cy="100" rx="4" ry="5" fill="var(--ink)"/>
+    <path class="ex ex-worried" d="M97 101 Q100.5 98 104 100 Q107.5 102 111 99" fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"/>
+    <path class="ex ex-thinking" d="M100 100.5 L110 98.5" fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"/>
+    <g class="ex ex-laughing">
+      <path d="M94 95.5 Q104 97 114 95.5 Q112 107 104 107 Q96 107 94 95.5 Z" fill="var(--ink)"/>
+      <ellipse cx="104" cy="104" rx="4.5" ry="2.4" fill="var(--c-primary)"/>
+    </g>
+    <path class="mo mo-closed" d="M98 99.5 L110 99.5" fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"/>
+    <ellipse class="mo mo-open_s" cx="104" cy="100" rx="3.4" ry="2.2" fill="var(--ink)"/>
+    <ellipse class="mo mo-open_m" cx="104" cy="100.5" rx="4.6" ry="3.6" fill="var(--ink)"/>
+    <ellipse class="mo mo-open_l" cx="104" cy="101" rx="5.6" ry="5.2" fill="var(--ink)"/>
+    <path class="mo mo-smile" d="M95 96.5 Q104 106 113 96.5 Q104 101 95 96.5 Z" fill="var(--ink)"/>
+  </g>
+</svg>

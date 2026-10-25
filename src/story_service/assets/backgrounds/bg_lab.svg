@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="Science lab with a bench and glassware" data-kind="indoor" data-ground-y="640" data-supports="day evening night" data-slots="260,640 640,640 1020,640">
+  <g class="layer-far">
+    <rect x="0" y="0" width="1280" height="600" fill="var(--paper)"/>
+    <rect x="0" y="0" width="1280" height="600" fill="var(--c-secondary)" opacity="0.1"/>
+    <g fill="var(--c-neutral-1)" opacity="0.6"><rect x="0" y="120" width="1280" height="3"/><rect x="0" y="240" width="1280" height="3"/><rect x="0" y="360" width="1280" height="3"/>
+      <rect x="200" y="0" width="3" height="480"/><rect x="420" y="0" width="3" height="480"/><rect x="640" y="0" width="3" height="480"/><rect x="860" y="0" width="3" height="480"/><rect x="1080" y="0" width="3" height="480"/></g>
+    <rect x="80" y="110" width="220" height="200" rx="10" fill="var(--paper)"/>
+    <rect x="94" y="124" width="192" height="172" rx="6" fill="var(--sky)"/>
+    <rect x="186" y="124" width="8" height="172" fill="var(--paper)"/>
+  </g>
+  <g class="layer-mid">
+    <rect x="720" y="150" width="440" height="14" rx="6" fill="var(--c-neutral-2)"/>
+    <rect x="720" y="280" width="440" height="14" rx="6" fill="var(--c-neutral-2)"/>
+    <path d="M760 100 L780 100 L780 120 L798 150 L742 150 L760 120 Z" fill="var(--c-secondary)"/>
+    <rect x="830" y="96" width="26" height="54" rx="6" fill="var(--c-support)"/>
+    <circle cx="920" cy="126" r="24" fill="var(--c-accent)"/><rect x="912" y="94" width="16" height="20" fill="var(--c-accent)"/>
+    <rect x="980" y="106" width="60" height="44" rx="6" fill="var(--c-primary)"/>
+    <path d="M1080 110 L1100 110 L1100 126 L1116 150 L1064 150 L1080 126 Z" fill="var(--c-support)"/>
+    <g fill="var(--c-neutral-1-d)"><rect x="760" y="226" width="40" height="54" rx="6"/><rect x="820" y="236" width="40" height="44" rx="6"/></g>
+    <rect x="890" y="240" width="200" height="40" rx="6" fill="var(--c-secondary-d)"/>
+    <rect x="0" y="470" width="1280" height="20" rx="4" fill="var(--c-neutral-2-d)"/>
+    <rect x="0" y="490" width="1280" height="110" fill="var(--c-neutral-2)"/>
+    <g fill="var(--c-neutral-2-d)"><rect x="300" y="500" width="4" height="100"/><rect x="640" y="500" width="4" height="100"/><rect x="980" y="500" width="4" height="100"/></g>
+    <circle cx="640" cy="40" r="120" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
+    <rect x="560" y="0" width="160" height="18" rx="8" fill="var(--c-neutral-1)"/>
+  </g>
+  <g class="layer-near">
+    <rect x="0" y="600" width="1280" height="120" fill="var(--c-neutral-1)"/>
+    <g fill="var(--c-neutral-1-d)"><rect x="0" y="600" width="160" height="60"/><rect x="320" y="600" width="160" height="60"/><rect x="640" y="600" width="160" height="60"/><rect x="960" y="600" width="160" height="60"/>
+      <rect x="160" y="660" width="160" height="60"/><rect x="480" y="660" width="160" height="60"/><rect x="800" y="660" width="160" height="60"/><rect x="1120" y="660" width="160" height="60"/></g>
+  </g>
+</svg>

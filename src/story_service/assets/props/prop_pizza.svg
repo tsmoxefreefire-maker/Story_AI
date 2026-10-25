@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Pizza (whole, cut in parts)" data-label-ar="بيتزا" data-tags="food pizza" data-bbox="48 142 152 196" data-scale="1.0">
+<ellipse cx="100" cy="170" rx="52" ry="26" fill="var(--hair-4)"/>
+<ellipse cx="100" cy="168" rx="44" ry="20" fill="var(--c-accent)"/>
+<ellipse cx="80" cy="162" rx="7" ry="4" fill="var(--c-primary-d)"/><ellipse cx="114" cy="158" rx="7" ry="4" fill="var(--c-primary-d)"/>
+<ellipse cx="92" cy="178" rx="7" ry="4" fill="var(--c-primary-d)"/><ellipse cx="124" cy="174" rx="7" ry="4" fill="var(--c-primary-d)"/>
+<path d="M56 168 L144 168 M100 148 L100 188" stroke="var(--hair-4)" stroke-width="3"/>
+<path d="M48 172 Q52 196 100 196 Q148 196 152 172 Q146 192 100 194 Q54 192 48 172 Z" fill="var(--hair-3)"/>
+</svg>

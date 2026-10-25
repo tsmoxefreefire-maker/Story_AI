@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="Outdoors (open field)" data-kind="outdoor" data-ground-y="640" data-supports="day evening night" data-slots="260,640 640,640 1020,640">
+  <defs><linearGradient id="og-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky-d)" stop-opacity="0.75"/><stop offset="0.8" stop-color="var(--sky-d)" stop-opacity="0"/></linearGradient></defs>
+  <g class="layer-far">
+    <rect x="0" y="0" width="1280" height="720" fill="var(--sky)"/>
+    <rect x="0" y="0" width="1280" height="720" fill="url(#og-sky)"/>
+    <circle class="sun amb-glow" cx="1060" cy="130" r="76" fill="var(--c-accent)" opacity="0.3"/><circle class="sun" cx="1060" cy="130" r="54" fill="var(--c-accent)"/>
+    <g class="night-only">
+      <circle cx="1060" cy="120" r="38" fill="var(--paper)"/>
+      <circle cx="1075" cy="110" r="34" fill="var(--sky)"/>
+      <circle class="amb-twinkle" cx="180" cy="90" r="3" fill="var(--paper)"/><circle class="amb-twinkle d2" cx="330" cy="150" r="2.5" fill="var(--paper)"/>
+      <circle class="amb-twinkle" cx="520" cy="70" r="3" fill="var(--paper)"/><circle class="amb-twinkle d2" cx="760" cy="130" r="2.5" fill="var(--paper)"/>
+      <circle class="amb-twinkle" cx="900" cy="60" r="2" fill="var(--paper)"/><circle class="amb-twinkle d2" cx="1200" cy="200" r="2.5" fill="var(--paper)"/>
+    </g>
+    <g class="day-only amb-drift" fill="var(--paper)" opacity="0.9">
+      <ellipse cx="250" cy="140" rx="70" ry="26"/><ellipse cx="300" cy="120" rx="48" ry="30"/><ellipse cx="205" cy="128" rx="36" ry="22"/>
+      <ellipse cx="700" cy="90" rx="58" ry="20"/><ellipse cx="740" cy="74" rx="38" ry="24"/>
+    </g>
+  </g>
+  <g class="day-only amb-fly"><g transform="translate(-170 170)" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.45"><path class="amb-flap" d="M0 0 Q8 -8 16 0 Q24 -8 32 0"/><path class="amb-flap" d="M44 22 Q50 16 56 22 Q62 16 68 22"/><path class="amb-flap" d="M-34 30 Q-28 24 -22 30 Q-16 24 -10 30"/></g></g>
+  <g class="layer-mid">
+    <path d="M0 560 Q210 468 430 536 Q650 602 870 520 Q1080 446 1280 528 L1280 640 L0 640 Z" fill="var(--ground-d)"/>
+    <rect x="173" y="470" width="14" height="90" rx="7" fill="var(--c-neutral-2)"/>
+    <circle cx="180" cy="452" r="44" fill="var(--ground-d)"/><circle cx="160" cy="470" r="30" fill="var(--ground-d)"/>
+    <rect x="1093" y="456" width="14" height="96" rx="7" fill="var(--c-neutral-2)"/>
+    <circle cx="1100" cy="438" r="46" fill="var(--ground-d)"/><circle cx="1124" cy="460" r="30" fill="var(--ground-d)"/>
+  </g>
+  <g class="layer-near">
+    <rect x="0" y="600" width="1280" height="120" fill="var(--ground)"/>
+    <path d="M0 600 Q320 588 640 600 Q960 612 1280 600 L1280 616 L0 616 Z" fill="var(--ground-d)" opacity="0.35"/>
+    <ellipse cx="80" cy="672" rx="70" ry="26" fill="var(--ground-d)"/>
+    <ellipse cx="1210" cy="680" rx="80" ry="28" fill="var(--ground-d)"/>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Ruler" data-label-ar="مسطرة" data-tags="school measuring" data-bbox="18 164 182 196" data-scale="0.7">
+<rect x="18" y="164" width="164" height="32" rx="4" fill="var(--c-accent)"/>
+<rect x="18" y="184" width="164" height="12" fill="var(--c-accent-d)"/>
+<path d="M30 164 V176 M46 164 V172 M62 164 V176 M78 164 V172 M94 164 V176 M110 164 V172 M126 164 V176 M142 164 V172 M158 164 V176 M172 164 V172" stroke="var(--ink)" stroke-width="2.5"/>
+</svg>

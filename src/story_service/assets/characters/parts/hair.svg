@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400">
+  <!-- Hair styles (catalog enum). layer="back" goes behind the body, layer="front" over the head. -->
+  <g data-variant="short_crop" data-layer="front">
+    <path d="M66 80 Q63 40 100 38 Q137 40 134 80 Q129 61 114 58 Q104 63 94 58 Q74 59 66 80 Z" fill="var(--hair)"/>
+    <path d="M114 58 Q129 61 134 80 Q136 52 120 43 Z" fill="var(--hair-d)"/>
+  </g>
+  <g data-variant="side_part" data-layer="front">
+    <path d="M66 82 Q62 38 102 37 Q138 39 135 78 Q127 55 104 55 Q92 66 77 63 Q70 69 66 82 Z" fill="var(--hair)"/>
+    <path d="M104 55 Q127 55 135 78 Q137 50 118 41 Z" fill="var(--hair-d)"/>
+  </g>
+  <g data-variant="curly_short" data-layer="front">
+    <path d="M66 78 Q66 52 100 47 Q134 52 134 78 Q120 63 100 63 Q80 63 66 78 Z" fill="var(--hair)"/>
+    <circle cx="72" cy="63" r="11" fill="var(--hair)"/>
+    <circle cx="85" cy="50" r="13" fill="var(--hair)"/>
+    <circle cx="101" cy="45" r="14" fill="var(--hair)"/>
+    <circle cx="117" cy="50" r="13" fill="var(--hair-d)"/>
+    <circle cx="129" cy="63" r="11" fill="var(--hair-d)"/>
+  </g>
+  <g data-variant="afro_puff" data-layer="back">
+    <circle cx="100" cy="56" r="49" fill="var(--hair)"/>
+    <path d="M130 22 Q152 42 148 78 Q140 52 118 36 Z" fill="var(--hair-d)"/>
+  </g>
+  <g data-variant="afro_puff" data-layer="front">
+    <path d="M68 72 Q72 46 100 44 Q128 46 132 72 Q116 59 100 61 Q84 59 68 72 Z" fill="var(--hair)"/>
+  </g>
+  <g data-variant="long_straight" data-layer="back">
+    <path d="M62 78 Q60 34 100 33 Q140 34 138 78 L142 168 Q121 177 100 171 Q79 177 58 168 Z" fill="var(--hair-d)"/>
+  </g>
+  <g data-variant="long_straight" data-layer="front">
+    <path d="M66 86 Q61 38 100 37 Q139 38 134 86 Q130 61 105 52 Q100 58 95 52 Q70 61 66 86 Z" fill="var(--hair)"/>
+  </g>
+  <g data-variant="ponytail" data-layer="back">
+    <path d="M72 58 Q47 62 45 96 Q43 131 57 152 Q62 128 62 104 Q63 80 78 66 Z" fill="var(--hair-d)"/>
+    <circle cx="70" cy="62" r="5" fill="var(--c-accent)"/>
+  </g>
+  <g data-variant="ponytail" data-layer="front">
+    <path d="M66 82 Q62 38 100 37 Q138 38 134 82 Q128 56 100 54 Q72 56 66 82 Z" fill="var(--hair)"/>
+  </g>
+  <g data-variant="bun" data-layer="back">
+    <circle cx="100" cy="35" r="17" fill="var(--hair-d)"/>
+  </g>
+  <g data-variant="bun" data-layer="front">
+    <path d="M66 82 Q62 38 100 37 Q138 38 134 82 Q128 56 100 54 Q72 56 66 82 Z" fill="var(--hair)"/>
+  </g>
+  <g data-variant="braids" data-layer="back">
+    <ellipse cx="65" cy="112" rx="7" ry="9" fill="var(--hair-d)"/>
+    <ellipse cx="65" cy="128" rx="6.5" ry="8.5" fill="var(--hair-d)"/>
+    <ellipse cx="65" cy="143" rx="6" ry="8" fill="var(--hair-d)"/>
+    <ellipse cx="135" cy="112" rx="7" ry="9" fill="var(--hair-d)"/>
+    <ellipse cx="135" cy="128" rx="6.5" ry="8.5" fill="var(--hair-d)"/>
+    <ellipse cx="135" cy="143" rx="6" ry="8" fill="var(--hair-d)"/>
+  </g>
+  <g data-variant="braids" data-layer="front">
+    <path d="M65 96 Q60 38 100 37 Q140 38 135 96 Q131 60 104 53 Q100 58 96 53 Q69 60 65 96 Z" fill="var(--hair)"/>
+  </g>
+  <g data-variant="bald" data-layer="front"/>
+  <g data-variant="thin_elder" data-layer="front">
+    <path d="M66 90 Q62 66 75 57 Q70 73 73 92 Z" fill="var(--hair)"/>
+    <path d="M134 90 Q138 66 125 57 Q130 73 127 92 Z" fill="var(--hair-d)"/>
+  </g>
+</svg>

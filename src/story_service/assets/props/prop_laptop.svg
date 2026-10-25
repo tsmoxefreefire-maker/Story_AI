@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Laptop" data-label-ar="حاسوب محمول" data-tags="tech" data-bbox="28 86 172 196" data-scale="0.8">
+<rect x="44" y="86" width="112" height="84" rx="8" fill="var(--c-neutral-2-d)"/>
+<rect x="52" y="94" width="96" height="68" rx="4" fill="var(--c-secondary)"/>
+<path d="M28 172 L172 172 L162 196 L38 196 Z" fill="var(--c-neutral-2)"/>
+<rect x="84" y="178" width="32" height="6" rx="3" fill="var(--c-neutral-2-d)"/>
+</svg>

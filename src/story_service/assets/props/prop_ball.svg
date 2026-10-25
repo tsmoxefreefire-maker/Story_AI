@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" data-label="Ball" data-label-ar="كرة" data-tags="play sport" data-bbox="68 132 132 196" data-scale="0.45">
+<circle cx="100" cy="164" r="32" fill="var(--c-primary)"/>
+<path d="M70 156 Q100 146 130 156 L131 170 Q100 160 69 170 Z" fill="var(--paper)"/>
+<path d="M114 136 A32 32 0 0 1 114 192 A40 40 0 0 0 114 136 Z" fill="var(--c-primary-d)"/>
+</svg>
