@@ -1,0 +1,49 @@
+/* ===== Scenes: time of day, layers, props, widgets (Sections 6.1 to 6.6) =====
+   The scene group carries tod-day / tod-evening / tod-night, which set --sky, --ground and --light-o (tokens.py).
+   The sun shows in the day and evening; the moon and stars only at night; clouds hide at night. */
+.tod-night .sun,.tod-night .day-only,.tod-day .night-only,.tod-evening .night-only{display:none}
+.scene [data-initial=hidden]{opacity:0}
+.scene .cam{transform-origin:0 0}
+.scene .el{transform-box:fill-box;transform-origin:50% 50%}
+.scene .actor{transform-box:fill-box;transform-origin:50% 100%}
+.scene .hotspot{fill:var(--paper);fill-opacity:0;cursor:pointer}
+.scene .hotspot.on{fill-opacity:.0001}
+.scene .hotspot:focus{outline:none}
+.scene .tap-ring{fill:none;stroke:var(--c-accent);stroke-width:6;opacity:0;pointer-events:none}
+.overlay-open .tap-ring.on{opacity:1;animation:ss-ring 1.2s ease-in-out infinite}
+@keyframes ss-ring{0%,100%{stroke-opacity:1}50%{stroke-opacity:.35}}
+.freeze .tap-ring{animation:none!important}
+@media (prefers-reduced-motion:reduce){.tap-ring{animation:none!important}}
+
+/* ===== Ambient loops (an addition to the plan, docs/DECISIONS.md): clock hands, the sun, plants, clouds, steam, birds,
+   cats. They follow the rules of the actors' idle loops (7.5): CSS only, not seekable, off with ?freeze=1 and with
+   prefers-reduced-motion, never counted as a visible change. Transform and opacity only. */
+.amb-spin{transform-box:fill-box;transform-origin:50% 50%;animation:amb-spin 40s linear infinite}
+.amb-hand{transform-box:fill-box;transform-origin:50% 100%;animation:amb-spin 60s steps(60,end) infinite}
+.amb-sway{transform-box:fill-box;transform-origin:50% 100%;animation:amb-sway 3.6s ease-in-out infinite alternate}
+.amb-slow{animation-duration:6s}
+.amb-drift{animation:amb-drift 14s ease-in-out infinite alternate}
+.amb-glow{transform-box:fill-box;transform-origin:50% 50%;animation:amb-glow 4s ease-in-out infinite alternate}
+.amb-flicker{animation:amb-flicker 1.8s ease-in-out infinite alternate}
+.amb-steam{opacity:0;animation:amb-steam 2.7s ease-out infinite}
+.amb-steam.d2{animation-delay:.9s}.amb-steam.d3{animation-delay:1.8s}
+.amb-twinkle{animation:amb-twinkle 2.6s ease-in-out infinite alternate}
+.amb-twinkle.d2{animation-delay:1.3s}
+.amb-fly{animation:amb-fly 28s linear infinite}
+.amb-flap{transform-box:fill-box;transform-origin:50% 100%;animation:amb-flap .45s ease-in-out infinite alternate}
+.amb-tail{transform-box:fill-box;transform-origin:0 100%;animation:amb-tail 2.2s ease-in-out infinite alternate}
+.amb-blink{transform-box:fill-box;transform-origin:50% 50%;animation:amb-blink 4.4s infinite}
+@keyframes amb-spin{to{transform:rotate(360deg)}}
+@keyframes amb-sway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+@keyframes amb-drift{from{transform:translateX(-16px)}to{transform:translateX(16px)}}
+@keyframes amb-glow{from{transform:scale(1);opacity:.22}to{transform:scale(1.14);opacity:.42}}
+@keyframes amb-flicker{from{opacity:.3}to{opacity:.7}}
+@keyframes amb-steam{0%{transform:translateY(0);opacity:0}30%{opacity:.65}100%{transform:translateY(-26px);opacity:0}}
+@keyframes amb-twinkle{from{opacity:.25}to{opacity:1}}
+@keyframes amb-fly{from{transform:translateX(0)}to{transform:translateX(1560px)}}
+@keyframes amb-flap{from{transform:scaleY(1)}to{transform:scaleY(.4)}}
+@keyframes amb-tail{from{transform:rotate(-10deg)}to{transform:rotate(12deg)}}
+@keyframes amb-blink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.freeze [class*="amb-"]{animation:none!important}
+@media (prefers-reduced-motion:reduce){[class*="amb-"]{animation:none!important}}
+svg.scene:not(.active) [class*="amb-"]{animation-play-state:paused}
