@@ -688,7 +688,20 @@ def _check_bindings(rep, plan, scene, catalog, cast) -> None:
     it = scene.interaction
     tap = it if it is not None and it.type == "tap_reveal" else None
     stray = [b.interaction_id for b in plan.interaction_bindings if tap is None or b.interaction_id != tap.id]
-    rep.add("bindings_known", not stray, "blocker", f"bindings for unknown interactions {stray}", code="BINDING")
+    if it is None:  # spec 06 S7: bindings exist only for tap_reveal; every other scene has "interaction_bindings": []
+        why = "this scene has no interaction"
+    elif tap is None:
+        why = f"interaction {it.id} is {it.type}, and only tap_reveal interactions take bindings"
+    else:
+        why = f"the only interaction to bind here is {tap.id}"
+    rep.add(
+        "bindings_known",
+        not stray,
+        "blocker",
+        f"interaction_bindings for {stray}: {why}",
+        code="BINDING",
+        fix_hint='write "interaction_bindings": []' if tap is None else f"keep only the binding for {tap.id}",
+    )
     if tap is None:
         return
     binding = next((b for b in plan.interaction_bindings if b.interaction_id == tap.id), None)
