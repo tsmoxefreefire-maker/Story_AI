@@ -1,25 +1,43 @@
-"""Groq speech-to-text (Whisper). Asks for verbose JSON with word-level timestamps; if the provider returns no word
-times, S6 falls back to `timing_source = estimated` (Section 14.2)."""
+"""Groq text-to-speech (default provider). The API key comes only from `GROQ_API_KEY` and is never logged.
+
+Facts to confirm against Groq's documentation (Section 14.2): model ids, the voice list, the character limit per
+request, rate limits and the response format. The values below are the documented defaults at the time of writing; if
+a request is rejected for one of them the provider raises `ProviderError` with the provider's message, never the key."""
 
 from __future__ import annotations
 
 from ...core.retry import ProviderError, TransientError
 from .. import groq_http
-from . import STTProvider
+from . import SynthResult, TTSProvider
 
-API = "https://api.groq.com/openai/v1/audio/transcriptions"
+API = "https://api.groq.com/openai/v1/audio/speech"
 
 
-class GroqSTT(STTProvider):
+class GroqTTS(TTSProvider):
     name = "groq"
+    supported_languages = ("ar",)
+    supported_dialects = ("gulf", "msa")  # the default model is Saudi Arabic
+    max_chars = 200
 
-    def __init__(self, api_key: str | None, model: str = "whisper-large-v3", timeout_s: float = 90):
+    def __init__(
+        self,
+        api_key: str | None,
+        model: str = "canopylabs/orpheus-arabic-saudi",
+        model_en: str | None = None,
+        timeout_s: float = 60,
+    ):
         if not api_key:
             raise ProviderError("GROQ_API_KEY is not set")
-        self._key, self.model, self.timeout = api_key, model, timeout_s
+        self._key, self.model, self.model_en, self.timeout = api_key, model, model_en, timeout_s
+        if model_en:
+            self.supported_languages = ("ar", "en")
 
-    def transcribe(self, audio_bytes, language, *, reference_text=None):  # reference_text is ignored on purpose
-        import httpx
+    def synthesize(self, text, voice_id, language, dialect):
+        import httpx  # imported here so the fakes need no HTTP library
+
+        model = self.model if language == "ar" else self.model_en
+        if not model:
+            raise ProviderError(f"no TTS model configured for language {language!r}")
 
         def send():
             try:
@@ -27,25 +45,10 @@ class GroqSTT(STTProvider):
                     API,
                     timeout=self.timeout,
                     headers={"Authorization": f"Bearer {self._key}"},
-                    files={"file": ("line.mp3", audio_bytes, "audio/mpeg")},
-                    data={
-                        "model": self.model,
-                        "language": language,
-                        "response_format": "verbose_json",
-                        "timestamp_granularities[]": "word",
-                    },
+                    json={"model": model, "voice": voice_id, "input": text, "response_format": "wav"},
                 )
             except (httpx.TimeoutException, httpx.TransportError) as e:
                 raise TransientError(type(e).__name__) from None
 
-        r = groq_http.request(send, "groq stt")  # waits out Groq's rate limits; see groq_http
-        try:
-            body = r.json()
-        except ValueError:
-            raise ProviderError(f"groq stt returned a body that is not JSON: {r.text[:120]!r}") from None
-        words = [
-            {"w": w.get("word", "").strip(), "s": round(float(w["start"]) * 1000), "e": round(float(w["end"]) * 1000)}
-            for w in body.get("words") or []
-            if w.get("word")
-        ]
-        return {"text": body.get("text", ""), "words": words}
+        r = groq_http.request(send, "groq tts")  # waits out Groq's rate limits; see groq_http
+        return SynthResult(bytes=r.content, format="wav", sample_rate=24000)
