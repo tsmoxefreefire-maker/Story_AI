@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="Classroom with a board, windows and posters" data-kind="indoor" data-ground-y="640" data-supports="day evening" data-slots="260,640 640,640 1020,640">
+  <defs><linearGradient id="classroom-lit" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--paper)" stop-opacity="0.26"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.07"/></linearGradient><linearGradient id="classroom-wallshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.12"/></linearGradient><linearGradient id="classroom-floorshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0.16"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0"/></linearGradient><linearGradient id="classroom-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.12"/></linearGradient></defs>
   <g class="layer-far">
     <rect x="0" y="0" width="1280" height="600" fill="var(--paper)"/>
     <rect x="0" y="0" width="1280" height="600" fill="var(--c-secondary)" opacity="0.14"/>
@@ -10,6 +11,8 @@
     <rect x="1060" y="100" width="180" height="240" rx="8" fill="var(--paper)"/>
     <rect x="1072" y="112" width="156" height="216" rx="5" fill="var(--sky)"/>
     <rect x="1146" y="112" width="8" height="216" fill="var(--paper)"/><rect x="1072" y="216" width="156" height="8" fill="var(--paper)"/>
+  <g class="day-only"><rect x="0" y="0" width="1280" height="600" fill="url(#classroom-lit)"/></g>
+    <rect x="0" y="440" width="1280" height="160" fill="url(#classroom-wallshade)"/>
   </g>
   <g class="layer-mid">
     <rect x="330" y="90" width="620" height="270" rx="10" fill="var(--c-neutral-2-d)"/>
@@ -19,12 +22,16 @@
     <g fill="var(--paper)" opacity="0.5"><rect x="380" y="150" width="200" height="8" rx="4"/><rect x="380" y="180" width="140" height="8" rx="4"/><rect x="620" y="150" width="120" height="8" rx="4"/></g>
     <rect x="236" y="130" width="70" height="90" rx="6" fill="var(--c-accent)"/><circle cx="271" cy="166" r="18" fill="var(--paper)"/>
     <rect x="976" y="140" width="66" height="84" rx="6" fill="var(--c-primary)"/><rect x="988" y="156" width="42" height="8" rx="4" fill="var(--paper)"/><rect x="988" y="174" width="30" height="8" rx="4" fill="var(--paper)"/>
-    <circle cx="640" cy="30" r="110" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
     <rect x="540" y="0" width="200" height="18" rx="8" fill="var(--c-neutral-1)"/>
   </g>
   <g class="layer-near">
     <rect x="0" y="600" width="1280" height="120" fill="var(--c-neutral-1)"/>
     <rect x="0" y="592" width="1280" height="12" fill="var(--paper)"/>
     <g fill="var(--c-neutral-1-d)" opacity="0.5"><rect x="0" y="650" width="1280" height="3"/><rect x="0" y="700" width="1280" height="3"/></g>
+  <rect x="0" y="600" width="1280" height="60" fill="url(#classroom-floorshade)"/>
+    <g class="day-only" fill="var(--paper)" opacity="0.2"><polygon points="71,188 189,188 399,716 281,716" opacity="0.5"/><polygon points="235,600 353,600 399,716 281,716" opacity="0.6"/><polygon points="1091,188 1209,188 999,716 881,716" opacity="0.5"/><polygon points="927,600 1045,600 999,716 881,716" opacity="0.6"/></g>
+    <rect x="0" y="640" width="1280" height="80" fill="url(#classroom-edge)"/>
+    <g class="night-only"><rect x="0" y="0" width="1280" height="720" fill="var(--ink)" opacity="0.24"/></g>
+    <circle cx="640" cy="30" r="110" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
   </g>
 </svg>

@@ -18,6 +18,8 @@ from story_service.api.limits import BodyLimit, RateLimiter
 from story_service.api.service import StoryService
 from story_service.api.settings import ApiSettings, SettingsError
 from story_service.api.tokens import TokenError, make_token, read_token
+from story_service.api.try_page import HEADERS as TRY_HEADERS
+from story_service.api.try_page import render as render_try_page
 
 SECRET = "s" * 40
 needs_ffmpeg = pytest.mark.skipif(shutil.which("ffmpeg") is None, reason="ffmpeg is not installed")
@@ -157,6 +159,24 @@ def test_body_limit_counts_a_chunked_body_as_it_arrives():
     big = _call(lambda app: BodyLimit(app, max_bytes=100), [], [b"x" * 60, b"x" * 60, b"x" * 60])
     assert [m.get("status") for m in big if "status" in m] == [422]  # the app's own answer is dropped
     assert json.loads(big[1]["body"])["error"]["code"] == "INPUT_INVALID" and len(big) == 2
+
+
+# ----------------------------------------------------------------------------------------------- try page
+def test_try_page_lists_the_story_folders_and_holds_no_key(tmp_path):
+    html = render_try_page(settings(tmp_path).stories_dir, ["plants", "clock"])
+    assert "نبتة سلمى العطشى" in html and "يزن والحافلة" in html and "/*STORIES*/" not in html
+    assert "k1" not in html and SECRET not in html  # the page never carries the API key or a secret
+    assert "frame-src 'self'" in TRY_HEADERS["Content-Security-Policy"]
+
+
+def test_try_page_escapes_story_text(tmp_path):
+    bad = tmp_path / "bad"
+    bad.mkdir()
+    (bad / "script.json").write_text('{"title": "</script><script>alert(1)</script>", "scenes": []}', encoding="utf-8")
+    (bad / "intake.json").write_text('{"topic_title": "x"}', encoding="utf-8")
+    html = render_try_page(tmp_path, ["bad", "missing"])
+    assert "</script><script>alert(1)" not in html and "\\u003c/script>" in html
+    assert '"folder": "missing"' in html  # a folder that does not read still gets a card
 
 
 # ----------------------------------------------------------------------------------------------- service

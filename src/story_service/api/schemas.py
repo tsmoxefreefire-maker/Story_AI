@@ -65,6 +65,25 @@ class DevStoryRequest(_Body):
     force: bool = False
 
 
+class StoryJson(_Body):
+    """A story as JSON: what modules 1 to 5 hand to module 6. `plans` (scene id -> scene plan) is optional when an LLM
+    is connected for the director (S7); the deeper checks are those of a story folder."""
+
+    intake: dict
+    script: dict
+    cast: dict
+    plans: dict[str, dict] | list[dict] | None = None
+
+
+class DevJsonRequest(_Body):
+    """POST /v1/dev/stories/json: build a story pasted as JSON."""
+
+    story: StoryJson
+    external: External | None = None
+    callback_url: str | None = Field(default=None, pattern=r"^https://")
+    force: bool = False
+
+
 class AccessLinkRequest(_Body):
     ttl_seconds: int | None = Field(default=None, ge=60, le=MAX_TTL_SEC)
 

@@ -3,41 +3,57 @@
 The routes in `routes_stories.py` and `routes_play.py` only translate HTTP to these methods. Module 6 runs a version
 like this: queued -> running (S6 to S10 build the bundle into the blob store) -> S12 (published or needs_review).
 Versions live in a `VersionStore`; this module uses the in-memory one until the database of milestone M0 exists, so
-story rows are lost when the server restarts (the bundles stay in BLOB_DIR)."""
+story rows are lost when the server restarts (the bundles stay in BLOB_DIR).
+
+Where a story's input comes from (each becomes a folder of intake.json, script.json, cast.json and plans/):
+- a ready story folder (`create_from_folder`, POST /v1/dev/stories);
+- a story pasted as JSON (`create_from_json`, POST /v1/dev/stories/json);
+- modules 1 to 5 through the connection point in upstream.py (`create_from_request`, POST /v1/stories).
+A scene without a plan is planned by the director (S7) through `llm` (providers/llm/clients.py); without an LLM every
+scene needs its plan."""
 
 from __future__ import annotations
 
 import hashlib
 import io
+import json
 import logging
 import re
+import shutil
 import threading
 import time
+import uuid
 import zipfile
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
 
+from ..core.retry import ProviderError, TransientError
 from ..devtools import story_folder
 from ..pipeline.models import Timeline
 from ..pipeline.module6 import StageFailed
 from ..pipeline.review import comments as review_comments
 from ..pipeline.stages import s12_publish
+from ..pipeline.stages.s7_director import DirectorError
 from ..pipeline.versions import MemoryVersionStore, Story, StoryBusy, VersionStore, new_id, next_version, utcnow
 from ..providers.blobstore import BlobStore, LocalBlobStore, version_prefix
 from .errors import ApiError, not_found
 from .settings import ApiSettings
 from .tokens import TokenError, make_token, read_token
+from .upstream import UpstreamError
 
 log = logging.getLogger("story_service.api")
 AUDIO_FILE = r"^[A-Za-z0-9_-]{1,64}\.mp3$"
 PLAYABLE = ("published", "superseded")
+SCENE_ID = re.compile(r"s\d{2}")
+MAX_SCENES = 20
 
 
-def build_into_blob(data: story_folder.StoryFolder, *, blob: BlobStore, prefix: str):
+def build_into_blob(data: story_folder.StoryFolder, *, blob: BlobStore, prefix: str, llm=None):
     """Module 6 (S6 to S10) on a story folder, then the bundle into the blob store under `{prefix}/bundle/` (the same
-    place module6.run puts it), where the play and package routes read it."""
-    res = story_folder.build(data)
+    place module6.run puts it), where the play and package routes read it. With `llm` the director (S7) plans the
+    scenes that have no plan, and the same client judges custom props (vision)."""
+    res = story_folder.build(data, llm=llm, vlm=llm)
     for rel, content in res.bundle.files().items():
         blob.put(f"{prefix}/bundle/{rel}", content)
     return res
@@ -52,9 +68,12 @@ class StoryService:
     settings: ApiSettings
     store: VersionStore = field(default_factory=MemoryVersionStore)
     blob: BlobStore | None = None
-    builder: object = None  # story_folder.build by default; tests may pass a faster one
+    builder: object = None  # build_into_blob by default; tests may pass a faster one
+    llm: object = None  # LLMClient for the director (S7); None: every scene needs its plan
+    upstream: object = None  # modules 1 to 5 (upstream.py); None: POST /v1/stories answers 501
     _keys: dict[str, str] = field(default_factory=dict)  # natural key -> story_id
-    _folders: dict[str, str] = field(default_factory=dict)  # story_id -> story folder name
+    _inputs: dict[str, Path] = field(default_factory=dict)  # story_id -> its input folder
+    _requests: dict[str, dict] = field(default_factory=dict)  # story_id -> POST /v1/stories body (modules 1 to 5)
     _times: dict[str, list[datetime]] = field(default_factory=dict)  # story_id -> [created_at, updated_at]
     _lock: threading.RLock = field(default_factory=threading.RLock)
 
@@ -89,6 +108,92 @@ class StoryService:
         root = Path(self.settings.stories_dir)
         return sorted(p.name for p in root.iterdir() if (p / "script.json").exists()) if root.is_dir() else []
 
+    def llm_name(self) -> str | None:
+        """What the director talks to, for /v1/health and the try page (never a key)."""
+        describe = getattr(self.llm, "describe", None)
+        return describe() if describe else (type(self.llm).__name__ if self.llm is not None else None)
+
+    def _new_story(self, key: str, story: Story, force: bool, *, folder: Path | None = None, request=None):
+        """Store a story and its version 1 (queued), unless the same request already made one (Section 3,
+        Idempotency: HTTP 200 with that story). Returns (story_id, version, created)."""
+        with self._lock:
+            existing = self._keys.get(key)
+            if existing and not force:
+                latest = self.store.versions(existing)[-1]
+                if latest.status != "failed":
+                    return existing, latest.version, False
+            self.store.save_story(story)
+            self._keys[key] = story.id
+            if folder is not None:
+                self._inputs[story.id] = folder
+            if request is not None:
+                self._requests[story.id] = request
+            self._touch(story.id)
+            v = next_version(self.store, story.id, "create")
+        return story.id, v.version, True
+
+    @staticmethod
+    def _key(idempotency_key: str | None, natural: str) -> str:
+        return hashlib.sha256((f"idem|{idempotency_key}" if idempotency_key else natural).encode()).hexdigest()
+
+    def _write_input(self, story: dict) -> Path:
+        """A story given as JSON ({intake, script, cast, plans?}) written as a story folder, then read back with the
+        same checks as a ready folder. Raises story_folder.StoryFolderError with what is wrong.
+
+        The folder is named by the story's content, written aside first and then moved into place in one step, so a
+        story's input never changes under it: the same paste twice (even at the same moment) shares one folder, and
+        a different paste gets its own."""
+        if not isinstance(story, dict):
+            raise story_folder.StoryFolderError("the story must be a JSON object with intake, script and cast")
+        missing = [k for k in ("intake", "script", "cast") if not isinstance(story.get(k), dict)]
+        if missing:
+            raise story_folder.StoryFolderError(f"the story has no {', '.join(missing)} (each a JSON object)")
+        plans = story.get("plans") or {}
+        if isinstance(plans, list):
+            plans = {str(p.get("scene_id")) if isinstance(p, dict) else "?": p for p in plans}
+        if not isinstance(plans, dict) or len(plans) > MAX_SCENES:
+            raise story_folder.StoryFolderError(f"plans must map scene ids to plans (at most {MAX_SCENES})")
+        for scene_id, plan in plans.items():
+            if not isinstance(scene_id, str) or not SCENE_ID.fullmatch(scene_id) or not isinstance(plan, dict):
+                raise story_folder.StoryFolderError(
+                    f"plan {scene_id!r}: scene ids look like s01, and a plan is a JSON object"
+                )
+        files = {f"{name}.json": story[name] for name in ("intake", "script", "cast")}
+        files |= {f"plans/scene_plan_{sid}.json": {**plan, "scene_id": sid} for sid, plan in plans.items()}
+        digest = hashlib.sha256(json.dumps(files, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+        root = Path(self.settings.blob_dir).resolve().parent / "inputs"
+        folder = root / digest[:32]
+        if folder.is_dir():
+            return folder  # this exact story was written and checked before
+        tmp = root / f".tmp-{digest[:12]}-{uuid.uuid4().hex[:8]}"
+        try:
+            (tmp / "plans").mkdir(parents=True)
+            for rel, data in files.items():
+                (tmp / rel).write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+            story_folder.load(tmp)  # the same checks as a ready folder
+            try:
+                tmp.rename(folder)
+            except OSError:  # the same story landed there a moment ago
+                if not folder.is_dir():
+                    raise
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+        return folder
+
+    @staticmethod
+    def _story_row(intake, external: dict, callback_url: str | None) -> Story:
+        return Story(
+            id=new_id(),
+            external_lesson_id=external["lesson_id"],
+            external_topic_id=external["topic_id"],
+            external_book_id=external.get("book_id"),
+            country=intake["country"] if isinstance(intake, dict) else intake.country,
+            language=intake["language"] if isinstance(intake, dict) else intake.language,
+            age_group=intake["age_group"] if isinstance(intake, dict) else intake.age_group,
+            subject=intake["subject"] if isinstance(intake, dict) else intake.subject,
+            callback_url=callback_url,
+        )
+
     # ------------------------------------------------------------------------------------------------ create
     def create_from_folder(
         self,
@@ -102,33 +207,73 @@ class StoryService:
         The same request again returns the same story (HTTP 200); an `Idempotency-Key` header replaces that key."""
         if folder not in self.folders():
             raise ApiError(422, "INPUT_INVALID", f"no story folder {folder!r}", {"folders": self.folders()})
-        story_data = story_folder.load(Path(self.settings.stories_dir) / folder)
+        path = Path(self.settings.stories_dir) / folder
+        story_data = story_folder.load(path)
         external = external or {"lesson_id": f"dev-{folder}", "topic_id": story_data.intake.topic_title}
-        natural = f"{folder}|{external['lesson_id']}|{external['topic_id']}"
-        key = hashlib.sha256((f"idem|{idempotency_key}" if idempotency_key else natural).encode()).hexdigest()
-        with self._lock:
-            existing = self._keys.get(key)
-            if existing and not force:
-                latest = self.store.versions(existing)[-1]
-                if latest.status != "failed":
-                    return existing, latest.version, False
-            intake = story_data.intake
-            story = Story(
-                id=new_id(),
-                external_lesson_id=external["lesson_id"],
-                external_topic_id=external["topic_id"],
-                external_book_id=external.get("book_id"),
-                country=intake.country,
-                language=intake.language,
-                age_group=intake.age_group,
-                subject=intake.subject,
-                callback_url=callback_url,
+        key = self._key(idempotency_key, f"{folder}|{external['lesson_id']}|{external['topic_id']}")
+        return self._new_story(key, self._story_row(story_data.intake, external, callback_url), force, folder=path)
+
+    def create_from_json(
+        self,
+        story: dict,
+        external: dict | None,
+        callback_url: str | None,
+        force: bool,
+        idempotency_key: str | None = None,
+    ):
+        """A new story from a story pasted as JSON: {intake, script, cast, plans?} (what modules 1 to 5 hand over).
+        Scenes without a plan need the director's LLM; without one the request is refused at once (422)."""
+        canonical = json.dumps({"story": story, "external": external}, sort_keys=True, ensure_ascii=False)
+        key = self._key(idempotency_key, "json|" + canonical)
+        try:
+            folder = self._write_input(story)
+            data = story_folder.load(folder)
+        except story_folder.StoryFolderError as e:
+            raise ApiError(422, "INPUT_INVALID", str(e)) from None
+        missing = [s for s in data.scene_ids if s not in data.plans]
+        if missing and self.llm is None:
+            raise ApiError(
+                422,
+                "INPUT_INVALID",
+                f"no scene plan for {', '.join(missing)} and no LLM is connected for the director (S7): include the "
+                "plans, or set LLM_PROVIDER and its key",
+                {"missing_plans": missing},
             )
-            self.store.save_story(story)
-            self._keys[key], self._folders[story.id] = story.id, folder
-            self._touch(story.id)
-            v = next_version(self.store, story.id, "create")
-        return story.id, v.version, True
+        external = external or {"lesson_id": "dev-json", "topic_id": data.intake.topic_title}
+        return self._new_story(key, self._story_row(data.intake, external, callback_url), force, folder=folder)
+
+    def create_from_request(self, request: dict, idempotency_key: str | None = None):
+        """POST /v1/stories: a lesson topic, built by modules 1 to 5 and then module 6. 501 until they are connected.
+        The natural key is the one of Section 3 (Idempotency)."""
+        if self.upstream is None:
+            raise ApiError(
+                501,
+                "NOT_CONNECTED",
+                "modules 1 to 5 (S0 to S5) are not connected yet; build a story folder with POST /v1/dev/stories, or "
+                "paste a story with POST /v1/dev/stories/json",
+            )
+        ext, topic, m = request["external"], request["topic"], request["metadata"]
+        text_hash = hashlib.sha256(request["lesson_text"].encode()).hexdigest()
+        fields = [ext["lesson_id"], ext["topic_id"], topic["title"], text_hash, m["country"], m["language"]]
+        fields += [m.get("dialect"), m["age_group"], m["grade"], m["subject"]]
+        natural = json.dumps(fields, ensure_ascii=False)  # JSON, so no two different requests join to the same text
+        story = self._story_row(m, ext, request.get("callback_url"))
+        return self._new_story(self._key(idempotency_key, natural), story, request.get("force", False), request=request)
+
+    def example(self, folder: str) -> dict:
+        """A ready story folder as one JSON object, the shape POST /v1/dev/stories/json takes."""
+        if folder not in self.folders():
+            raise ApiError(422, "INPUT_INVALID", f"no story folder {folder!r}", {"folders": self.folders()})
+        root = Path(self.settings.stories_dir) / folder
+        out = {
+            name: json.loads((root / f"{name}.json").read_text(encoding="utf-8"))
+            for name in ("intake", "script", "cast")
+        }
+        plans = {}
+        for f in sorted((root / "plans").glob("scene_plan_*.json")):
+            plan = json.loads(f.read_text(encoding="utf-8"))
+            plans[plan.get("scene_id", f.stem.removeprefix("scene_plan_"))] = plan
+        return out | {"plans": plans}
 
     # ------------------------------------------------------------------------------------------------ run
     def run_version(self, story_id: str, n: int) -> str:
@@ -139,8 +284,13 @@ class StoryService:
         self._touch(story_id)
         prefix = version_prefix(story_id, n)
         try:
-            data = story_folder.load(Path(self.settings.stories_dir) / self._folders[story_id])
-            res = self.builder(data, blob=self.blob, prefix=prefix)
+            folder = self._inputs.get(story_id)
+            if folder is None:  # a POST /v1/stories story: modules 1 to 5 first
+                out = self.upstream.run(self._requests[story_id])
+                folder = self._write_input(out)
+                self._inputs[story_id] = folder
+            data = story_folder.load(folder)
+            res = self.builder(data, blob=self.blob, prefix=prefix, llm=self.llm)
             self.blob.put(f"{prefix}/timeline.json", res.timeline.model_dump_json().encode())
             meta = res.bundle.meta
             v.result = {
@@ -157,10 +307,20 @@ class StoryService:
             }
             v.issues = [i.model_dump() for rep in res.reports.values() for i in rep.issues]
             v.idea = {"one_liner": data.script.logline}  # stand-in for the idea module 3 selects
-        except StageFailed as e:  # a stage gave up: needs_review with its issues (Section 10.2, D8)
+        except (StageFailed, DirectorError) as e:  # a stage ran out of attempts: needs_review (Section 10.2, 12.1)
             v.issues = [i.model_dump() for i in e.report.issues]
+            # a blocker too: this version has no finished bundle, so nobody may approve it
+            v.issues.append(
+                {"severity": "blocker", "code": "VALIDATION_EXHAUSTED", "message": str(e)[:500], "stage": "S6-S10"}
+            )
+        except UpstreamError as e:  # modules 1 to 5 refused the request (INPUT_TOO_SHORT, TOPIC_NOT_FOUND, …)
+            return self._fail(v, e.code, e.message, stage="S0-S5")
         except story_folder.StoryFolderError as e:
             return self._fail(v, "INPUT_INVALID", str(e))
+        except ProviderError as e:  # the LLM provider refused (key, model, …): Section 12.1 PROVIDER_ERROR
+            return self._fail(v, "PROVIDER_ERROR", str(e))
+        except TransientError as e:  # still busy after every retry (rate limit, 5xx, timeouts)
+            return self._fail(v, "PROVIDER_ERROR", f"the provider stayed busy after 5 tries ({e}); try again later")
         except Exception as e:  # a defect of ours: the version fails, the story is never left running
             log.exception("version %s/%s failed", story_id, n)
             return self._fail(v, "INTERNAL", f"{type(e).__name__}: {e}")
@@ -173,9 +333,9 @@ class StoryService:
         self._touch(story_id)
         return out
 
-    def _fail(self, v, code: str, message: str) -> str:
+    def _fail(self, v, code: str, message: str, stage: str = "S6-S10") -> str:
         v.status, v.finished_at = "failed", utcnow()
-        v.issues = [{"severity": "blocker", "code": code, "message": message, "stage": "S6-S10", "scene_id": None}]
+        v.issues = [{"severity": "blocker", "code": code, "message": message, "stage": stage, "scene_id": None}]
         self.store.save_version(v)
         self._touch(v.story_id)
         return "failed"
@@ -301,11 +461,14 @@ class StoryService:
         return self.view(story_id)
 
     def regenerate(self, story_id: str, reason: str | None) -> tuple[str, int]:
-        """A new version (trigger regenerate). Here it re-runs module 6 on the same story folder."""
+        """A new version (trigger regenerate). It re-runs module 6 on the same input; a POST /v1/stories story goes
+        through modules 1 to 5 again (Section 3: full regeneration)."""
         self._story(story_id)
         try:
             with self._lock:
                 v = s12_publish.regenerate(self.store, story_id, reason)
+                if story_id in self._requests:
+                    self._inputs.pop(story_id, None)
         except StoryBusy as e:
             raise ApiError(409, "STORY_BUSY", str(e)) from None
         self._touch(story_id)

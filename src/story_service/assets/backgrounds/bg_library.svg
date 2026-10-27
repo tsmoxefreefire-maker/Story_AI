@@ -8,13 +8,15 @@
       <rect x="200" y="12" width="22" height="82" rx="3" fill="var(--c-primary)"/><rect x="226" y="24" width="24" height="70" rx="3" fill="var(--c-secondary)"/>
       <path d="M256 94 L270 34 L286 38 L274 94 Z" fill="var(--c-accent)"/>
     </g>
-  </defs>
+  <linearGradient id="library-lit" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--paper)" stop-opacity="0.26"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.07"/></linearGradient><linearGradient id="library-wallshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.12"/></linearGradient><linearGradient id="library-floorshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0.16"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0"/></linearGradient><linearGradient id="library-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.12"/></linearGradient></defs>
   <g class="layer-far">
     <rect x="0" y="0" width="1280" height="600" fill="var(--paper)"/>
     <rect x="0" y="0" width="1280" height="600" fill="var(--c-primary)" opacity="0.12"/>
     <rect x="530" y="80" width="220" height="300" rx="110" fill="var(--paper)"/>
     <rect x="546" y="96" width="188" height="268" rx="94" fill="var(--sky)"/>
     <rect x="636" y="96" width="8" height="268" fill="var(--paper)"/><rect x="546" y="230" width="188" height="8" fill="var(--paper)"/>
+  <g class="day-only"><rect x="0" y="0" width="1280" height="600" fill="url(#library-lit)"/></g>
+    <rect x="0" y="440" width="1280" height="160" fill="url(#library-wallshade)"/>
   </g>
   <g class="layer-mid">
     <rect x="40" y="70" width="320" height="530" rx="8" fill="var(--c-neutral-2-d)"/>
@@ -25,12 +27,16 @@
     <rect x="932" y="82" width="296" height="506" rx="4" fill="var(--c-neutral-1-d)"/>
     <use href="#lb-row" transform="translate(938 86)"/><use href="#lb-row" transform="translate(938 210)"/><use href="#lb-row" transform="translate(938 334)"/><use href="#lb-row" transform="translate(938 458)"/>
     <g fill="var(--c-neutral-2-d)"><rect x="932" y="180" width="296" height="14"/><rect x="932" y="304" width="296" height="14"/><rect x="932" y="428" width="296" height="14"/></g>
-    <circle cx="640" cy="40" r="120" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
     <rect x="590" y="0" width="100" height="20" rx="8" fill="var(--c-neutral-2)"/>
   </g>
   <g class="layer-near">
     <rect x="0" y="600" width="1280" height="120" fill="var(--c-neutral-1-d)"/>
     <rect x="0" y="592" width="1280" height="12" fill="var(--c-neutral-2)"/>
     <rect x="380" y="640" width="520" height="56" rx="28" fill="var(--c-secondary)" opacity="0.6"/>
+  <rect x="0" y="600" width="1280" height="60" fill="url(#library-floorshade)"/>
+    <g class="day-only" fill="var(--paper)" opacity="0.2"><polygon points="569,190 711,190 501,716 359,716" opacity="0.5"/><polygon points="405,600 548,600 501,716 359,716" opacity="0.6"/></g>
+    <rect x="0" y="640" width="1280" height="80" fill="url(#library-edge)"/>
+    <g class="night-only"><rect x="0" y="0" width="1280" height="720" fill="var(--ink)" opacity="0.24"/></g>
+    <circle cx="640" cy="40" r="120" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
   </g>
 </svg>

@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="Living room at home" data-kind="indoor" data-ground-y="640" data-supports="day evening night" data-slots="260,640 640,640 1020,640">
+  <defs><linearGradient id="homeliving-lit" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--paper)" stop-opacity="0.26"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.07"/></linearGradient><linearGradient id="homeliving-wallshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.12"/></linearGradient><linearGradient id="homeliving-floorshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0.16"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0"/></linearGradient><linearGradient id="homeliving-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.12"/></linearGradient></defs>
   <g class="layer-far">
     <rect x="0" y="0" width="1280" height="600" fill="var(--paper)"/>
     <rect x="0" y="0" width="1280" height="600" fill="var(--c-accent)" opacity="0.22"/>
@@ -12,6 +13,8 @@
     <path d="M760 104 L820 104 Q812 240 830 370 L760 370 Z" fill="var(--c-secondary)"/>
     <path d="M1100 104 L1040 104 Q1048 240 1030 370 L1100 370 Z" fill="var(--c-secondary-d)"/>
     <rect x="750" y="96" width="360" height="12" rx="6" fill="var(--c-neutral-2)"/>
+  <g class="day-only"><rect x="0" y="0" width="1280" height="600" fill="url(#homeliving-lit)"/></g>
+    <rect x="0" y="440" width="1280" height="160" fill="url(#homeliving-wallshade)"/>
   </g>
   <g class="layer-mid">
     <rect x="200" y="150" width="200" height="150" rx="8" fill="var(--c-primary)"/>
@@ -23,7 +26,6 @@
     <circle cx="525" cy="245" r="20" fill="var(--c-primary)"/>
     <rect x="1170" y="380" width="10" height="210" rx="5" fill="var(--ink)"/>
     <path d="M1135 330 L1215 330 L1195 390 L1155 390 Z" fill="var(--c-accent)"/>
-    <circle cx="1175" cy="380" r="110" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
     <rect x="40" y="520" width="60" height="70" rx="10" fill="var(--c-primary-d)"/>
     <g class="amb-sway amb-slow"><circle cx="70" cy="486" r="40" fill="var(--ground-day-d)"/><circle cx="46" cy="506" r="26" fill="var(--ground-day-d)"/><circle cx="96" cy="502" r="28" fill="var(--ground-day-d)"/></g>
   </g>
@@ -33,5 +35,10 @@
     <g fill="var(--c-neutral-2)" opacity="0.25"><rect x="0" y="640" width="1280" height="3"/><rect x="0" y="684" width="1280" height="3"/></g>
     <ellipse cx="640" cy="672" rx="380" ry="36" fill="var(--c-primary)" opacity="0.85"/>
     <ellipse cx="640" cy="672" rx="300" ry="24" fill="var(--c-primary-d)" opacity="0.6"/>
+  <rect x="0" y="600" width="1280" height="60" fill="url(#homeliving-floorshade)"/>
+    <g class="day-only" fill="var(--paper)" opacity="0.2"><polygon points="828,205 1032,205 822,716 618,716" opacity="0.5"/><polygon points="666,600 870,600 822,716 618,716" opacity="0.6"/></g>
+    <rect x="0" y="640" width="1280" height="80" fill="url(#homeliving-edge)"/>
+    <g class="night-only"><rect x="0" y="0" width="1280" height="720" fill="var(--ink)" opacity="0.24"/></g>
+    <circle cx="1175" cy="380" r="110" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
   </g>
 </svg>

@@ -182,4 +182,11 @@ and where it lives. Anything here can be changed by the team; the tests name the
     `runtime/scene.css` (a unit test checks it).
 62. **S11 measures performance on real playback**: the frame-rate check lifts `freeze` while it measures, so idle and
     ambient loops run (about 60 fps under the 4x CPU throttle on the example stories), then puts it back.
-
+63. **Light and depth in the backgrounds (asked for by Hareth).** Within the style rules of 6.1: 2-stop linear
+    gradients only on large background areas, solid shapes with opacity otherwise, tokens only, no filters. Indoor:
+    the wall lit from the window side (day and evening), shade where the wall meets the floor, light shafts from each
+    window onto the floor (day and evening), the room 24% darker at night with the lamp and window glows moved on top
+    so they still shine, and a soft darker band at the bottom edge. Outdoor: haze over the far layer (distant hills
+    fade into the sky near the horizon), sunlight from the sun's side, and the same bottom band. About 15 to 25
+    elements per background; the busiest example scene went from 481 to 504 of the 600 allowed, pages from about
+    250 to 260 KB, and S11 still passes (performance included).

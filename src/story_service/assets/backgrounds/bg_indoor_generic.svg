@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="Plain room (indoors)" data-kind="indoor" data-ground-y="640" data-supports="day evening night" data-slots="260,640 640,640 1020,640">
+  <defs><linearGradient id="indoorgeneric-lit" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--paper)" stop-opacity="0.26"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.07"/></linearGradient><linearGradient id="indoorgeneric-wallshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.12"/></linearGradient><linearGradient id="indoorgeneric-floorshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0.16"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0"/></linearGradient><linearGradient id="indoorgeneric-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.12"/></linearGradient></defs>
   <g class="layer-far">
     <rect x="0" y="0" width="1280" height="600" fill="var(--paper)"/>
     <rect x="0" y="0" width="1280" height="600" fill="var(--c-neutral-1)" opacity="0.5"/>
@@ -8,16 +9,22 @@
     <rect x="914" y="124" width="212" height="172" rx="6" fill="var(--sky)"/>
     <g class="night-only"><circle cx="1080" cy="170" r="16" fill="var(--paper)"/></g>
     <rect x="1016" y="124" width="8" height="172" fill="var(--paper)"/>
+  <g class="day-only"><rect x="0" y="0" width="1280" height="600" fill="url(#indoorgeneric-lit)"/></g>
+    <rect x="0" y="440" width="1280" height="160" fill="url(#indoorgeneric-wallshade)"/>
   </g>
   <g class="layer-mid">
     <rect x="160" y="150" width="180" height="130" rx="8" fill="var(--c-secondary)"/>
     <rect x="174" y="164" width="152" height="102" rx="4" fill="var(--paper)"/>
     <circle cx="250" cy="215" r="28" fill="var(--c-accent)"/>
-    <circle cx="640" cy="40" r="120" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
     <rect x="590" y="0" width="100" height="20" rx="8" fill="var(--c-neutral-2)"/>
   </g>
   <g class="layer-near">
     <rect x="0" y="600" width="1280" height="120" fill="var(--c-neutral-1-d)"/>
     <rect x="0" y="592" width="1280" height="12" fill="var(--paper)"/>
+  <rect x="0" y="600" width="1280" height="60" fill="url(#indoorgeneric-floorshade)"/>
+    <g class="day-only" fill="var(--paper)" opacity="0.2"><polygon points="939,184 1101,184 891,716 729,716" opacity="0.5"/><polygon points="775,600 936,600 891,716 729,716" opacity="0.6"/></g>
+    <rect x="0" y="640" width="1280" height="80" fill="url(#indoorgeneric-edge)"/>
+    <g class="night-only"><rect x="0" y="0" width="1280" height="720" fill="var(--ink)" opacity="0.24"/></g>
+    <circle cx="640" cy="40" r="120" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
   </g>
 </svg>

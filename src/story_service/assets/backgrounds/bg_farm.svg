@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="Farm with a barn, a fence and fields" data-kind="outdoor" data-ground-y="640" data-supports="day evening night" data-slots="260,640 640,640 1020,640">
-  <defs><linearGradient id="fm-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky-d)" stop-opacity="0.75"/><stop offset="0.8" stop-color="var(--sky-d)" stop-opacity="0"/></linearGradient></defs>
+  <defs><linearGradient id="fm-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky-d)" stop-opacity="0.75"/><stop offset="0.8" stop-color="var(--sky-d)" stop-opacity="0"/></linearGradient><linearGradient id="farm-haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky)" stop-opacity="0"/><stop offset="1" stop-color="var(--sky)" stop-opacity="0.38"/></linearGradient><linearGradient id="farm-sunlit" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--paper)" stop-opacity="0.22"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.06"/></linearGradient><linearGradient id="farm-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.14"/></linearGradient></defs>
   <g class="layer-far">
     <rect x="0" y="0" width="1280" height="720" fill="var(--sky)"/>
     <rect x="0" y="0" width="1280" height="720" fill="url(#fm-sky)"/>
@@ -8,6 +8,7 @@
       <circle class="amb-twinkle" cx="240" cy="80" r="2.5" fill="var(--paper)"/><circle class="amb-twinkle d2" cx="520" cy="130" r="3" fill="var(--paper)"/><circle class="amb-twinkle" cx="800" cy="70" r="2.5" fill="var(--paper)"/></g>
     <path d="M0 470 Q240 400 520 450 Q800 500 1060 430 Q1180 400 1280 420 L1280 600 L0 600 Z" fill="var(--ground-d)"/>
     <g fill="var(--ground)" opacity="0.5"><path d="M0 520 Q300 480 640 510 L640 530 Q300 500 0 540 Z"/><path d="M640 500 Q960 470 1280 490 L1280 510 Q960 490 640 520 Z"/></g>
+  <rect x="0" y="300" width="1280" height="320" fill="url(#farm-haze)"/>
   </g>
   <g class="day-only amb-fly"><g transform="translate(-170 140)" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.45"><path class="amb-flap" d="M0 0 Q8 -8 16 0 Q24 -8 32 0"/><path class="amb-flap" d="M44 22 Q50 16 56 22 Q62 16 68 22"/><path class="amb-flap" d="M-34 30 Q-28 24 -22 30 Q-16 24 -10 30"/></g></g>
   <g class="layer-mid">
@@ -25,5 +26,7 @@
     <rect x="0" y="596" width="1280" height="124" fill="var(--ground)"/>
     <g fill="var(--ground-d)"><ellipse cx="70" cy="650" rx="12" ry="22"/><ellipse cx="100" cy="660" rx="12" ry="22"/><ellipse cx="1180" cy="664" rx="12" ry="22"/><ellipse cx="1210" cy="656" rx="12" ry="22"/><ellipse cx="1240" cy="666" rx="12" ry="22"/></g>
     <g fill="var(--c-accent)"><circle cx="420" cy="690" r="6"/><circle cx="880" cy="700" r="6"/></g>
+  <g class="day-only"><rect x="0" y="0" width="1280" height="720" fill="url(#farm-sunlit)"/></g>
+    <rect x="0" y="620" width="1280" height="100" fill="url(#farm-edge)"/>
   </g>
 </svg>

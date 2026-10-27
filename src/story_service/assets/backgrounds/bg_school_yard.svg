@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="School yard in front of the school building" data-kind="outdoor" data-ground-y="640" data-supports="day evening" data-slots="260,640 640,640 1020,640">
-  <defs><linearGradient id="sy-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky-d)" stop-opacity="0.75"/><stop offset="0.8" stop-color="var(--sky-d)" stop-opacity="0"/></linearGradient></defs>
+  <defs><linearGradient id="sy-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky-d)" stop-opacity="0.75"/><stop offset="0.8" stop-color="var(--sky-d)" stop-opacity="0"/></linearGradient><linearGradient id="schoolyard-haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky)" stop-opacity="0"/><stop offset="1" stop-color="var(--sky)" stop-opacity="0.38"/></linearGradient><linearGradient id="schoolyard-sunlit" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--paper)" stop-opacity="0.22"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.06"/></linearGradient><linearGradient id="schoolyard-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.14"/></linearGradient></defs>
   <g class="layer-far">
     <rect x="0" y="0" width="1280" height="720" fill="var(--sky)"/>
     <rect x="0" y="0" width="1280" height="720" fill="url(#sy-sky)"/>
     <circle class="sun amb-glow" cx="140" cy="100" r="68" fill="var(--c-accent)" opacity="0.3"/><circle class="sun" cx="140" cy="100" r="46" fill="var(--c-accent)"/>
     <g class="amb-drift" fill="var(--paper)" opacity="0.9"><ellipse cx="1080" cy="96" rx="64" ry="22"/><ellipse cx="1118" cy="80" rx="40" ry="26"/></g>
+  <rect x="0" y="300" width="1280" height="320" fill="url(#schoolyard-haze)"/>
   </g>
   <g class="day-only amb-fly"><g transform="translate(-170 120)" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.45"><path class="amb-flap" d="M0 0 Q8 -8 16 0 Q24 -8 32 0"/><path class="amb-flap" d="M44 22 Q50 16 56 22 Q62 16 68 22"/><path class="amb-flap" d="M-34 30 Q-28 24 -22 30 Q-16 24 -10 30"/></g></g>
   <g class="layer-mid">
@@ -39,5 +40,7 @@
     <ellipse cx="90" cy="700" rx="90" ry="22" fill="var(--ground-d)"/>
     <ellipse cx="1200" cy="704" rx="100" ry="24" fill="var(--ground-d)"/>
     <g class="bg-cat" transform="translate(1226 603) scale(1.06)"><ellipse cx="2" cy="-1" rx="27" ry="5" fill="var(--ink)" fill-opacity="0.13"/><path class="amb-tail" d="M14 -6 Q34 -8 32 -28 Q31 -38 38 -42" fill="none" stroke="var(--c-neutral-2)" stroke-width="6" stroke-linecap="round"/><path d="M-17 -2 Q-21 -30 -5 -38 Q13 -41 18 -18 Q20 -4 14 -2 Z" fill="var(--c-neutral-2)"/><path d="M-9 -4 L-9 -16 M1 -4 L1 -16" stroke="var(--c-neutral-2-d)" stroke-width="3" stroke-linecap="round"/><circle cx="-10" cy="-44" r="13" fill="var(--c-neutral-2)"/><path d="M-21 -51 L-20 -64 L-12 -55 Z M-6 -56 L-1 -66 L2 -52 Z" fill="var(--c-neutral-2)"/><g class="amb-blink"><circle cx="-15" cy="-45" r="2.1" fill="var(--ink)"/><circle cx="-6" cy="-45" r="2.1" fill="var(--ink)"/></g><path d="M-13 -39.5 l2 1.6 l2 -1.6" fill="none" stroke="var(--ink)" stroke-width="1.3" stroke-linecap="round"/></g>
+  <g class="day-only"><rect x="0" y="0" width="1280" height="720" fill="url(#schoolyard-sunlit)"/></g>
+    <rect x="0" y="620" width="1280" height="100" fill="url(#schoolyard-edge)"/>
   </g>
 </svg>

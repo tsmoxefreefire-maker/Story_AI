@@ -1,13 +1,15 @@
 """The FastAPI application of module 6 (Section 3).
 
-    python scripts/run_api.py            # then open http://localhost:8000/docs
+    python scripts/run_api.py            # then open http://localhost:8000 (try page) or /docs
 
 `create_app()` wires the settings, the service and the routes; every error leaves as {"error": {code, message,
-details}}. What the API does is in service.py; the routes are in routes_stories.py and routes_play.py."""
+details}}. What the API does is in service.py; the routes are in routes_stories.py, routes_play.py and routes_try.py
+(the try page at /, اجتهاد)."""
 
 from __future__ import annotations
 
 import logging
+import os
 import shutil
 
 from fastapi import FastAPI, Request
@@ -16,17 +18,26 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from . import routes_play, routes_stories
+from ..providers.llm import clients as llm_clients
+from . import routes_play, routes_stories, routes_try
 from .errors import ApiError
 from .limits import MAX_BODY_BYTES, BodyLimit, RateLimiter
 from .service import StoryService
 from .settings import ApiSettings
+from .upstream import load_upstream
 
 log = logging.getLogger("story_service.api")
 
 
-def create_app(settings: ApiSettings | None = None, service: StoryService | None = None) -> FastAPI:
-    service = service or StoryService(settings or ApiSettings.from_env())
+def create_app(settings: ApiSettings | None = None, service: StoryService | None = None, upstream=None) -> FastAPI:
+    """`upstream` is modules 1 to 5 (upstream.py); without it STORY_UPSTREAM is read. The director's LLM comes from
+    the environment (providers/llm/clients.py, LLM_PROVIDER and its key); without a key it is off."""
+    if service is None:
+        service = StoryService(
+            settings or ApiSettings.from_env(),
+            llm=llm_clients.from_env(),
+            upstream=upstream or load_upstream(os.environ.get("STORY_UPSTREAM")),
+        )
     app = FastAPI(
         title="story-service · module 6",
         version="0.1.0",
@@ -65,9 +76,16 @@ def create_app(settings: ApiSettings | None = None, service: StoryService | None
             blob_ok = True
         except Exception:
             blob_ok = False
-        checks = {"blob_store": blob_ok, "version_store": "memory", "ffmpeg": shutil.which("ffmpeg") is not None}
+        checks = {
+            "blob_store": blob_ok,
+            "version_store": "memory",
+            "ffmpeg": shutil.which("ffmpeg") is not None,
+            "llm": service.llm_name(),  # what the director (S7) talks to; None: scenes need ready plans
+            "upstream": service.upstream is not None,  # modules 1 to 5 connected
+        }
         return {"status": "ok" if blob_ok and checks["ffmpeg"] else "degraded", "checks": checks}
 
     app.include_router(routes_stories.router)
     app.include_router(routes_play.router)
+    app.include_router(routes_try.router)  # the try page at / (اجتهاد)
     return app

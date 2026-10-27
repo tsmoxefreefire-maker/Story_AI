@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تجربة الموديول 6</title>
+<style>
+:root{--bg:#f5f3ee;--surface:#fff;--ink:#1c2230;--muted:#5b6374;--line:#e2ddd2;--accent:#2d6a58;--accent-ink:#fff;
+--ok:#1d7448;--ok-bg:#e5f3eb;--bad:#ad2a1f;--bad-bg:#fbebe8;--wait:#865800;--wait-bg:#fdf3dc;--code:#efebe2;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--surface:#1c2028;--ink:#e8e9ec;--muted:#a3a9b6;--line:#2e3440;
+--accent:#5fb39a;--accent-ink:#0f1a16;--ok:#6fd19c;--ok-bg:#183326;--bad:#ff8f84;--bad-bg:#3a1d1a;--wait:#f2c46b;
+--wait-bg:#352a12;--code:#262b35;color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Segoe UI",Tahoma,"Noto Sans Arabic","Noto Naskh Arabic",system-ui,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 40px;display:flex;flex-direction:column;gap:16px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+h1{margin:0;font-size:1.6rem;line-height:1.3}
+h2{margin:0 0 8px;font-size:1.1rem;display:flex;align-items:center;gap:8px}
+.sub,.hint{margin:0;color:var(--muted)}
+.hint{font-size:.9rem}
+.pill{font-size:.85rem;padding:4px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.85rem}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input[type=password]{flex:1 1 240px;min-width:0;font:inherit;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.btn{font:inherit;cursor:pointer;padding:8px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;display:inline-block}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent}
+.btn.small{padding:4px 12px;font-size:.9rem}
+.msg{margin:0;font-size:.95rem}
+.msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}.msg.warn{color:var(--wait)}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.88em;background:var(--code);padding:1px 6px;border-radius:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.story{font:inherit;text-align:start;cursor:pointer;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.story:hover,.story:focus-visible{border-color:var(--accent);outline:none}
+.story strong{font-size:1.05rem}
+.story span{color:var(--muted);font-size:.9rem}
+.check{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:.92rem}
+.status{border-radius:10px;padding:10px 14px;background:var(--code);display:flex;flex-direction:column;gap:2px}
+.status.ok{background:var(--ok-bg);color:var(--ok)}
+.status.bad{background:var(--bad-bg);color:var(--bad)}
+.status.wait{background:var(--wait-bg);color:var(--wait)}
+.status small{color:var(--muted)}
+.status.wait b::after{content:"";display:inline-block;width:.6em;height:.6em;margin-inline-start:8px;border-radius:50%;background:currentColor;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.2}}
+@media (prefers-reduced-motion:reduce){.status.wait b::after{animation:none}}
+.issues{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.issues li{border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:.93rem;overflow-wrap:anywhere}
+.frame{width:100%;aspect-ratio:16/9;max-width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000}
+.frame iframe{width:100%;height:100%;border:0;display:block}
+.head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.list li{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.list .meta{color:var(--muted);font-size:.88rem;font-variant-numeric:tabular-nums}
+.tag{font-size:.8rem;padding:2px 10px;border-radius:999px;background:var(--code)}
+.tag.ok{background:var(--ok-bg);color:var(--ok)}.tag.bad{background:var(--bad-bg);color:var(--bad)}.tag.wait{background:var(--wait-bg);color:var(--wait)}
+textarea{width:100%;min-height:200px;font:13px/1.5 ui-monospace,Consolas,monospace;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);resize:vertical}
+select{font:inherit;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+footer{color:var(--muted);font-size:.9rem;text-align:center}
+footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <h1>تجربة الموديول 6</h1>
+    <p class="sub">بتحط المفتاح مرة وحدة، وبعدها كل ما تفتح الصفحة بتشغّلك قصة لحالها.</p>
+  </div>
+  <div id="health" class="pill">بفحص السيرفر…</div>
+</header>
+
+<section class="card">
+  <h2><span class="n">1</span> المفتاح</h2>
+  <p class="hint">هاي قيمة <code>API_KEYS</code> من صفحة Environment على Render. بتنحفظ بهاد المتصفح بس، فبتحطها مرة وحدة.</p>
+  <form id="keyForm" class="row" autocomplete="off">
+    <input id="key" type="password" placeholder="الصق المفتاح هون" dir="ltr" aria-label="المفتاح">
+    <button type="submit" class="btn primary">احفظ</button>
+    <button type="button" id="keyClear" class="btn ghost" hidden>امسح المفتاح</button>
+  </form>
+  <p id="keyMsg" class="msg"></p>
+</section>
+
+<section class="card">
+  <h2><span class="n">2</span> قصة ثانية؟ اختار</h2>
+  <div id="stories" class="grid"></div>
+  <label class="check"><input type="checkbox" id="force"> ابنِ نسخة جديدة حتى لو القصة مبنية من قبل</label>
+</section>
+
+<section class="card">
+  <h2><span class="n">+</span> الصق قصة</h2>
+  <p class="hint">هون بتلصق قصة كـ JSON فيها <code>intake</code> و <code>script</code> و <code>cast</code>، وهاد نفس اللي رح يجي من الموديولات 1–5. خطط المشاهد <code>plans</code> اختيارية لما الذكاء يكون موصول، لأنه المخرج (S7) بيكتبها لحاله.</p>
+  <p id="llmNote" class="msg"></p>
+  <div class="row">
+    <select id="exFolder" aria-label="قصة المثال"></select>
+    <button type="button" id="exLoad" class="btn small">عبّي مثال</button>
+    <label class="check"><input type="checkbox" id="exNoPlans"> بدون خطط المشاهد</label>
+  </div>
+  <textarea id="paste" dir="ltr" spellcheck="false" aria-label="القصة كـ JSON" placeholder='{"intake": {...}, "script": {...}, "cast": {...}}'></textarea>
+  <div class="row"><button type="button" id="pasteBuild" class="btn primary">ابنِ من اللي لصقته</button><span id="pasteMsg" class="msg"></span></div>
+</section>
+
+<section class="card" id="runCard" hidden>
+  <h2><span class="n">3</span> <span id="runTitle"></span></h2>
+  <div id="status" class="status"></div>
+  <ul id="issues" class="issues" hidden></ul>
+  <div class="row" id="issueTools" hidden><button type="button" id="copyIssues" class="btn small">انسخ التفاصيل</button><span id="copyMsg" class="msg"></span></div>
+  <div id="playerBox" hidden>
+    <div class="frame"><iframe id="player" title="القصة" sandbox="allow-scripts"></iframe></div>
+    <div class="row" style="margin-top:10px">
+      <a id="openTab" class="btn" target="_blank" rel="noopener">افتح بتاب جديد</a>
+      <button id="zip" class="btn" type="button">نزّل ZIP</button>
+    </div>
+    <p id="warn" class="msg warn" hidden></p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="head"><h2>القصص اللي انبنت</h2><button id="refresh" class="btn ghost small" type="button">حدّث</button></div>
+  <p class="hint">بالنسخة المجانية من Render، لما السيرفر ينام أو يعيد التشغيل بتنمسح هالقائمة.</p>
+  <ul id="list" class="list"></ul>
+</section>
+
+<footer>كل الطلبات بالتفصيل بـ <a href="/docs">/docs</a></footer>
+</div>
+
+<script>
+"use strict";
+const STORIES = /*STORIES*/[];
+const $ = (s) => document.querySelector(s);
+const STATUS = {
+  queued: ["بالدور", "wait"],
+  running: ["عم تنبني: الصوت والرسم والتجميع", "wait"],
+  published: ["جاهزة ✓", "ok"],
+  needs_review: ["وقفت: بدها مراجعة", "bad"],
+  failed: ["فشلت", "bad"],
+};
+const KEY_NAME = "story_service_api_key";
+const keep = {  // this browser only; the page source never holds a key
+  get() { try { return localStorage.getItem(KEY_NAME) || ""; } catch (e) { return ""; } },
+  set(v) { try { localStorage.setItem(KEY_NAME, v); } catch (e) { /* the key then lasts until a refresh */ } },
+  clear() { try { localStorage.removeItem(KEY_NAME); } catch (e) { /* nothing kept */ } },
+};
+let key = keep.get();
+let run = 0;            // each build or follow gets a number; an older one stops when a newer one starts
+let lastIssues = [];
+
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+
+async function call(method, path, body) {
+  const headers = { "X-API-Key": key };
+  if (body !== undefined) headers["Content-Type"] = "application/json";
+  let r;
+  try {
+    r = await fetch(path, { method, headers, body: body === undefined ? undefined : JSON.stringify(body) });
+  } catch (e) {
+    throw Object.assign(new Error("ما قدرت أوصل للسيرفر. ممكن يكون نايم: استنى دقيقة وجرّب."), { status: 0 });
+  }
+  const isJson = (r.headers.get("content-type") || "").includes("json");
+  const data = isJson ? await r.json().catch(() => null) : null;
+  if (!r.ok) {
+    const err = (data && data.error) || {};
+    throw Object.assign(new Error(err.message || "HTTP " + r.status), { status: r.status, code: err.code, details: err.details || {} });
+  }
+  return isJson ? data : r;
+}
+
+function explain(e) {
+  if (e.status === 401) return "المفتاح غلط أو مش محطوط. حطه بخطوة 1.";
+  if (e.status === 429) return "طلبات كثير بدقيقة وحدة. استنى شوي وجرّب.";
+  if (e.status === 0) return e.message;
+  return (e.code ? e.code + ": " : "") + e.message;
+}
+
+/* ---------- health ---------- */
+fetch("/v1/health").then((r) => r.json()).then((h) => {
+  const c = h.checks || {};
+  $("#health").textContent = (h.status === "ok" ? "السيرفر شغّال" : "السيرفر شغّال بس في نقص") +
+    " · ffmpeg " + (c.ffmpeg ? "✓" : "✗") + " · الذكاء " + (c.llm ? "✓" : "✗");
+  const n = $("#llmNote");
+  if (c.llm) { n.textContent = "✓ الذكاء موصول (" + c.llm + "): بتقدر تلصق بدون خطط المشاهد."; n.className = "msg ok"; }
+  else { n.textContent = "الذكاء مش موصول: لازم القصة اللي بتلصقها يكون فيها خطط المشاهد."; n.className = "msg warn"; }
+}).catch(() => { $("#health").textContent = "ما في رد من السيرفر"; });
+
+/* ---------- 1. key ---------- */
+function keyMsg(text, cls) { const m = $("#keyMsg"); m.textContent = text; m.className = "msg " + (cls || ""); }
+
+async function checkKey() {
+  $("#keyClear").hidden = !key;
+  if (!key) { keyMsg("حط المفتاح أول إشي."); return false; }
+  try {
+    await call("GET", "/v1/dev/folders");
+    keyMsg("✓ المفتاح صح، ومحفوظ بهاد المتصفح.", "ok");
+    return true;
+  } catch (e) {
+    keyMsg(e.status === 401 ? "المفتاح غلط. انسخه من Render ← Environment (اكبس العين جنبه أول)." : explain(e), "bad");
+    return false;
+  }
+}
+
+$("#keyForm").addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  const v = $("#key").value.trim();
+  if (!v) { keyMsg("المربع فاضي.", "bad"); return; }
+  key = v; keep.set(v); $("#key").value = "";
+  auto();
+});
+$("#keyClear").addEventListener("click", () => { key = ""; keep.clear(); checkKey(); loadList(); });
+
+/* ---------- 2. stories ---------- */
+function drawStories() {
+  const box = $("#stories");
+  if (!STORIES.length) { box.append(el("p", "hint", "ما في مجلدات قصص بـ stories/.")); return; }
+  for (const s of STORIES) {
+    const b = el("button", "story");
+    b.type = "button";
+    b.append(el("strong", "", s.title || s.folder));
+    const meta = [s.topic, s.age && "عمر " + s.age, s.scenes && s.scenes + " مشاهد"].filter(Boolean).join(" · ");
+    if (meta) b.append(el("span", "", meta));
+    b.append(el("span", "", "ابنِ وشغّل ←"));
+    b.addEventListener("click", () => build(s));
+    box.append(b);
+  }
+}
+
+/* ---------- 3. run ---------- */
+function showRun(title) {
+  $("#runCard").hidden = false;
+  $("#runTitle").textContent = title;
+  $("#playerBox").hidden = true;
+  $("#player").removeAttribute("src");
+  $("#issues").hidden = true;
+  $("#issueTools").hidden = true;
+  $("#warn").hidden = true;
+  $("#runCard").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function setStatus(text, cls, note) {
+  const s = $("#status");
+  s.className = "status " + (cls || "");
+  s.replaceChildren(el("b", "", text));
+  if (note) s.append(el("small", "", note));
+}
+
+function showIssues(issues) {
+  lastIssues = issues || [];
+  const ul = $("#issues");
+  ul.replaceChildren();
+  if (!lastIssues.length) lastIssues = [{ message: "ما وصلت تفاصيل من السيرفر." }];
+  for (const i of lastIssues) {
+    const li = el("li");
+    if (i.code) li.append(el("b", "", i.code + " "));
+    li.append(document.createTextNode(i.message || ""));
+    const where = [i.stage, i.scene_id].filter(Boolean).join(" · ");
+    if (where) li.append(el("div", "hint", where));
+    ul.append(li);
+  }
+  ul.hidden = false;
+  $("#issueTools").hidden = false;
+  $("#copyMsg").textContent = "";
+}
+
+$("#copyIssues").addEventListener("click", async () => {
+  const text = JSON.stringify(lastIssues, null, 1);
+  try { await navigator.clipboard.writeText(text); $("#copyMsg").textContent = "انسخت. ابعتها لـ Claude زي ما هي."; }
+  catch (e) { $("#copyMsg").textContent = "ما زبط النسخ، ظلّل النص وانسخه بإيدك."; }
+});
+
+async function build(s, note) {
+  const name = s.title || s.folder;
+  run++;  // stop following an earlier story
+  showRun(name);
+  if (!key) { setStatus("حط المفتاح بخطوة 1 أول إشي.", "bad"); $("#key").focus(); return; }
+  setStatus("عم ببعت الطلب…", "wait");
+  try {
+    const out = await call("POST", "/v1/dev/stories", { folder: s.folder, force: $("#force").checked });
+    follow(out.story_id, name, note);
+  } catch (e) { setStatus(explain(e), "bad"); }
+}
+
+function follow(id, name, note) {
+  const me = ++run;
+  showRun(name);
+  const started = Date.now();
+  const again = () => setTimeout(tick, 3000);
+  async function tick() {
+    if (me !== run) return;
+    let v;
+    try { v = await call("GET", "/v1/stories/" + id); }
+    catch (e) {
+      if (me !== run) return;
+      if (e.status === 404) { setStatus("السيرفر أعاد التشغيل ومسح القصة (Render المجاني بيعمل هيك). اختارها من جديد.", "bad"); return; }
+      if (e.status === 0) { setStatus(e.message, "wait"); again(); return; }
+      setStatus(explain(e), "bad"); return;
+    }
+    if (me !== run) return;
+    const [label, cls] = STATUS[v.status] || [v.status, ""];
+    const secs = Math.round((Date.now() - started) / 1000);
+    if (v.status === "queued" || v.status === "running") {
+      if (secs > 1800) { setStatus("طوّلت أكثر من 30 دقيقة. شوف Logs على Render.", "bad"); return; }
+      setStatus(label + " (" + secs + " ثانية)", cls, (note ? note + " " : "") + "السيرفر المجاني بطيء، البناء ممكن ياخذ كم دقيقة. خلّي الصفحة مفتوحة.");
+      again(); return;
+    }
+    loadList();
+    if (v.status === "published") {
+      const title = v.result && v.result.title ? " · " + v.result.title : "";
+      setStatus(label + title, "ok", secs > 5 ? "خلصت بـ " + secs + " ثانية." : undefined);
+      play(id);
+      return;
+    }
+    setStatus(label, "bad", "هاي المشاكل اللي وقّفتها:");
+    showIssues(v.issues);
+  }
+  tick();
+}
+
+async function play(id) {
+  try {
+    const link = await call("POST", "/v1/stories/" + id + "/access-link", {});
+    const u = new URL(link.url, location.href);
+    const path = u.pathname + u.search;   // same server as this page, whatever PUBLIC_BASE_URL says
+    $("#player").src = path;
+    $("#openTab").href = path;
+    $("#zip").onclick = () => zip(id);
+    $("#playerBox").hidden = false;
+    if (u.origin !== location.origin) {
+      const w = $("#warn");
+      w.textContent = "تنبيه: PUBLIC_BASE_URL على Render مكتوب فيه " + u.origin + ". القصة شغّالة هون، بس الروابط اللي بيعطيها الـ API بتأشّر على مكان غلط. خلّي قيمته: " + location.origin;
+      w.hidden = false;
+    }
+  } catch (e) { setStatus(explain(e), "bad"); }
+}
+
+async function zip(id) {
+  try {
+    const r = await call("GET", "/v1/stories/" + id + "/package");
+    const url = URL.createObjectURL(await r.blob());
+    const a = el("a");
+    a.href = url; a.download = "story-" + id.slice(0, 8) + ".zip";
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+  } catch (e) { setStatus(explain(e), "bad"); }
+}
+
+/* ---------- paste a story ---------- */
+for (const s of STORIES) {
+  const o = el("option", "", s.title || s.folder);
+  o.value = s.folder;
+  $("#exFolder").append(o);
+}
+function pasteMsg(text, cls) { const m = $("#pasteMsg"); m.textContent = text; m.className = "msg " + (cls || ""); }
+
+$("#exLoad").addEventListener("click", async () => {
+  if (!key) { pasteMsg("حط المفتاح بخطوة 1 أول إشي.", "bad"); return; }
+  try {
+    const story = await call("GET", "/v1/dev/folders/" + encodeURIComponent($("#exFolder").value) + "/json");
+    if ($("#exNoPlans").checked) delete story.plans;
+    $("#paste").value = JSON.stringify(story, null, 1);
+    pasteMsg("✓ تعبّى. غيّر اللي بدك إياه (الأسماء، الجمل…) واكبس ابنِ.", "ok");
+  } catch (e) { pasteMsg(explain(e), "bad"); }
+});
+
+$("#pasteBuild").addEventListener("click", async () => {
+  if (!key) { pasteMsg("حط المفتاح بخطوة 1 أول إشي.", "bad"); return; }
+  let story;
+  try { story = JSON.parse($("#paste").value); }
+  catch (e) { pasteMsg("الـ JSON فيه غلط: " + e.message, "bad"); return; }
+  if (story && story.story) story = story.story;
+  const name = (story && story.script && story.script.title) || "القصة الملصوقة";
+  pasteMsg("");
+  run++;
+  showRun(name);
+  setStatus("عم ببعت القصة…", "wait");
+  try {
+    const out = await call("POST", "/v1/dev/stories/json", { story, force: $("#force").checked });
+    follow(out.story_id, name);
+  } catch (e) {
+    const missing = e.details && e.details.missing_plans;
+    if (missing) setStatus("ناقص خطط للمشاهد " + missing.join("، ") + " والذكاء مش موصول. يا إما حط الخطط، يا إما وصّل الذكاء على Render.", "bad");
+    else setStatus(explain(e), "bad");
+  }
+});
+
+/* ---------- list ---------- */
+const nameOf = (v) => (v.result && v.result.title) || (v.external && v.external.topic_id) || v.story_id.slice(0, 8);
+
+async function loadList() {  // returns the stories, newest first (null when they could not be read)
+  const ul = $("#list");
+  if (!key) { ul.replaceChildren(el("li", "hint", "حط المفتاح لتشوف القصص.")); return null; }
+  let data;
+  try { data = await call("GET", "/v1/stories?limit=50"); }
+  catch (e) { ul.replaceChildren(el("li", "hint", explain(e))); return null; }
+  const items = (data.items || []).slice().reverse();
+  if (!items.length) { ul.replaceChildren(el("li", "hint", "لسا ما في قصص.")); return items; }
+  ul.replaceChildren(...items.map((v) => {
+    const name = nameOf(v);
+    const [label, cls] = STATUS[v.status] || [v.status, ""];
+    const li = el("li");
+    const info = el("div");
+    info.append(el("strong", "", name + " "), el("span", "tag " + cls, label));
+    const when = v.created_at ? new Date(v.created_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }) : "";
+    info.append(el("div", "meta", "نسخة " + v.current_version + (when ? " · " + when : "")));
+    const b = el("button", "btn small");
+    b.type = "button";
+    if (v.status === "published") { b.textContent = "شغّل"; b.onclick = () => { run++; showRun(name); setStatus(label, "ok"); play(v.story_id); }; }
+    else if (v.status === "queued" || v.status === "running") { b.textContent = "تابع"; b.onclick = () => follow(v.story_id, name); }
+    else { b.textContent = "شو المشكلة"; b.onclick = () => { run++; showRun(name); setStatus(label, "bad"); showIssues(v.issues); }; }
+    li.append(info, b);
+    return li;
+  }));
+  return items;
+}
+$("#refresh").addEventListener("click", loadList);
+
+/* ---------- automatic: a story plays as soon as the page opens ---------- */
+async function auto() {
+  if (!(await checkKey())) { loadList(); $("#key").focus(); return; }
+  const items = await loadList();
+  if (!items) return;
+  const ready = items.find((v) => v.status === "published");
+  if (ready) {
+    run++;
+    showRun(nameOf(ready));
+    setStatus(STATUS.published[0], "ok", "هاي آخر قصة جاهزة. اكبس تشغيل جوّاها، أو اختار قصة ثانية من فوق.");
+    play(ready.story_id);
+    return;
+  }
+  const busy = items.find((v) => v.status === "queued" || v.status === "running");
+  if (busy) { follow(busy.story_id, nameOf(busy)); return; }
+  const first = STORIES.find((s) => s.folder === "plants") || STORIES[0];
+  if (first) build(first, "ما في قصة جاهزة، فعم ببنيلك هاي لحالها.");
+}
+
+drawStories();
+auto();
+</script>
+</body>
+</html>

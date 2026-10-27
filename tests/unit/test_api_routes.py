@@ -37,6 +37,13 @@ def settings(tmp_path, **kw) -> ApiSettings:
     )
 
 
+@pytest.fixture(autouse=True)
+def no_llm_or_modules_from_this_machine(monkeypatch):
+    """The tests decide the LLM and modules 1 to 5 themselves, whatever this computer's environment has."""
+    for name in ("LLM_PROVIDER", "ANTHROPIC_API_KEY", "OPENAI_API_KEY", "OPENAI_BASE_URL", "STORY_UPSTREAM"):
+        monkeypatch.delenv(name, raising=False)
+
+
 @pytest.fixture
 def client(tmp_path):
     return TestClient(create_app(settings(tmp_path)))
@@ -51,11 +58,21 @@ def error_code(res) -> str:
 # ----------------------------------------------------------------------------------------------- basics
 def test_health_and_docs_need_no_key(client):
     res = client.get("/v1/health")
-    assert res.status_code == 200 and set(res.json()["checks"]) == {"blob_store", "version_store", "ffmpeg"}
+    checks = res.json()["checks"]
+    assert res.status_code == 200 and set(checks) == {"blob_store", "version_store", "ffmpeg", "llm", "upstream"}
+    assert checks["llm"] is None and checks["upstream"] is False  # no LLM key and no modules 1 to 5 in the tests
     spec = client.get("/openapi.json").json()
     assert {"/v1/stories", "/v1/stories/{story_id}/access-link", "/v1/play/{token}/index.html"} <= set(spec["paths"])
     assert "APIKeyHeader" in spec["components"]["securitySchemes"]  # the Authorize button in /docs
     assert client.get("/docs").status_code == 200
+
+
+def test_the_try_page_opens_without_a_key(client):
+    for path in ("/", "/try"):
+        page = client.get(path)
+        assert page.status_code == 200 and page.headers["content-type"].startswith("text/html")
+        assert "نبتة سلمى العطشى" in page.text and "frame-src 'self'" in page.headers["content-security-policy"]
+    assert "/" not in client.get("/openapi.json").json()["paths"]  # not part of the API in /docs
 
 
 def test_every_story_route_needs_a_valid_key(client):
@@ -107,6 +124,51 @@ def test_create_story_is_validated_then_waits_for_modules_1_to_5(client):
 
 def test_dev_folders(client):
     assert {"clock", "percent", "plants"} <= set(client.get("/v1/dev/folders", headers=KEY).json()["folders"])
+    example = client.get("/v1/dev/folders/clock/json", headers=KEY).json()
+    assert set(example) == {"intake", "script", "cast", "plans"}
+    assert error_code(client.get("/v1/dev/folders/nope/json", headers=KEY)) == "INPUT_INVALID"
+
+
+def test_a_pasted_story_without_plans_and_without_llm_is_refused_at_once(client):
+    story = client.get("/v1/dev/folders/clock/json", headers=KEY).json() | {"plans": {}}
+    res = client.post("/v1/dev/stories/json", headers=KEY, json={"story": story})
+    assert res.status_code == 422 and res.json()["error"]["details"]["missing_plans"][0] == "s01"
+    assert (
+        error_code(client.post("/v1/dev/stories/json", headers=KEY, json={"story": {"intake": {}}})) == "INPUT_INVALID"
+    )
+
+
+@needs_ffmpeg
+def test_a_pasted_story_is_built(client):
+    story = client.get("/v1/dev/folders/clock/json", headers=KEY).json()
+    res = client.post("/v1/dev/stories/json", headers=KEY, json={"story": story})
+    assert res.status_code == 202
+    assert client.get(f"/v1/stories/{res.json()['story_id']}", headers=KEY).json()["status"] == "published"
+
+
+@needs_ffmpeg
+def test_post_stories_runs_through_the_connection_point(tmp_path):
+    class Modules:
+        def __init__(self, story):
+            self.story = story
+
+        def run(self, request):
+            return self.story
+
+    plain = TestClient(create_app(settings(tmp_path)))
+    story = plain.get("/v1/dev/folders/clock/json", headers=KEY).json()
+    client = TestClient(create_app(settings(tmp_path), upstream=Modules(story)))
+    body = {
+        "external": {"lesson_id": "L1", "topic_id": "T1"},
+        "lesson_text": "نص الدرس " * 40,
+        "topic": {"title": "قراءة الساعة"},
+        "metadata": {"country": "JO", "age_group": "6-8", "grade": "1", "subject": "math"},
+    }
+    res = client.post("/v1/stories", headers=KEY, json=body)
+    assert res.status_code == 202 and res.json()["status"] == "queued"
+    assert client.get(f"/v1/stories/{res.json()['story_id']}", headers=KEY).json()["status"] == "published"
+    assert client.post("/v1/stories", headers=KEY, json=body).status_code == 200  # the same request: the same story
+    assert client.get("/v1/health").json()["checks"]["upstream"] is True
 
 
 # ----------------------------------------------------------------------------------------------- limits

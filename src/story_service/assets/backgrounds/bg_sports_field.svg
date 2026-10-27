@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-label="Sports field with a goal and stands" data-kind="outdoor" data-ground-y="640" data-supports="day evening night" data-slots="260,640 640,640 1020,640">
-  <defs><linearGradient id="sf-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky-d)" stop-opacity="0.75"/><stop offset="0.8" stop-color="var(--sky-d)" stop-opacity="0"/></linearGradient></defs>
+  <defs><linearGradient id="sf-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky-d)" stop-opacity="0.75"/><stop offset="0.8" stop-color="var(--sky-d)" stop-opacity="0"/></linearGradient><linearGradient id="sportsfield-haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky)" stop-opacity="0"/><stop offset="1" stop-color="var(--sky)" stop-opacity="0.38"/></linearGradient><linearGradient id="sportsfield-sunlit" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--paper)" stop-opacity="0.22"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.06"/></linearGradient><linearGradient id="sportsfield-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ink)" stop-opacity="0"/><stop offset="1" stop-color="var(--ink)" stop-opacity="0.14"/></linearGradient></defs>
   <g class="layer-far">
     <rect x="0" y="0" width="1280" height="720" fill="var(--sky)"/>
     <rect x="0" y="0" width="1280" height="720" fill="url(#sf-sky)"/>
@@ -8,6 +8,7 @@
     <rect x="1120" y="140" width="12" height="320" fill="var(--c-neutral-2)"/>
     <rect x="1090" y="120" width="72" height="34" rx="6" fill="var(--c-neutral-2-d)"/>
     <circle cx="1126" cy="137" r="70" fill="var(--c-accent)" style="opacity:var(--light-o)"/>
+  <rect x="0" y="300" width="1280" height="320" fill="url(#sportsfield-haze)"/>
   </g>
   <g class="day-only amb-fly"><g transform="translate(-170 140)" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.45"><path class="amb-flap" d="M0 0 Q8 -8 16 0 Q24 -8 32 0"/><path class="amb-flap" d="M44 22 Q50 16 56 22 Q62 16 68 22"/><path class="amb-flap" d="M-34 30 Q-28 24 -22 30 Q-16 24 -10 30"/></g></g>
   <g class="layer-mid">
@@ -27,5 +28,7 @@
     <rect x="1000" y="466" width="250" height="10" fill="var(--paper)"/>
     <g fill="var(--paper)" opacity="0.45"><rect x="1012" y="476" width="4" height="124"/><rect x="1060" y="476" width="4" height="124"/><rect x="1110" y="476" width="4" height="124"/><rect x="1160" y="476" width="4" height="124"/><rect x="1210" y="476" width="4" height="124"/>
       <rect x="1010" y="510" width="232" height="4"/><rect x="1010" y="550" width="232" height="4"/></g>
+  <g class="day-only"><rect x="0" y="0" width="1280" height="720" fill="url(#sportsfield-sunlit)"/></g>
+    <rect x="0" y="620" width="1280" height="100" fill="url(#sportsfield-edge)"/>
   </g>
 </svg>
